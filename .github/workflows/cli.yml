@@ -16,7 +16,6 @@ jobs:
   build-and-push-digital-ocean:
     name: Push to Digital Ocean
     runs-on: ubuntu-latest
-    needs: run-tests
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +24,7 @@ jobs:
         with:
           digitalocean-token: ${{ secrets.DIGITALOCEAN_TOKEN }}
           digitalocean-repository: ${{ vars.DIGITALOCEAN_REPOSITORY }}
-          dockerfile-path: "deployment/Dockerfile.deploy"
+          dockerfile-path: "Dockerfile.deploy"
           branch-environment-map: '{"main": "prod", "development": "dev", "staging": "stg", "testing": "test"}'
   deploy:
     runs-on: ubuntu-latest
