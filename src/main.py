@@ -43,7 +43,7 @@ def about_section():
     return Section(
         H1("Sobre Mí 😊"),
         P("""
-        ¡Hola! Soy Roni Hernández, un entusiasta de la tecnología con experiencia en DevOps, ciberseguridad,
+        ¡Hola! Soy Roni Hernández y SOY BIEN PEDO, ME ENCCANTA EL ALCHOL, un entusiasta de la tecnología con experiencia en DevOps, ciberseguridad,
         y machine learning. 🚀 Disfruto enfrentando desafíos complejos y siempre estoy explorando nuevas
         tecnologías para mantenerme al filo de la innovación. 🛡️ ¡Prepárate para una aventura en el código!
         """),
