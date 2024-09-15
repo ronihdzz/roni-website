@@ -1,0 +1,46 @@
+{
+    "name": "Roni Hernández",
+    "profession": "Squad Leader Back-end Developer Middle",
+    "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",     
+    "linkedin": "https://www.linkedin.com/in/ronihdz/",
+    "github": "https://github.com/ronihdzz",
+    "youtube": "https://www.youtube.com/@ronihernandez245",
+    "medium": "https://medium.com/@ronihdzbel",
+    "devto": "https://dev.to/ronihdz",
+    "cv": "/static/cv.pdf",
+    "photo": "static/roni.jpg",
+    "experiences": [
+        {
+            "title": "Ganadores de Swift Change Makers Hackathon 2024",
+            "description": "Hackathon celebrado en Monterrey que reunió a los mejores equipos de todo México, cada uno habiendo ganado previamente hackathones locales para obtener su pase al evento. Mi equipo y yo fuimos seleccionados para participar en este Hakathon y logramos el primer lugar en el reto propuesto por FEMSA.Durante el hackathon, desarrollamos OXXO LINK, una solución innovadora diseñada para facilitar la colaboración entre vecinos y optimizar la compra de productos en OXXO. Este proyecto fue el resultado de un intenso trabajo en equipo, donde cada uno de nosotros aportó ideas que evolucionaron en una propuesta sólida y efectiva.Nuestra solución impresionó al jurado, tanto que comenzaron a utilizar nuestro término 'los paros' para describir la dinámica del proyecto. Ganar el Reto FEMSA fue una experiencia emocionante y muy gratificante, sobre todo por la calidad de los otros equipos participantes. Competir y destacar en un evento de esta magnitud fue una experiencia que recordaré siempre.",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
+                "type_resource": "video"
+            }
+        },
+        {
+            "title": "Ganadores del hackathon NASA Space Apps Challenge 2023",
+            "description": "La NASA Space Apps Challenge 2023 es un hackathon global que invita a participantes de todo el mundo a resolver desafíos relacionados con la ciencia y el espacio utilizando datos abiertos de la NASA y sus socios. En la edición de CDMX, junto con mi equipo, AstroFire, obtuvimos el primer lugar con nuestra innovadora propuesta llamada 'Sensores de Muerte'. Este proyecto consistía en una red de sensores estratégicamente colocados en áreas forestales para detectar la velocidad y dirección de incendios. Los sensores se comunicaban entre sí mediante el protocolo LORA, formando una red local que permitía emitir alertas tempranas y facilitar una respuesta rápida ante incendios forestales. Aunque se trataba de un prototipo inicial (no con todas las funciones), logramos que fuera completamente funcional. Además, desarrollamos tanto el hardware que capturaba los datos como el sitio web y la aplicación móvil, lo que nos permitió mostrar un prototipo que impresionó al jurado por su efectividad y potencial, a pesar de ser una versión preliminar.",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
+                "type_resource": "video"
+            }
+        },
+        {
+            "title": "Congreso de telecomunicacion Facultad de Ingenieria UNAM",
+            "description": "Como parte del ciclo de conferencias del departamento de telecomunicaciones de la Facultad de Ingeniería, tuve el honor de ser invitado como ponente por el Dr. Luis Francisco García Jiménez, profesor de Redes de Comunicaciones. Durante la charla, expuse sobre temas clave como el Internet de las Cosas, el desarrollo de software y algunos de mis proyectos open source. Fue una experiencia enriquecedora compartir mi conocimiento y pasión frente a un público interesado en estos campos tecnológicos.",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
+                "type_resource": "video"
+            }
+        }, 
+        {
+            "title": "CONACES Acapulco",
+            "description": "Mis amigos y yo tuvimos el honor de ser invitados como ponentes en el CONACES 2023, el evento espacial más importante de México, organizado por la Agencia Espacial Mexicana. Durante el congreso, coincidimos con figuras brillantes como Rodolfo Neri Vela, el primer astronauta mexicano, así como otros expertos del sector espacial. Tuvimos la oportunidad de presentar nuestros proyectos en un evento de tal magnitud, lo cual fue una experiencia increíble para compartir ideas y aprender de personas destacadas en la industria.",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
+                "type_resource": "video"
+            }
+        }
+    ]
+}
