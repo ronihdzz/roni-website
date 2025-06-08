@@ -13,7 +13,10 @@ def inject_css():
     return Head(
         Link(rel="stylesheet", href="/static/styles.css"),
         Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"),
-        Script(src="/static/script.js")  # Incluye el archivo script.js
+        Link(rel="preconnect", href="https://fonts.googleapis.com"),
+        Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=""),
+        Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"),
+        Script(src="/static/script.js")
     )
 
 # Función para leer datos desde un archivo JSON
@@ -52,7 +55,13 @@ def sidebar():
                 Li(A("Projects", href="#projects")),
                 Li(A("Blog", href="#blog")),
                 Li(A("Contact", href="#contact")),
-                Li(A("Download CV", href=data['cv'], target="_blank")),
+                Li(
+                    "Download CV",
+                    Ul(
+                        Li(A("Español", href=data['cv'], target="_blank")),
+                        Li(A("English", href=data['cv_en'], target="_blank"))
+                    )
+                ),
                 cls="nav-links"
             ),
             Div(
@@ -60,7 +69,7 @@ def sidebar():
                 A(I(cls="fab fa-github"), href=data['github']),
                 A(I(cls="fab fa-youtube"), href=data['youtube']),
                 A(I(cls="fab fa-medium"), href=data['medium']),
-                A(I(cls="fab fa-dev"), href=data['devto']),
+                # A(I(cls="fab fa-dev"), href=data['devto']),
                 cls="social-links"
             ),
             cls="sidebar"
@@ -97,9 +106,9 @@ def main_content():
             id="about"
         ),
         moments_section(data['experiences']),  # Renombrar la sección de experiencias a momentos
-        projects_section(),  # Agregar la sección de proyectos
-        blog_section(),  # Agregar la sección del blog
-        contact_section()  # Agregar la sección de contacto
+        # projects_section(),  # Agregar la sección de proyectos
+        # blog_section(),  # Agregar la sección del blog
+        # contact_section()  # Agregar la sección de contacto
     )
 
 def moments_section(experiences):
