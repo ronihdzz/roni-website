@@ -13,7 +13,10 @@ def inject_css():
     return Head(
         Link(rel="stylesheet", href="/static/styles.css"),
         Link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"),
-        Script(src="/static/script.js")  # Incluye el archivo script.js
+        Link(rel="preconnect", href="https://fonts.googleapis.com"),
+        Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=""),
+        Link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap"),
+        Script(src="/static/script.js")
     )
 
 # Función para leer datos desde un archivo JSON
