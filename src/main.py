@@ -51,9 +51,11 @@ def sidebar():
             P(data['profession']),
             Ul(
                 Li(A("About", href="#about")),
+                Li(A("Skills", href="#skills")),
                 Li(A("Moments", href="#moments")),
                 Li(A("Projects", href="#projects")),
                 Li(A("Blog", href="#blog")),
+                Li(A("Education", href="#education")),
                 Li(A("Contact", href="#contact")),
                 Li(
                     "Download CV",
@@ -105,11 +107,51 @@ def main_content():
             cls="main-section",
             id="about"
         ),
-        moments_section(data['experiences']),  # Renombrar la sección de experiencias a momentos
-        projects_section(),  # Agregar la sección de proyectos
-        blog_section(),  # Agregar la sección del blog
-        contact_section()  # Agregar la sección de contacto
+        skills_section(data['skills']),
+        moments_section(data['experiences']),
+        projects_section(),
+        blog_section(),
+        education_section(data['education']),
+        contact_section()
     )
+
+def skills_section(skills):
+    return Section(
+        H2("Skills", cls="section-title"),
+        Div(
+            *[
+                Div(
+                    H3(category.capitalize(), cls="skills-category"),
+                    Ul(*[Li(item) for item in skills[category]], cls="skills-list"),
+                    cls="skills-card"
+                )
+                for category in skills
+            ],
+            cls="skills-container"
+        ),
+        cls="skills-section",
+        id="skills"
+    )
+
+def education_section(education):
+    return Section(
+        H2("Education", cls="section-title"),
+        Div(
+            *[
+                Div(
+                    H3(ed['degree'], cls='education-degree'),
+                    P(ed['institution'], cls='education-inst'),
+                    P(ed['status'], cls='education-status'),
+                    cls='education-item'
+                )
+                for ed in education
+            ],
+            cls='education-container'
+        ),
+        cls='education-section',
+        id='education'
+    )
+
 
 def moments_section(experiences):
     return Section(

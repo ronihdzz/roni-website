@@ -1,7 +1,7 @@
 {
     "name": "Roni Hernández",
     "profession": "Squad Leader Back-end Developer Middle",
-    "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",     
+    "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",
     "linkedin": "https://www.linkedin.com/in/ronihdz/",
     "github": "https://github.com/ronihdzz",
     "youtube": "https://www.youtube.com/@ronihdzz",
@@ -34,7 +34,7 @@
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
                 "type_resource": "video"
             }
-        }, 
+        },
         {
             "title": "CONACES Acapulco",
             "description": "Mis amigos y yo tuvimos el honor de ser invitados como ponentes en el CONACES 2023, el evento espacial más importante de México, organizado por la Agencia Espacial Mexicana. Durante el congreso, coincidimos con figuras brillantes como Rodolfo Neri Vela, el primer astronauta mexicano, así como otros expertos del sector espacial. Tuvimos la oportunidad de presentar nuestros proyectos en un evento de tal magnitud, lo cual fue una experiencia increíble para compartir ideas y aprender de personas destacadas en la industria.",
@@ -42,6 +42,46 @@
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
                 "type_resource": "video"
             }
+        }
+    ],
+    "skills": {
+        "languages": [
+            "Python",
+            "Go",
+            "C",
+            "C++"
+        ],
+        "frameworks": [
+            "FastAPI",
+            "Django",
+            "Django REST Framework",
+            "Flask"
+        ],
+        "databases": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "SQL"
+        ],
+        "devops": [
+            "AWS",
+            "Docker",
+            "GitHub",
+            "DigitalOcean",
+            "NGINX",
+            "Kubernetes"
+        ]
+    },
+    "education": [
+        {
+            "degree": "Licenciatura en Informática",
+            "institution": "Universidad Nacional Autónoma de México",
+            "status": "En curso"
+        },
+        {
+            "degree": "Ingeniería en Telecomunicaciones (inconclusa)",
+            "institution": "",
+            "status": "3 años cursados"
         }
     ]
 }

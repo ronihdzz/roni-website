@@ -7,6 +7,8 @@ Este proyecto es un portafolio personal desarrollado con Python y FastAPI. El si
 - **Datos Dinámicos**: Los datos del sitio web se extraen de un archivo `data.json`, lo que permite una fácil actualización del contenido.
 - **Sección "About Me"**: Muestra una breve descripción con la opción de "Ver más" para expandir el texto.
 - **Sección "Moments"**: Renombrada desde "Experiences", muestra momentos destacados con descripciones y medios (imágenes o videos).
+- **Sección "Skills"**: Presenta las principales habilidades técnicas organizadas por categorías.
+- **Sección "Education"**: Muestra la formación académica relevante.
 - **Sección "Projects"**: Espacio para listar proyectos personales.
 - **Sección "Blog"**: Espacio para listar entradas de blog.
 - **Sección "Download CV"**: Permite la visualización y descarga del CV en formato PDF.

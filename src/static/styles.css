@@ -223,3 +223,75 @@ body {
 .full-description {
     display: none;
 }
+
+/* Skills section */
+.skills-section {
+    margin-left: 280px;
+    padding: 60px;
+    background-color: var(--sidebar-bg);
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skills-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px);
+}
+
+.skills-category {
+    font-size: 20px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    margin-bottom: 5px;
+}
+
+/* Education section */
+.education-section {
+    margin-left: 280px;
+    padding: 60px;
+    background-color: var(--sidebar-bg);
+}
+
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.education-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.education-degree {
+    font-size: 20px;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.education-inst,
+.education-status {
+    margin: 0;
+    font-size: 16px;
+}
