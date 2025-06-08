@@ -1,47 +1,436 @@
 {
-    "name": "Roni Hernández",
-    "profession": "Squad Leader Back-end Developer",
-    "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",     
-    "linkedin": "https://www.linkedin.com/in/ronihdz/",
-    "github": "https://github.com/ronihdzz",
-    "youtube": "https://www.youtube.com/@ronihdzz",
-    "medium": "https://ronihdz.medium.com/",
-    "devto": "https://dev.to/ronihdz",
-    "cv": "/static/cv.pdf",
-    "cv_en": "/static/cv_en.pdf",
-    "photo": "static/roni.jpg",
+    "personal": {
+        "name": "Roni Hernández",
+        "profession": "Squad Leader Back-end Developer",
+        "title_parts": [
+            "Hola,",
+            "Soy Roni Hernández,",
+            "Squad Leader Back-end Developer"
+        ],
+        "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",
+        "photo": "static/roni.jpg",
+        "cv": {
+            "spanish": "/static/cv.pdf",
+            "english": "/static/cv_en.pdf"
+        }
+    },
+    "social_links": {
+        "linkedin": "https://www.linkedin.com/in/ronihdz/",
+        "github": "https://github.com/ronihdzz",
+        "youtube": "https://www.youtube.com/@ronihdzz",
+        "medium": "https://ronihdz.medium.com/",
+        "devto": "https://dev.to/ronihdz"
+    },
+    "contact": {
+        "email": "roni@example.com",
+        "phone": "+52 55 1234 5678",
+        "location": "Ciudad de México, México",
+        "available_for_work": true,
+        "preferred_contact": "email",
+        "form": {
+            "title": "Envíame un mensaje",
+            "subtitle": "¿Tienes un proyecto en mente? ¡Me encantaría escuchar sobre él!",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "placeholder": "Tu nombre",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "type": "email",
+                    "placeholder": "Tu email",
+                    "required": true
+                },
+                {
+                    "name": "subject",
+                    "type": "text",
+                    "placeholder": "Asunto",
+                    "required": true
+                },
+                {
+                    "name": "message",
+                    "type": "textarea",
+                    "placeholder": "Tu mensaje",
+                    "required": true,
+                    "rows": 5
+                }
+            ],
+            "submit_text": "Enviar mensaje",
+            "action": "/contact",
+            "method": "post"
+        }
+    },
+    "skills": {
+        "featured": ["Python", "JavaScript", "FastHTML", "AWS", "Docker"],
+        "categories": {
+            "Lenguajes de Programación": [
+                {
+                    "name": "Python",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fab fa-python"
+                },
+                {
+                    "name": "JavaScript",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fab fa-js-square"
+                },
+                {
+                    "name": "TypeScript",
+                    "level": "Intermedio",
+                    "years": 1,
+                    "icon": "fab fa-js-square"
+                },
+                {
+                    "name": "Java",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fab fa-java"
+                },
+                {
+                    "name": "C/C++",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fas fa-code"
+                },
+                {
+                    "name": "SQL",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fas fa-database"
+                }
+            ],
+            "Frameworks & Librerías": [
+                {
+                    "name": "Django",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fab fa-python"
+                },
+                {
+                    "name": "FastAPI",
+                    "level": "Avanzado",
+                    "years": 2,
+                    "icon": "fas fa-bolt"
+                },
+                {
+                    "name": "Flask",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fab fa-python"
+                },
+                {
+                    "name": "FastHTML",
+                    "level": "Intermedio",
+                    "years": 1,
+                    "icon": "fas fa-code"
+                },
+                {
+                    "name": "React",
+                    "level": "Básico",
+                    "years": 1,
+                    "icon": "fab fa-react"
+                },
+                {
+                    "name": "Node.js",
+                    "level": "Intermedio",
+                    "years": 1,
+                    "icon": "fab fa-node-js"
+                }
+            ],
+            "Cloud & DevOps": [
+                {
+                    "name": "AWS",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fab fa-aws"
+                },
+                {
+                    "name": "Docker",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fab fa-docker"
+                },
+                {
+                    "name": "GitHub Actions",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fab fa-github"
+                },
+                {
+                    "name": "Linux",
+                    "level": "Avanzado",
+                    "years": 4,
+                    "icon": "fab fa-linux"
+                },
+                {
+                    "name": "Kubernetes",
+                    "level": "Básico",
+                    "years": 1,
+                    "icon": "fas fa-dharmachakra"
+                }
+            ],
+            "Bases de Datos": [
+                {
+                    "name": "PostgreSQL",
+                    "level": "Avanzado",
+                    "years": 3,
+                    "icon": "fas fa-database"
+                },
+                {
+                    "name": "Redis",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fas fa-database"
+                },
+                {
+                    "name": "MongoDB",
+                    "level": "Básico",
+                    "years": 1,
+                    "icon": "fas fa-leaf"
+                },
+                {
+                    "name": "MySQL",
+                    "level": "Intermedio",
+                    "years": 2,
+                    "icon": "fas fa-database"
+                }
+            ]
+        }
+    },
+    "projects": [
+        {
+            "id": "portfolio-fasthtml",
+            "title": "Portfolio Personal con FastHTML",
+            "description": "Sitio web personal desarrollado con FastHTML, featuring un diseño moderno y responsive. Incluye secciones para experiencias, skills, proyectos y contacto con animaciones CSS avanzadas.",
+            "long_description": "Este proyecto representa mi portfolio personal construido desde cero utilizando FastHTML, un framework moderno de Python para desarrollo web. El sitio incluye un diseño completamente responsive con un sistema de colores dark theme, animaciones CSS avanzadas, y una arquitectura de componentes reutilizables. Implementé características como lazy loading, intersection observer para animaciones, y un sistema de formularios funcional.",
+            "technologies": ["FastHTML", "Python", "CSS3", "JavaScript", "HTML5"],
+            "category": "Web Development",
+            "status": "Completed",
+            "featured": true,
+            "links": {
+                "demo": "https://ronihdz.com",
+                "github": "https://github.com/ronihdzz/portfolio-fasthtml",
+                "documentation": null
+            },
+            "images": [
+                "/static/projects/portfolio-1.jpg",
+                "/static/projects/portfolio-2.jpg"
+            ],
+            "date_created": "2024-01-15",
+            "date_updated": "2024-01-20"
+        },
+        {
+            "id": "oxxo-link",
+            "title": "OXXO LINK - Swift Change Makers",
+            "description": "Solución ganadora del Swift Change Makers Hackathon 2024 para facilitar la colaboración entre vecinos en compras de OXXO.",
+            "long_description": "OXXO LINK es una aplicación innovadora desarrollada durante el Swift Change Makers Hackathon 2024, donde obtuvimos el primer lugar en el reto FEMSA. La solución permite a los vecinos colaborar en sus compras, optimizando costos y tiempo mediante un sistema de 'paros' comunitarios. La aplicación incluye geolocalización, sistema de puntos, y notificaciones en tiempo real.",
+            "technologies": ["React Native", "Node.js", "MongoDB", "Socket.io", "Google Maps API"],
+            "category": "Mobile App",
+            "status": "Prototype",
+            "featured": true,
+            "links": {
+                "demo": "https://oxxolink-demo.com",
+                "github": "https://github.com/team/oxxo-link",
+                "presentation": "/static/projects/oxxo-link-presentation.pdf"
+            },
+            "images": [
+                "/static/projects/oxxo-link-1.jpg",
+                "/static/projects/oxxo-link-2.jpg"
+            ],
+            "date_created": "2024-03-15",
+            "date_updated": "2024-03-17",
+            "awards": ["1er Lugar Swift Change Makers Hackathon 2024", "Reto FEMSA"]
+        },
+        {
+            "id": "sensores-muerte",
+            "title": "Sensores de Muerte - NASA Space Apps",
+            "description": "Red de sensores IoT para detección temprana de incendios forestales. Proyecto ganador de NASA Space Apps Challenge 2023.",
+            "long_description": "Sistema integral de detección de incendios forestales que combina hardware IoT, comunicación LORA, y aplicaciones web/móvil. Los sensores detectan cambios en temperatura, humedad y calidad del aire para alertar sobre posibles incendios. El sistema incluye una red mesh de comunicación entre sensores y una plataforma de monitoreo en tiempo real.",
+            "technologies": ["Arduino", "LORA", "Python", "React", "Firebase", "IoT"],
+            "category": "IoT",
+            "status": "Prototype",
+            "featured": true,
+            "links": {
+                "demo": "https://sensores-muerte-demo.com",
+                "github": "https://github.com/astrofire/sensores-muerte",
+                "nasa_page": "https://www.spaceappschallenge.org/2023/find-a-team/astrofire/"
+            },
+            "images": [
+                "/static/projects/sensores-1.jpg",
+                "/static/projects/sensores-2.jpg"
+            ],
+            "date_created": "2023-10-07",
+            "date_updated": "2023-10-08",
+            "awards": ["1er Lugar NASA Space Apps Challenge 2023 CDMX"]
+        },
+        {
+            "id": "banking-core",
+            "title": "Core Bancario - Fairplay",
+            "description": "Sistema core bancario desarrollado desde cero para startup fintech, manejando transacciones y pagos a escala.",
+            "long_description": "Desarrollo del sistema core bancario de Fairplay desde cero, implementando arquitectura de microservicios para manejar transacciones financieras, órdenes de pago, y operaciones bancarias a gran escala. El sistema procesa millones de transacciones diarias con alta disponibilidad y cumplimiento de regulaciones financieras.",
+            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"],
+            "category": "Fintech",
+            "status": "In Production",
+            "featured": false,
+            "links": {
+                "company": "https://fairplay.mx",
+                "github": null,
+                "documentation": null
+            },
+            "images": [],
+            "date_created": "2022-06-01",
+            "date_updated": "2024-01-01",
+            "confidential": true
+        }
+    ],
     "experiences": [
         {
+            "id": "swift-hackathon-2024",
             "title": "Ganadores de Swift Change Makers Hackathon 2024",
             "description": "Hackathon celebrado en Monterrey que reunió a los mejores equipos de todo México, cada uno habiendo ganado previamente hackathones locales para obtener su pase al evento. Mi equipo y yo fuimos seleccionados para participar en este Hakathon y logramos el primer lugar en el reto propuesto por FEMSA.Durante el hackathon, desarrollamos OXXO LINK, una solución innovadora diseñada para facilitar la colaboración entre vecinos y optimizar la compra de productos en OXXO. Este proyecto fue el resultado de un intenso trabajo en equipo, donde cada uno de nosotros aportó ideas que evolucionaron en una propuesta sólida y efectiva.Nuestra solución impresionó al jurado, tanto que comenzaron a utilizar nuestro término 'los paros' para describir la dinámica del proyecto. Ganar el Reto FEMSA fue una experiencia emocionante y muy gratificante, sobre todo por la calidad de los otros equipos participantes. Competir y destacar en un evento de esta magnitud fue una experiencia que recordaré siempre.",
+            "date": "2024-03-15",
+            "location": "Monterrey, México",
+            "type": "hackathon",
+            "award": "1er Lugar",
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["Hackathon", "FEMSA", "OXXO", "Innovation"]
         },
         {
+            "id": "nasa-space-apps-2023",
             "title": "Ganadores del hackathon NASA Space Apps Challenge 2023",
             "description": "La NASA Space Apps Challenge 2023 es un hackathon global que invita a participantes de todo el mundo a resolver desafíos relacionados con la ciencia y el espacio utilizando datos abiertos de la NASA y sus socios. En la edición de CDMX, junto con mi equipo, AstroFire, obtuvimos el primer lugar con nuestra innovadora propuesta llamada 'Sensores de Muerte'. Este proyecto consistía en una red de sensores estratégicamente colocados en áreas forestales para detectar la velocidad y dirección de incendios. Los sensores se comunicaban entre sí mediante el protocolo LORA, formando una red local que permitía emitir alertas tempranas y facilitar una respuesta rápida ante incendios forestales. Aunque se trataba de un prototipo inicial (no con todas las funciones), logramos que fuera completamente funcional. Además, desarrollamos tanto el hardware que capturaba los datos como el sitio web y la aplicación móvil, lo que nos permitió mostrar un prototipo que impresionó al jurado por su efectividad y potencial, a pesar de ser una versión preliminar.",
+            "date": "2023-10-07",
+            "location": "Ciudad de México, México",
+            "type": "hackathon",
+            "award": "1er Lugar",
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["NASA", "Space", "IoT", "Environmental"]
         },
         {
+            "id": "unam-telecom-talk",
             "title": "Congreso de telecomunicacion Facultad de Ingenieria UNAM",
             "description": "Como parte del ciclo de conferencias del departamento de telecomunicaciones de la Facultad de Ingeniería, tuve el honor de ser invitado como ponente por el Dr. Luis Francisco García Jiménez, profesor de Redes de Comunicaciones. Durante la charla, expuse sobre temas clave como el Internet de las Cosas, el desarrollo de software y algunos de mis proyectos open source. Fue una experiencia enriquecedora compartir mi conocimiento y pasión frente a un público interesado en estos campos tecnológicos.",
+            "date": "2023-11-15",
+            "location": "UNAM, Ciudad de México",
+            "type": "conference",
+            "award": null,
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
                 "type_resource": "video"
-            }
-        }, 
+            },
+            "tags": ["IoT", "Software Development", "Open Source", "UNAM"]
+        },
         {
+            "id": "conaces-acapulco",
             "title": "CONACES Acapulco",
             "description": "Mis amigos y yo tuvimos el honor de ser invitados como ponentes en el CONACES 2023, el evento espacial más importante de México, organizado por la Agencia Espacial Mexicana. Durante el congreso, coincidimos con figuras brillantes como Rodolfo Neri Vela, el primer astronauta mexicano, así como otros expertos del sector espacial. Tuvimos la oportunidad de presentar nuestros proyectos en un evento de tal magnitud, lo cual fue una experiencia increíble para compartir ideas y aprender de personas destacadas en la industria.",
+            "date": "2023-09-20",
+            "location": "Acapulco, México",
+            "type": "conference",
+            "award": null,
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["Space", "Mexican Space Agency", "Innovation"]
         }
-    ]
+    ],
+    "work_experience": [
+        {
+            "company": "Fairplay",
+            "position": "Squad Leader Back-end Developer",
+            "location": "Ciudad de México (Remoto)",
+            "start_date": "2022-06-01",
+            "end_date": null,
+            "current": true,
+            "description": "Desarrollo del sistema core bancario desde cero, liderando arquitectura de microservicios para transacciones financieras y pagos a escala.",
+            "achievements": [
+                "Construcción del core bancario desde cero",
+                "Implementación de arquitectura de microservicios",
+                "Manejo de transacciones millonarias diarias",
+                "Colaboración con equipos de Data, DevOps, y Producto"
+            ],
+            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"]
+        },
+        {
+            "company": "Telmex",
+            "position": "Cybersecurity Analyst",
+            "location": "Ciudad de México",
+            "start_date": "2021-01-01",
+            "end_date": "2022-05-31",
+            "current": false,
+            "description": "Análisis de seguridad informática y redes, monitoreo de amenazas y implementación de medidas de protección.",
+            "achievements": [
+                "Implementación de sistemas de monitoreo de seguridad",
+                "Análisis de vulnerabilidades de red",
+                "Respuesta a incidentes de seguridad"
+            ],
+            "technologies": ["Linux", "Network Security", "Firewalls", "SIEM"]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Universidad Nacional Autónoma de México (UNAM)",
+            "degree": "Ingeniería en Telecomunicaciones",
+            "field": "Telecomunicaciones y Electrónica",
+            "start_date": "2018-08-01",
+            "end_date": "2023-07-01",
+            "status": "Completed",
+            "location": "Ciudad de México",
+            "relevant_courses": [
+                "Redes de Comunicaciones",
+                "Programación",
+                "Sistemas Embebidos",
+                "Procesamiento Digital de Señales"
+            ]
+        }
+    ],
+    "certifications": [
+        {
+            "name": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "date": "2023-06-15",
+            "credential_id": "AWS-SA-2023-001",
+            "url": "https://aws.amazon.com/certification/"
+        }
+    ],
+    "languages": [
+        {
+            "language": "Español",
+            "level": "Nativo",
+            "code": "es"
+        },
+        {
+            "language": "English",
+            "level": "Intermedio-Avanzado",
+            "code": "en"
+        }
+    ],
+    "meta": {
+        "version": "2.0",
+        "last_updated": "2024-01-20",
+        "sections_enabled": {
+            "about": true,
+            "skills": true,
+            "projects": true,
+            "experiences": true,
+            "work_experience": true,
+            "education": true,
+            "contact": true
+        },
+        "seo": {
+            "keywords": ["desarrollador backend", "python", "aws", "microservicios", "fintech"],
+            "description": "Roni Hernández - Squad Leader Back-end Developer especializado en Python, AWS y sistemas financieros"
+        }
+    }
 }

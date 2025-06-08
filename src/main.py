@@ -13,11 +13,11 @@ def inject_css():
     return Head(
         Meta(charset="utf-8"),
         Meta(name="viewport", content="width=device-width, initial-scale=1.0"),
-        Meta(name="description", content=f"{data['name']} - {data['profession']} | Portfolio Personal"),
-        Meta(name="keywords", content="programador, desarrollo web, portfolio, software"),
-        Meta(name="author", content=data['name']),
-        Meta(property="og:title", content=f"{data['name']} - Portfolio Personal"),
-        Meta(property="og:description", content=data['about'][:150] + "..."),
+        Meta(name="description", content=f"{data['personal']['name']} - {data['personal']['profession']} | Portfolio Personal"),
+        Meta(name="keywords", content=", ".join(data['meta']['seo']['keywords'])),
+        Meta(name="author", content=data['personal']['name']),
+        Meta(property="og:title", content=f"{data['personal']['name']} - Portfolio Personal"),
+        Meta(property="og:description", content=data['meta']['seo']['description']),
         Meta(property="og:type", content="website"),
         
         Link(rel="stylesheet", href="/static/styles.css"),
@@ -28,7 +28,7 @@ def inject_css():
         
         Script(src="/static/script.js", defer=True),
         
-        Title(f"{data['name']} - Portfolio Personal")
+        Title(f"{data['personal']['name']} - Portfolio Personal")
     )
 
 # Función para leer datos desde un archivo JSON
@@ -59,8 +59,8 @@ def sidebar():
     return Nav(
         Div(
             Img(src="static/ronihdz_en_proyectos.jpeg", alt="Teaching", cls="teaching-image-sidebar"),
-            H2(data['name']),
-            P(data['profession']),
+            H2(data['personal']['name']),
+            P(data['personal']['profession']),
             Ul(
                 Li(A("About", href="#about")),
                 Li(A("Moments", href="#moments")),
@@ -70,18 +70,18 @@ def sidebar():
                 Li(
                     "Download CV",
                     Ul(
-                        Li(A("Español", href=data['cv'], target="_blank")),
-                        Li(A("English", href=data['cv_en'], target="_blank"))
+                        Li(A("Español", href=data['personal']['cv']['spanish'], target="_blank")),
+                        Li(A("English", href=data['personal']['cv']['english'], target="_blank"))
                     )
                 ),
                 cls="nav-links"
             ),
             Div(
-                A(I(cls="fab fa-linkedin"), href=data['linkedin']),
-                A(I(cls="fab fa-github"), href=data['github']),
-                A(I(cls="fab fa-youtube"), href=data['youtube']),
-                A(I(cls="fab fa-medium"), href=data['medium']),
-                # A(I(cls="fab fa-dev"), href=data['devto']),
+                A(I(cls="fab fa-linkedin"), href=data['social_links']['linkedin']),
+                A(I(cls="fab fa-github"), href=data['social_links']['github']),
+                A(I(cls="fab fa-youtube"), href=data['social_links']['youtube']),
+                A(I(cls="fab fa-medium"), href=data['social_links']['medium']),
+                # A(I(cls="fab fa-dev"), href=data['social_links']['devto']),
                 cls="social-links"
             ),
             cls="sidebar"
@@ -89,7 +89,7 @@ def sidebar():
     )
 
 def main_content():
-    about_me = data['about']
+    about_me = data['personal']['about']
     max_length = 500  # Aumenta este valor para mostrar más texto antes de "Ver más"
     if len(about_me) > max_length:
         short_about_me = about_me[:max_length] + "..."
@@ -105,9 +105,7 @@ def main_content():
     return Main(
         Section(
             Div(
-                H1("Hola,", cls="title-part"),
-                H1(f"Soy {data['name']},", cls="title-part"),
-                H1(f"{data['profession']}", cls="title-part"),
+                *[H1(title_part, cls="title-part") for title_part in data['personal']['title_parts']],
                 cls="title"
             ),
             Div(
@@ -142,20 +140,15 @@ def moments_section(experiences):
 
 def skills_preview():
     """Preview de habilidades en la sección principal"""
-    skills = ["Python", "JavaScript", "FastHTML", "React", "Node.js"]
+    featured_skills = data['skills']['featured']
     return Div(
-        *[Span(skill, cls="skill-tag") for skill in skills],
+        *[Span(skill, cls="skill-tag") for skill in featured_skills],
         cls="skills-preview"
     )
 
 def skills_section():
     """Sección completa de habilidades"""
-    skills_data = {
-        "Lenguajes": ["Python", "JavaScript", "TypeScript", "HTML/CSS", "SQL"],
-        "Frameworks": ["FastHTML", "React", "Node.js", "Express", "Django"],
-        "Herramientas": ["Git", "Docker", "VS Code", "Linux", "PostgreSQL"],
-        "Cloud": ["AWS", "Vercel", "Netlify", "Heroku"]
-    }
+    skills_data = data['skills']['categories']
     
     return Section(
         H2("Skills", cls="section-title"),
@@ -171,34 +164,38 @@ def skill_category(title, skills):
     return Div(
         H3(title, cls="skill-category-title"),
         Div(
-            *[Span(skill, cls="skill-item") for skill in skills],
+            *[skill_item(skill) for skill in skills],
             cls="skill-items"
         ),
         cls="skill-category"
     )
 
+def skill_item(skill):
+    """Renderiza un skill individual con icono y nivel"""
+    if isinstance(skill, dict):
+        icon = I(cls=skill.get('icon', 'fas fa-code'))
+        skill_span = Span(
+            icon,
+            Span(skill['name'], cls="skill-name"),
+            Span(f"{skill['level']} ({skill['years']} años)", cls="skill-level"),
+            cls="skill-item detailed",
+            title=f"{skill['name']} - {skill['level']} ({skill['years']} años de experiencia)"
+        )
+    else:
+        skill_span = Span(skill, cls="skill-item")
+    
+    return skill_span
+
 def projects_section():
-    projects_data = [
-        {
-            "title": "Portfolio Personal",
-            "description": "Sitio web personal desarrollado con FastHTML y diseño moderno.",
-            "tech": ["FastHTML", "Python", "CSS", "JavaScript"],
-            "link": "#",
-            "github": "#"
-        },
-        {
-            "title": "Proyecto en Desarrollo",
-            "description": "Próximamente más proyectos interesantes.",
-            "tech": ["React", "Node.js", "MongoDB"],
-            "link": "#",
-            "github": "#"
-        }
-    ]
+    projects_data = data['projects']
+    # Filtrar solo proyectos destacados o mostrar todos
+    featured_projects = [p for p in projects_data if p.get('featured', False)]
+    projects_to_show = featured_projects if featured_projects else projects_data
     
     return Section(
         H2("Proyectos", cls="section-title"),
         Div(
-            *[project_card(project) for project in projects_data],
+            *[project_card(project) for project in projects_to_show],
             cls="projects-grid"
         ),
         cls="projects-section",
@@ -206,32 +203,55 @@ def projects_section():
     )
 
 def project_card(project):
+    # Generar links dinámicamente basado en lo que esté disponible
+    links = []
+    if project.get("links", {}).get("demo"):
+        links.append(A("Ver Demo", href=project["links"]["demo"], cls="project-link", target="_blank"))
+    if project.get("links", {}).get("github"):
+        links.append(A("GitHub", href=project["links"]["github"], cls="project-link", target="_blank"))
+    if project.get("links", {}).get("presentation"):
+        links.append(A("Presentación", href=project["links"]["presentation"], cls="project-link", target="_blank"))
+    
+    # Mostrar awards si existen
+    awards_section = []
+    if project.get("awards"):
+        awards_section = [
+            Div(
+                *[Span(award, cls="award-tag") for award in project["awards"]],
+                cls="project-awards"
+            )
+        ]
+    
     return Div(
         H3(project["title"], cls="project-title"),
         P(project["description"], cls="project-description"),
+        *awards_section,
         Div(
-            *[Span(tech, cls="tech-tag") for tech in project["tech"]],
+            *[Span(tech, cls="tech-tag") for tech in project["technologies"]],
             cls="project-tech"
         ),
         Div(
-            A("Ver Demo", href=project["link"], cls="project-link", target="_blank"),
-            A("GitHub", href=project["github"], cls="project-link", target="_blank"),
+            *links,
             cls="project-links"
-        ),
+        ) if links else "",
         cls="project-card"
     )
 
 def contact_section():
+    contact_data = data['contact']
+    
     return Section(
         H2("Contacto", cls="section-title"),
         Div(
             Div(
                 H3("¡Trabajemos juntos!", cls="contact-title"),
-                P("¿Tienes un proyecto en mente? ¡Me encantaría escuchar sobre él!", cls="contact-description"),
+                P(contact_data['form']['subtitle'], cls="contact-description"),
                 Div(
-                    contact_item("fas fa-envelope", "Email", "tu@email.com", "mailto:tu@email.com"),
-                    contact_item("fab fa-linkedin", "LinkedIn", "linkedin.com/in/tu-perfil", data['linkedin']),
-                    contact_item("fab fa-github", "GitHub", "github.com/tu-usuario", data['github']),
+                    contact_item("fas fa-envelope", "Email", contact_data['email'], f"mailto:{contact_data['email']}"),
+                    contact_item("fas fa-phone", "Teléfono", contact_data['phone'], f"tel:{contact_data['phone']}"),
+                    contact_item("fas fa-map-marker-alt", "Ubicación", contact_data['location'], "#"),
+                    contact_item("fab fa-linkedin", "LinkedIn", "linkedin.com/in/ronihdz", data['social_links']['linkedin']),
+                    contact_item("fab fa-github", "GitHub", "github.com/ronihdzz", data['social_links']['github']),
                     cls="contact-items"
                 ),
                 cls="contact-info"
@@ -255,17 +275,38 @@ def contact_item(icon, label, text, link):
     )
 
 def contact_form():
+    form_data = data['contact']['form']
+    
+    # Generar campos dinámicamente desde el JSON
+    form_fields = []
+    for field in form_ data['fields']:
+        if field['type'] == 'textarea':
+            form_fields.append(
+                Textarea(
+                    name=field['name'],
+                    placeholder=field['placeholder'],
+                    rows=str(field.get('rows', 5)),
+                    required=field.get('required', False)
+                )
+            )
+        else:
+            form_fields.append(
+                Input(
+                    type=field['type'],
+                    name=field['name'],
+                    placeholder=field['placeholder'],
+                    required=field.get('required', False)
+                )
+            )
+    
     return Div(
-        H3("Envíame un mensaje", cls="form-title"),
+        H3(form_data['title'], cls="form-title"),
         Form(
-            Input(type="text", name="name", placeholder="Tu nombre", required=True),
-            Input(type="email", name="email", placeholder="Tu email", required=True),
-            Input(type="text", name="subject", placeholder="Asunto", required=True),
-            Textarea(name="message", placeholder="Tu mensaje", rows="5", required=True),
-            Button("Enviar mensaje", type="submit", cls="submit-btn"),
+            *form_fields,
+            Button(form_data['submit_text'], type="submit", cls="submit-btn"),
             cls="contact-form",
-            action="#",
-            method="post"
+            action=form_data['action'],
+            method=form_data['method']
         ),
         cls="form-container"
     )
@@ -296,6 +337,25 @@ def experience_item(exp):
         description_element,
         media_element,
         cls="experience-item"
+    )
+
+# Ruta para manejar el formulario de contacto
+@rt("/contact")
+def contact_post(name: str, email: str, subject: str, message: str):
+    # Aquí puedes añadir la lógica para enviar el email
+    # Por ahora, solo logueamos la información
+    print(f"Nuevo mensaje de contacto:")
+    print(f"Nombre: {name}")
+    print(f"Email: {email}")
+    print(f"Asunto: {subject}")
+    print(f"Mensaje: {message}")
+    
+    # Retornar una respuesta de confirmación
+    return Div(
+        H2("¡Mensaje enviado!", cls="success-title"),
+        P(f"Gracias {name}, he recibido tu mensaje y te responderé pronto.", cls="success-message"),
+        A("Volver al inicio", href="/", cls="read-more"),
+        cls="success-container"
     )
 
 # Iniciar el servidor

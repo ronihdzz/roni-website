@@ -578,9 +578,9 @@ input:focus {
 }
 
 .skill-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
 }
 
 .skill-item {
@@ -906,3 +906,163 @@ input:focus {
 
 .contact-info { animation-delay: 0.2s; }
 .form-container { animation-delay: 0.4s; }
+
+/* Estilos adicionales para elementos dinámicos del JSON */
+
+/* Skills detallados con iconos y niveles */
+.skill-item.detailed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--surface-color);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    text-align: center;
+}
+
+.skill-item.detailed:hover {
+    background: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-item.detailed i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.skill-item.detailed:hover i {
+    color: white;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.skill-level {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.skill-item.detailed:hover .skill-name,
+.skill-item.detailed:hover .skill-level {
+    color: white;
+}
+
+/* Awards en proyectos */
+.project-awards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.award-tag {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+    color: var(--background-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.award-tag::before {
+    content: '🏆';
+    font-size: 0.875rem;
+}
+
+/* Estilos para diferentes tipos de proyectos */
+.project-card[data-category="Web Development"] .project-title::before {
+    content: '🌐 ';
+}
+
+.project-card[data-category="Mobile App"] .project-title::before {
+    content: '📱 ';
+}
+
+.project-card[data-category="IoT"] .project-title::before {
+    content: '🔧 ';
+}
+
+.project-card[data-category="Fintech"] .project-title::before {
+    content: '💰 ';
+}
+
+/* Loading states para contenido dinámico */
+.skill-item.loading,
+.project-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.skill-item.loading::after,
+.project-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Tooltip para skills */
+.skill-item[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-color);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Mejorar la accesibilidad de los formularios dinámicos */
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+    border-color: #ef4444;
+}
+
+.contact-form input:valid,
+.contact-form textarea:valid {
+    border-color: #10b981;
+}
+
+/* Estado focus mejorado para formularios */
+.contact-form input:focus:invalid,
+.contact-form textarea:focus:invalid {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.contact-form input:focus:valid,
+.contact-form textarea:focus:valid {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
