@@ -11,6 +11,7 @@ function initializeApp() {
     initializeSmoothScrolling();
     initializeActiveNavigation();
     initializeIntersectionObserver();
+    initializeLanguageToggle();
 }
 
 // ====== TOGGLE SIDEBAR DESKTOP ======
@@ -30,16 +31,37 @@ function initializeSidebarToggle() {
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.querySelector('.sidebar-toggle i');
+    const main = document.querySelector('main');
     
     sidebar.classList.toggle('collapsed');
     
     if (sidebar.classList.contains('collapsed')) {
         toggleBtn.className = 'fas fa-chevron-right';
         localStorage.setItem('sidebarCollapsed', 'true');
+        // Añadir una clase temporal para animación suave
+        main.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        // Forzar el centrado del contenido
+        setTimeout(() => {
+            main.style.display = 'flex';
+            main.style.flexDirection = 'column';
+            main.style.alignItems = 'center';
+        }, 50);
     } else {
         toggleBtn.className = 'fas fa-chevron-left';
         localStorage.setItem('sidebarCollapsed', 'false');
+        main.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        // Restaurar el display normal
+        setTimeout(() => {
+            main.style.display = '';
+            main.style.flexDirection = '';
+            main.style.alignItems = '';
+        }, 50);
     }
+    
+    // Remover la transición después de la animación
+    setTimeout(() => {
+        main.style.transition = '';
+    }, 300);
 }
 
 // Restaurar estado de sidebar al cargar
@@ -47,12 +69,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarCollapsed = localStorage.getItem('sidebarCollapsed');
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.querySelector('.sidebar-toggle i');
+    const main = document.querySelector('main');
     
     if (sidebarCollapsed === 'true' && window.innerWidth > 768) {
         sidebar.classList.add('collapsed');
-        toggleBtn.className = 'fas fa-chevron-right';
+        if (toggleBtn) toggleBtn.className = 'fas fa-chevron-right';
+        // Aplicar el centrado inmediatamente
+        if (main) {
+            main.style.display = 'flex';
+            main.style.flexDirection = 'column';
+            main.style.alignItems = 'center';
+        }
     }
 });
+
+// ====== TOGGLE DE IDIOMA ======
+function initializeLanguageToggle() {
+    // Manejar visibilidad del botón de idioma móvil
+    const mobileLanguageToggle = document.querySelector('.mobile-language-toggle');
+    
+    function handleResize() {
+        if (mobileLanguageToggle) {
+            if (window.innerWidth <= 768) {
+                mobileLanguageToggle.style.display = 'block';
+            } else {
+                mobileLanguageToggle.style.display = 'none';
+            }
+        }
+    }
+    
+    // Ejecutar al cargar
+    handleResize();
+    
+    // Ejecutar en redimensionamiento
+    window.addEventListener('resize', debounce(handleResize, 250));
+}
 
 // ====== MENÚ MÓVIL ======
 function initializeMobileMenu() {
@@ -71,7 +122,7 @@ function initializeMobileMenu() {
     
     // Cerrar con tecla Escape
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
             closeMobileMenu();
         }
     });
@@ -80,21 +131,21 @@ function initializeMobileMenu() {
     window.addEventListener('resize', debounce(function() {
         if (window.innerWidth > 768) {
             closeMobileMenu();
-            mobileToggle.style.display = 'none';
+            if (mobileToggle) mobileToggle.style.display = 'none';
         } else {
-            mobileToggle.style.display = 'block';
+            if (mobileToggle) mobileToggle.style.display = 'block';
         }
     }, 250));
     
     // Mostrar/ocultar botón móvil según tamaño de pantalla
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 768 && mobileToggle) {
         mobileToggle.style.display = 'block';
     }
 }
 
 function toggleMobileMenu() {
     const sidebar = document.querySelector('.sidebar');
-    const isActive = sidebar.classList.contains('active');
+    const isActive = sidebar && sidebar.classList.contains('active');
     
     if (isActive) {
         closeMobileMenu();
@@ -107,9 +158,13 @@ function openMobileMenu() {
     const sidebar = document.querySelector('.sidebar');
     const toggle = document.querySelector('.mobile-menu-toggle');
     
-    sidebar.classList.add('active');
-    sidebar.classList.remove('collapsed'); // Asegurar que no esté colapsada en móvil
-    toggle.innerHTML = '<i class="fas fa-times"></i>';
+    if (sidebar) {
+        sidebar.classList.add('active');
+        sidebar.classList.remove('collapsed'); // Asegurar que no esté colapsada en móvil
+    }
+    if (toggle) {
+        toggle.innerHTML = '<i class="fas fa-times"></i>';
+    }
     document.body.style.overflow = 'hidden';
 }
 
@@ -117,8 +172,12 @@ function closeMobileMenu() {
     const sidebar = document.querySelector('.sidebar');
     const toggle = document.querySelector('.mobile-menu-toggle');
     
-    sidebar.classList.remove('active');
-    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    if (sidebar) {
+        sidebar.classList.remove('active');
+    }
+    if (toggle) {
+        toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
     document.body.style.overflow = '';
 }
 
@@ -253,12 +312,14 @@ function toggleDescription(shortDescription, fullDescription, readMoreLink) {
         // Expandir
         shortDescription.style.display = 'none';
         fullDescription.style.display = 'block';
-        readMoreLink.textContent = 'Ver menos';
+        // El texto "Ver menos" se establecerá desde el servidor según el idioma
+        readMoreLink.textContent = readMoreLink.textContent.includes('more') ? 'Read less' : 'Ver menos';
     } else {
         // Contraer
         fullDescription.style.display = 'none';
         shortDescription.style.display = 'block';
-        readMoreLink.textContent = 'Ver más';
+        // El texto "Ver más" se establecerá desde el servidor según el idioma
+        readMoreLink.textContent = readMoreLink.textContent.includes('less') ? 'Read more' : 'Ver más';
     }
 }
 
@@ -283,3 +344,4 @@ window.toggleAboutMe = toggleAboutMe;
 // ====== LOG DE INICIALIZACIÓN ======
 console.log('🚀 Portfolio minimalista inicializado');
 console.log('📱 Modo:', window.innerWidth <= 768 ? 'Móvil' : 'Escritorio');
+console.log('🌐 Idioma detectado desde la URL o configuración del servidor');

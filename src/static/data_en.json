@@ -1,0 +1,379 @@
+{
+    "personal": {
+        "name": "Ronaldo Hernández",
+        "profession": "Full-stack Developer",
+        "title_parts": [
+            "Hello, I'm",
+            "Ronaldo Hernández",
+            "Full-stack Developer"
+        ],
+        "about": "I'm a passionate full-stack developer with over 3 years of experience creating modern web and mobile applications. I specialize in JavaScript, Python, React, and Node.js. I love solving complex problems and turning ideas into functional digital products. I'm always learning new technologies and looking for opportunities to collaborate on innovative projects.",
+        "photo": "static/roni.jpg",
+        "cv": {
+            "spanish": "/static/cv.pdf",
+            "english": "/static/cv_en.pdf"
+        }
+    },
+    "social_links": {
+        "linkedin": "https://linkedin.com/in/ronihdz",
+        "github": "https://github.com/ronihdzz",
+        "youtube": "https://youtube.com/@ronihdz",
+        "medium": "https://medium.com/@ronihdz"
+    },
+    "contact": {
+        "email": "ronaldo@example.com",
+        "phone": "+1 (555) 123-4567",
+        "location": "Mexico City, Mexico",
+        "available_for_work": true,
+        "preferred_contact": "email",
+        "form": {
+            "title": "Send me a message",
+            "subtitle": "Do you have a project in mind? Let's talk and bring your ideas to life!",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "placeholder": "Your name",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "type": "email",
+                    "placeholder": "your.email@example.com",
+                    "required": true
+                },
+                {
+                    "name": "subject",
+                    "type": "text",
+                    "placeholder": "Message subject",
+                    "required": true
+                },
+                {
+                    "name": "message",
+                    "type": "textarea",
+                    "placeholder": "Tell me about your project...",
+                    "rows": 5,
+                    "required": true
+                }
+            ],
+            "submit_text": "Send Message",
+            "action": "/contact",
+            "method": "post"
+        }
+    },
+    "skills": {
+        "featured": ["JavaScript", "Python", "React", "Node.js", "FastAPI", "PostgreSQL"],
+        "categories": {
+            "Frontend": [
+                {
+                    "name": "React",
+                    "level": "Advanced",
+                    "years": 3,
+                    "icon": "fab fa-react"
+                },
+                {
+                    "name": "JavaScript",
+                    "level": "Advanced",
+                    "years": 4,
+                    "icon": "fab fa-js-square"
+                },
+                {
+                    "name": "TypeScript",
+                    "level": "Intermediate",
+                    "years": 2,
+                    "icon": "fas fa-code"
+                },
+                {
+                    "name": "Next.js",
+                    "level": "Intermediate",
+                    "years": 2,
+                    "icon": "fas fa-layer-group"
+                }
+            ],
+            "Backend": [
+                {
+                    "name": "Node.js",
+                    "level": "Advanced",
+                    "years": 3,
+                    "icon": "fab fa-node-js"
+                },
+                {
+                    "name": "Python",
+                    "level": "Advanced",
+                    "years": 4,
+                    "icon": "fab fa-python"
+                },
+                {
+                    "name": "FastAPI",
+                    "level": "Advanced",
+                    "years": 2,
+                    "icon": "fas fa-bolt"
+                },
+                {
+                    "name": "Django",
+                    "level": "Intermediate",
+                    "years": 1,
+                    "icon": "fas fa-server"
+                }
+            ],
+            "Database": [
+                {
+                    "name": "PostgreSQL",
+                    "level": "Advanced",
+                    "years": 3,
+                    "icon": "fas fa-database"
+                },
+                {
+                    "name": "MongoDB",
+                    "level": "Intermediate",
+                    "years": 2,
+                    "icon": "fas fa-leaf"
+                },
+                {
+                    "name": "Redis",
+                    "level": "Intermediate",
+                    "years": 1,
+                    "icon": "fas fa-memory"
+                }
+            ],
+            "Tools": [
+                "Git", "Docker", "AWS", "Vercel", "Figma", "Postman"
+            ]
+        }
+    },
+    "projects": [
+        {
+            "id": "portfolio-fasthtml",
+            "title": "Personal Portfolio with FastHTML",
+            "description": "Personal website developed with FastHTML, featuring a modern and responsive design. Includes sections for experiences, skills, projects and contact with advanced CSS animations.",
+            "long_description": "This project represents my personal portfolio built from scratch using FastHTML, a modern Python framework for web development. The site includes a fully responsive design with a dark theme color system, advanced CSS animations, and a reusable component architecture. I implemented features such as lazy loading, intersection observer for animations, and a functional form system.",
+            "technologies": ["FastHTML", "Python", "CSS3", "JavaScript", "HTML5"],
+            "category": "Web Development",
+            "status": "Completed",
+            "featured": true,
+            "links": {
+                "demo": "https://ronihdz.com",
+                "github": "https://github.com/ronihdzz/portfolio-fasthtml",
+                "documentation": null
+            },
+            "images": [
+                "/static/projects/portfolio-1.jpg",
+                "/static/projects/portfolio-2.jpg"
+            ],
+            "date_created": "2024-01-15",
+            "date_updated": "2024-01-20"
+        },
+        {
+            "id": "oxxo-link",
+            "title": "OXXO LINK - Swift Change Makers",
+            "description": "Winning solution of the Swift Change Makers Hackathon 2024 to facilitate collaboration between neighbors in OXXO purchases.",
+            "long_description": "OXXO LINK is an innovative application developed during the Swift Change Makers Hackathon 2024, where we won first place in the FEMSA challenge. The solution allows neighbors to collaborate on their purchases, optimizing costs and time through a community 'stops' system. The application includes geolocation, points system, and real-time notifications.",
+            "technologies": ["React Native", "Node.js", "MongoDB", "Socket.io", "Google Maps API"],
+            "category": "Mobile App",
+            "status": "Prototype",
+            "featured": true,
+            "links": {
+                "demo": "https://oxxolink-demo.com",
+                "github": "https://github.com/team/oxxo-link",
+                "presentation": "/static/projects/oxxo-link-presentation.pdf"
+            },
+            "images": [
+                "/static/projects/oxxo-link-1.jpg",
+                "/static/projects/oxxo-link-2.jpg"
+            ],
+            "date_created": "2024-03-15",
+            "date_updated": "2024-03-17",
+            "awards": ["1st Place Swift Change Makers Hackathon 2024", "FEMSA Challenge"]
+        },
+        {
+            "id": "sensores-muerte",
+            "title": "Death Sensors - NASA Space Apps",
+            "description": "IoT sensor network for early wildfire detection. Project winner of NASA Space Apps Challenge 2023.",
+            "long_description": "Comprehensive wildfire detection system that combines IoT hardware, LORA communication, and web/mobile applications. The sensors detect changes in temperature, humidity and air quality to alert about potential fires. The system includes a mesh network of communication between sensors and a real-time monitoring platform.",
+            "technologies": ["Arduino", "LORA", "Python", "React", "Firebase", "IoT"],
+            "category": "IoT",
+            "status": "Prototype",
+            "featured": true,
+            "links": {
+                "demo": "https://sensores-muerte-demo.com",
+                "github": "https://github.com/astrofire/sensores-muerte",
+                "nasa_page": "https://www.spaceappschallenge.org/2023/find-a-team/astrofire/"
+            },
+            "images": [
+                "/static/projects/sensores-1.jpg",
+                "/static/projects/sensores-2.jpg"
+            ],
+            "date_created": "2023-10-07",
+            "date_updated": "2023-10-08",
+            "awards": ["1st Place NASA Space Apps Challenge 2023 CDMX"]
+        },
+        {
+            "id": "banking-core",
+            "title": "Banking Core - Fairplay",
+            "description": "Banking core system developed from scratch for fintech startup, handling transactions and payments at scale.",
+            "long_description": "Development of Fairplay's banking core system from scratch, implementing microservices architecture to handle financial transactions, payment orders, and banking operations at scale. The system processes millions of daily transactions with high availability and compliance with financial regulations.",
+            "title": "Core Bancario - Fairplay",
+            "description": "Sistema core bancario desarrollado desde cero para startup fintech, manejando transacciones y pagos a escala.",
+            "long_description": "Desarrollo del sistema core bancario de Fairplay desde cero, implementando arquitectura de microservicios para manejar transacciones financieras, órdenes de pago, y operaciones bancarias a gran escala. El sistema procesa millones de transacciones diarias con alta disponibilidad y cumplimiento de regulaciones financieras.",
+            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"],
+            "category": "Fintech",
+            "status": "In Production",
+            "featured": false,
+            "links": {
+                "company": "https://fairplay.mx",
+                "github": null,
+                "documentation": null
+            },
+            "images": [],
+            "date_created": "2022-06-01",
+            "date_updated": "2024-01-01",
+            "confidential": true
+        }
+    ],
+    "experiences": [
+        {
+            "id": "swift-hackathon-2024",
+            "title": "Winners of Swift Change Makers Hackathon 2024",
+            "description": "Hackathon held in Monterrey that brought together the best teams from across Mexico, each having previously won local hackathons to earn their spot in the event. My team and I were selected to participate in this Hackathon and achieved first place in the challenge proposed by FEMSA. During the hackathon, we developed OXXO LINK, an innovative solution designed to facilitate collaboration between neighbors and optimize product purchases at OXXO. This project was the result of intense teamwork, where each of us contributed ideas that evolved into a solid and effective proposal. Our solution impressed the jury so much that they began using our term 'los paros' to describe the project's dynamics. Winning the FEMSA Challenge was an exciting and very rewarding experience, especially given the quality of the other participating teams. Competing and standing out in an event of this magnitude was an experience I will always remember.",
+            "date": "2024-03-15",
+            "location": "Monterrey, Mexico",
+            "type": "hackathon",
+            "award": "1st Place",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
+                "type_resource": "video"
+            },
+            "tags": ["Hackathon", "FEMSA", "OXXO", "Innovation"]
+        },
+        {
+            "id": "nasa-space-apps-2023",
+            "title": "Winners of NASA Space Apps Challenge 2023",
+            "description": "The NASA Space Apps Challenge 2023 is a global hackathon that invites participants from around the world to solve challenges related to science and space using open data from NASA and its partners. In the CDMX edition, together with my team, AstroFire, we won first place with our innovative proposal called 'Death Sensors'. This project consisted of a network of strategically placed sensors in forest areas to detect the speed and direction of fires. The sensors communicated with each other using the LORA protocol, forming a local network that enabled early alerts and facilitated rapid response to forest fires. Although it was an initial prototype (not with all functions), we managed to make it fully functional. Additionally, we developed both the hardware that captured the data and the website and mobile application, allowing us to showcase a prototype that impressed the jury with its effectiveness and potential, despite being a preliminary version.",
+            "date": "2023-10-07",
+            "location": "Mexico City, Mexico",
+            "type": "hackathon",
+            "award": "1st Place",
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
+                "type_resource": "video"
+            },
+            "tags": ["NASA", "Space", "IoT", "Environmental"]
+        },
+        {
+            "id": "unam-telecom-talk",
+            "title": "Telecommunications Congress - UNAM Engineering Faculty",
+            "description": "As part of the lecture series of the telecommunications department at the Engineering Faculty, I had the honor of being invited as a speaker by Dr. Luis Francisco García Jiménez, professor of Communication Networks. During the talk, I presented on key topics such as the Internet of Things, software development, and some of my open source projects. It was an enriching experience to share my knowledge and passion with an audience interested in these technological fields.",
+            "date": "2023-11-15",
+            "location": "UNAM, Mexico City",
+            "type": "conference",
+            "award": null,
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
+                "type_resource": "video"
+            },
+            "tags": ["IoT", "Software Development", "Open Source", "UNAM"]
+        },
+        {
+            "id": "conaces-acapulco",
+            "title": "CONACES Acapulco",
+            "description": "My friends and I had the honor of being invited as speakers at CONACES 2023, Mexico's most important space event, organized by the Mexican Space Agency. During the congress, we met brilliant figures such as Rodolfo Neri Vela, Mexico's first astronaut, as well as other experts from the space sector. We had the opportunity to present our projects at such a significant event, which was an incredible experience to share ideas and learn from prominent people in the industry.",
+            "date": "2023-09-20",
+            "location": "Acapulco, Mexico",
+            "type": "conference",
+            "award": null,
+            "media": {
+                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
+                "type_resource": "video"
+            },
+            "tags": ["Space", "Mexican Space Agency", "Innovation"]
+        }
+    ],
+    "work_experience": [
+        {
+            "company": "Fairplay",
+            "position": "Squad Leader Back-end Developer",
+            "location": "Mexico City (Remote)",
+            "start_date": "2022-06-01",
+            "end_date": null,
+            "current": true,
+            "description": "Development of the banking core system from scratch, leading microservices architecture for financial transactions and payments at scale.",
+            "achievements": [
+                "Building the banking core from scratch",
+                "Implementation of microservices architecture",
+                "Handling millions of daily transactions",
+                "Collaboration with Data, DevOps, and Product teams"
+            ],
+            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"]
+        },
+        {
+            "company": "Telmex",
+            "position": "Cybersecurity Analyst",
+            "location": "Mexico City",
+            "start_date": "2021-01-01",
+            "end_date": "2022-05-31",
+            "current": false,
+            "description": "Computer and network security analysis, threat monitoring, and implementation of protection measures.",
+            "achievements": [
+                "Implementation of security monitoring systems",
+                "Network vulnerability analysis",
+                "Security incident response"
+            ],
+            "technologies": ["Linux", "Network Security", "Firewalls", "SIEM"]
+        }
+    ],
+    "education": [
+        {
+            "institution": "National Autonomous University of Mexico (UNAM)",
+            "degree": "Telecommunications Engineering",
+            "field": "Telecommunications and Electronics",
+            "start_date": "2018-08-01",
+            "end_date": "2023-07-01",
+            "status": "Completed",
+            "location": "Mexico City",
+            "relevant_courses": [
+                "Communication Networks",
+                "Programming",
+                "Embedded Systems",
+                "Digital Signal Processing"
+            ]
+        }
+    ],
+    "certifications": [
+        {
+            "name": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "date": "2023-06-15",
+            "credential_id": "AWS-SA-2023-001",
+            "url": "https://aws.amazon.com/certification/"
+        }
+    ],
+    "languages": [
+        {
+            "language": "Español",
+            "level": "Nativo",
+            "code": "es"
+        },
+        {
+            "language": "English",
+            "level": "Intermedio-Avanzado",
+            "code": "en"
+        }
+    ],
+    "meta": {
+        "version": "2.0",
+        "last_updated": "2024-01-20",
+        "sections_enabled": {
+            "about": true,
+            "skills": true,
+            "projects": true,
+            "experiences": true,
+            "work_experience": true,
+            "education": true,
+            "contact": true
+        },
+        "seo": {
+            "keywords": ["full-stack developer", "web developer", "React", "Node.js", "Python", "JavaScript", "freelance", "portfolio"],
+            "description": "Ronaldo Hernández - Full-stack Developer specialized in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations."
+        }
+    }
+}

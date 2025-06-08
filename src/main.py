@@ -8,8 +8,23 @@ app, rt = fast_app()
 # Configurar la ruta para servir archivos estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Función para leer datos desde un archivo JSON
+def read_data(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data
+
+# Variables globales para manejar los idiomas
+current_language = 'es'  # Idioma por defecto
+data_es = read_data(os.path.join('.', 'static', 'data.json'))
+data_en = read_data(os.path.join('.', 'static', 'data_en.json'))
+
+def get_current_data():
+    return data_en if current_language == 'en' else data_es
+
 # Función para inyectar el CSS y el JS en el header
 def inject_css():
+    data = get_current_data()
     return Head(
         Meta(charset="utf-8"),
         Meta(name="viewport", content="width=device-width, initial-scale=1.0"),
@@ -31,33 +46,81 @@ def inject_css():
         Title(f"{data['personal']['name']} - Portfolio Personal")
     )
 
-# Función para leer datos desde un archivo JSON
-def read_data(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
-
-# Leer los datos desde el archivo JSON
-data = read_data(os.path.join('.', 'static', 'data.json'))
-
 # Vista de la página principal
 @rt("/")
 def home_view():
     return Html(
-        inject_css(),  # Inyecta el CSS y el JS en el header
+        inject_css(),
         Body(
             Div(
-                sidebar(),  # Menú lateral
+                sidebar(),
                 Main(
-                    main_content(),  # Contenido principal
+                    main_content(),
                 ),
                 cls="container"
             )
         )
     )
 
+# Ruta para cambiar idioma
+@rt("/change-language/{lang}")
+def change_language(lang: str):
+    global current_language
+    if lang in ['es', 'en']:
+        current_language = lang
+        return RedirectResponse("/", status_code=302)
+    else:
+        return {"error": "Invalid language"}
+
+# Función para obtener textos de la interfaz según el idioma
+def get_ui_text(key):
+    ui_texts = {
+        'es': {
+            'about': 'Acerca de',
+            'moments': 'Momentos',
+            'skills': 'Habilidades',
+            'projects': 'Proyectos',
+            'contact': 'Contacto',
+            'download_cv': 'Descargar CV',
+            'spanish': 'Español',
+            'english': 'English',
+            'see_work': 'Ver mi trabajo',
+            'contact_me': 'Contáctame',
+            'read_more': 'Ver más',
+            'read_less': 'Ver menos',
+            'projects_title': 'Proyectos',
+            'contact_title': 'Contacto',
+            'work_together': '¡Trabajemos juntos!',
+            'email': 'Email',
+            'phone': 'Teléfono',
+            'location': 'Ubicación'
+        },
+        'en': {
+            'about': 'About',
+            'moments': 'Moments', 
+            'skills': 'Skills',
+            'projects': 'Projects',
+            'contact': 'Contact',
+            'download_cv': 'Download CV',
+            'spanish': 'Español',
+            'english': 'English',
+            'see_work': 'See my work',
+            'contact_me': 'Contact me',
+            'read_more': 'Read more',
+            'read_less': 'Read less',
+            'projects_title': 'Projects',
+            'contact_title': 'Contact',
+            'work_together': 'Let\'s work together!',
+            'email': 'Email',
+            'phone': 'Phone',
+            'location': 'Location'
+        }
+    }
+    return ui_texts.get(current_language, ui_texts['es']).get(key, key)
+
 # Componentes
 def sidebar():
+    data = get_current_data()
     return Nav(
         Div(
             Button(
@@ -66,21 +129,32 @@ def sidebar():
                 onclick="toggleSidebar()",
                 title="Colapsar sidebar"
             ),
+            Button(
+                get_ui_text('english') if current_language == 'es' else get_ui_text('spanish'),
+                cls="language-toggle",
+                onclick=f"window.location.href='/change-language/{'en' if current_language == 'es' else 'es'}'",
+                title="Cambiar idioma / Change language"
+            ),
             Img(src="static/ronihdz_en_proyectos.jpeg", alt="Foto de perfil - Programador", cls="teaching-image-sidebar"),
             H2(data['personal']['name']),
             P(data['personal']['profession']),
             Ul(
-                Li(A(Span("About"), href="#about", role="menuitem")),
-                Li(A(Span("Moments"), href="#moments", role="menuitem")),
-                Li(A(Span("Skills"), href="#skills", role="menuitem")),
-                Li(A(Span("Projects"), href="#projects", role="menuitem")),
-                Li(A(Span("Contact"), href="#contact", role="menuitem")),
+                Li(A(Span(get_ui_text('about')), href="#about", role="menuitem")),
+                Li(A(Span(get_ui_text('moments')), href="#moments", role="menuitem")),
+                Li(A(Span(get_ui_text('skills')), href="#skills", role="menuitem")),
+                Li(A(Span(get_ui_text('projects')), href="#projects", role="menuitem")),
+                Li(A(Span(get_ui_text('contact')), href="#contact", role="menuitem")),
                 Li(
-                    Span("Download CV"),
+                    A(
+                        Span(get_ui_text('download_cv')),
+                        href="#",
+                        cls="cv-dropdown-trigger"
+                    ),
                     Ul(
-                        Li(A("Español", href=data['personal']['cv']['spanish'], target="_blank", rel="noopener noreferrer")),
-                        Li(A("English", href=data['personal']['cv']['english'], target="_blank", rel="noopener noreferrer"))
-                    )
+                        Li(A(get_ui_text('spanish'), href=data['personal']['cv']['spanish'], target="_blank", rel="noopener noreferrer")),
+                        Li(A(get_ui_text('english'), href=data['personal']['cv']['english'], target="_blank", rel="noopener noreferrer"))
+                    ),
+                    cls="cv-dropdown"
                 ),
                 cls="nav-links",
                 role="menu"
@@ -92,19 +166,28 @@ def sidebar():
                 A(I(cls="fab fa-medium"), href=data['social_links']['medium'], target="_blank", rel="noopener noreferrer", aria_label="Medium"),
                 cls="social-links"
             ),
+            # Botón de idioma para móvil
+            Button(
+                get_ui_text('english') if current_language == 'es' else get_ui_text('spanish'),
+                cls="mobile-language-toggle",
+                onclick=f"window.location.href='/change-language/{'en' if current_language == 'es' else 'es'}'",
+                title="Cambiar idioma / Change language",
+                style="display: none;"
+            ),
             cls="sidebar"
         )
     )
 
 def main_content():
+    data = get_current_data()
     about_me = data['personal']['about']
-    max_length = 400  # Reducido para ser más minimalista
+    max_length = 400
     if len(about_me) > max_length:
         short_about_me = about_me[:max_length] + "..."
         full_about_me = about_me
         about_me_element = Div(
             P(short_about_me, cls="about-me-description short-description"),
-            A("Ver más", href="#", cls="read-more", onclick="toggleAboutMe(event)"),
+            A(get_ui_text('read_more'), href="#", cls="read-more", onclick="toggleAboutMe(event)"),
             P(full_about_me, cls="about-me-description full-description", style="display: none;")
         )
     else:
@@ -120,8 +203,8 @@ def main_content():
                 about_me_element,
                 skills_preview(),
                 Div(
-                    A("Ver mi trabajo", href="#moments", cls="read-more"),
-                    A("Contáctame", href="#contact", cls="read-more"),
+                    A(get_ui_text('see_work'), href="#moments", cls="read-more"),
+                    A(get_ui_text('contact_me'), href="#contact", cls="read-more"),
                     cls="cta-buttons"
                 ),
                 cls="about-me-section"
@@ -137,7 +220,7 @@ def main_content():
 
 def moments_section(experiences):
     return Section(
-        H2("Moments", cls="section-title"),
+        H2(get_ui_text('moments'), cls="section-title"),
         Div(
             *[experience_item(exp) for exp in experiences],
             cls="experiences"
@@ -148,7 +231,8 @@ def moments_section(experiences):
 
 def skills_preview():
     """Preview de habilidades en la sección principal"""
-    featured_skills = data['skills']['featured'][:6]  # Limitar a 6 skills para ser más minimalista
+    data = get_current_data()
+    featured_skills = data['skills']['featured'][:6]
     return Div(
         *[Span(skill, cls="skill-tag") for skill in featured_skills],
         cls="skills-preview"
@@ -156,10 +240,11 @@ def skills_preview():
 
 def skills_section():
     """Sección completa de habilidades"""
+    data = get_current_data()
     skills_data = data['skills']['categories']
     
     return Section(
-        H2("Skills", cls="section-title"),
+        H2(get_ui_text('skills'), cls="section-title"),
         Div(
             *[skill_category(category, skills) for category, skills in skills_data.items()],
             cls="skills-grid"
@@ -185,9 +270,9 @@ def skill_item(skill):
         skill_span = Span(
             icon,
             Span(skill['name'], cls="skill-name"),
-            Span(f"{skill['level']} ({skill['years']} años)", cls="skill-level"),
+            Span(f"{skill['level']} ({skill['years']} años)" if current_language == 'es' else f"{skill['level']} ({skill['years']} years)", cls="skill-level"),
             cls="skill-item detailed",
-            title=f"{skill['name']} - {skill['level']} ({skill['years']} años de experiencia)"
+            title=f"{skill['name']} - {skill['level']} ({skill['years']} años de experiencia)" if current_language == 'es' else f"{skill['name']} - {skill['level']} ({skill['years']} years of experience)"
         )
     else:
         skill_span = Span(skill, cls="skill-item")
@@ -195,13 +280,13 @@ def skill_item(skill):
     return skill_span
 
 def projects_section():
+    data = get_current_data()
     projects_data = data['projects']
-    # Mostrar solo proyectos destacados para ser más minimalista
     featured_projects = [p for p in projects_data if p.get('featured', False)]
-    projects_to_show = featured_projects[:4] if featured_projects else projects_data[:4]  # Máximo 4 proyectos
+    projects_to_show = featured_projects[:4] if featured_projects else projects_data[:4]
     
     return Section(
-        H2("Proyectos", cls="section-title"),
+        H2(get_ui_text('projects_title'), cls="section-title"),
         Div(
             *[project_card(project) for project in projects_to_show],
             cls="projects-grid"
@@ -214,11 +299,11 @@ def project_card(project):
     # Generar links dinámicamente basado en lo que esté disponible
     links = []
     if project.get("links", {}).get("demo"):
-        links.append(A("Ver Demo", href=project["links"]["demo"], cls="project-link", target="_blank"))
+        links.append(A("Ver Demo" if current_language == 'es' else "View Demo", href=project["links"]["demo"], cls="project-link", target="_blank"))
     if project.get("links", {}).get("github"):
         links.append(A("GitHub", href=project["links"]["github"], cls="project-link", target="_blank"))
     if project.get("links", {}).get("presentation"):
-        links.append(A("Presentación", href=project["links"]["presentation"], cls="project-link", target="_blank"))
+        links.append(A("Presentación" if current_language == 'es' else "Presentation", href=project["links"]["presentation"], cls="project-link", target="_blank"))
     
     # Mostrar awards si existen
     awards_section = []
@@ -246,18 +331,19 @@ def project_card(project):
     )
 
 def contact_section():
+    data = get_current_data()
     contact_data = data['contact']
     
     return Section(
-        H2("Contacto", cls="section-title"),
+        H2(get_ui_text('contact_title'), cls="section-title"),
         Div(
             Div(
-                H3("¡Trabajemos juntos!", cls="contact-title"),
+                H3(get_ui_text('work_together'), cls="contact-title"),
                 P(contact_data['form']['subtitle'], cls="contact-description"),
                 Div(
-                    contact_item("fas fa-envelope", "Email", contact_data['email'], f"mailto:{contact_data['email']}"),
-                    contact_item("fas fa-phone", "Teléfono", contact_data['phone'], f"tel:{contact_data['phone']}"),
-                    contact_item("fas fa-map-marker-alt", "Ubicación", contact_data['location'], "#"),
+                    contact_item("fas fa-envelope", get_ui_text('email'), contact_data['email'], f"mailto:{contact_data['email']}"),
+                    contact_item("fas fa-phone", get_ui_text('phone'), contact_data['phone'], f"tel:{contact_data['phone']}"),
+                    contact_item("fas fa-map-marker-alt", get_ui_text('location'), contact_data['location'], "#"),
                     contact_item("fab fa-linkedin", "LinkedIn", "linkedin.com/in/ronihdz", data['social_links']['linkedin']),
                     cls="contact-items"
                 ),
@@ -282,6 +368,7 @@ def contact_item(icon, label, text, link):
     )
 
 def contact_form():
+    data = get_current_data()
     form_data = data['contact']['form']
     
     # Generar campos dinámicamente desde el JSON
@@ -318,13 +405,32 @@ def contact_form():
         cls="form-container"
     )
 
-
 def experience_item(exp):
     media = exp['media']
     if media['type_resource'] == "video":
-        media_element = Iframe(src=media['url'], cls="experience-media", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen=True)
+        # Modificar URL de YouTube para remover autoplay y añadir parámetros para no autoplay
+        video_url = media['url']
+        if 'youtube.com' in video_url or 'youtu.be' in video_url:
+            # Asegurar que no hay autoplay y añadir parámetros de control
+            if '?' in video_url:
+                video_url += '&autoplay=0&rel=0&controls=1&showinfo=0'
+            else:
+                video_url += '?autoplay=0&rel=0&controls=1&showinfo=0'
+        
+        media_element = Iframe(
+            src=video_url, 
+            cls="experience-media", 
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            allowfullscreen=True,
+            loading="lazy"  # Lazy loading para mejor performance
+        )
     else:
-        media_element = Img(src=media['url'], alt=exp['title'], cls="experience-media")
+        media_element = Img(
+            src=media['url'], 
+            alt=exp['title'], 
+            cls="experience-media",
+            loading="lazy"
+        )
     
     description = exp['description']
     max_length = 200
@@ -333,7 +439,7 @@ def experience_item(exp):
         full_description = description
         description_element = Div(
             P(short_description, cls="experience-description short-description"),
-            A("Ver más", href="#", cls="read-more", onclick=f"showFullDescription(event, '{exp['title']}')"),
+            A(get_ui_text('read_more'), href="#", cls="read-more", onclick=f"showFullDescription(event, '{exp['title']}')"),
             P(full_description, cls="experience-description full-description", style="display: none;")
         )
     else:
@@ -349,19 +455,31 @@ def experience_item(exp):
 # Ruta para manejar el formulario de contacto
 @rt("/contact")
 def contact_post(name: str, email: str, subject: str, message: str):
-    # Aquí puedes añadir la lógica para enviar el email
-    # Por ahora, solo logueamos la información
     print(f"Nuevo mensaje de contacto:")
     print(f"Nombre: {name}")
     print(f"Email: {email}")
     print(f"Asunto: {subject}")
     print(f"Mensaje: {message}")
     
-    # Retornar una respuesta de confirmación
+    success_text = {
+        'es': {
+            'title': '¡Mensaje enviado!',
+            'message': f'Gracias {name}, he recibido tu mensaje y te responderé pronto.',
+            'back': 'Volver al inicio'
+        },
+        'en': {
+            'title': 'Message sent!',
+            'message': f'Thank you {name}, I have received your message and will respond soon.',
+            'back': 'Back to home'
+        }
+    }
+    
+    text = success_text.get(current_language, success_text['es'])
+    
     return Div(
-        H2("¡Mensaje enviado!", cls="success-title"),
-        P(f"Gracias {name}, he recibido tu mensaje y te responderé pronto.", cls="success-message"),
-        A("Volver al inicio", href="/", cls="read-more"),
+        H2(text['title'], cls="success-title"),
+        P(text['message'], cls="success-message"),
+        A(text['back'], href="/", cls="read-more"),
         cls="success-container"
     )
 

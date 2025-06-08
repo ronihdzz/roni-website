@@ -63,142 +63,142 @@
         }
     },
     "skills": {
-        "featured": ["Python", "JavaScript", "FastHTML", "AWS", "Docker"],
+        "featured": ["Python", "FastAPI", "AWS", "Docker", "PostgreSQL"],
         "categories": {
-            "Lenguajes de Programación": [
-                {
-                    "name": "Python",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fab fa-python"
-                },
-                {
-                    "name": "JavaScript",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fab fa-js-square"
-                },
-                {
-                    "name": "TypeScript",
-                    "level": "Intermedio",
-                    "years": 1,
-                    "icon": "fab fa-js-square"
-                },
-                {
-                    "name": "Java",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fab fa-java"
-                },
-                {
-                    "name": "C/C++",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fas fa-code"
-                },
-                {
-                    "name": "SQL",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fas fa-database"
-                }
-            ],
-            "Frameworks & Librerías": [
-                {
-                    "name": "Django",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fab fa-python"
-                },
-                {
-                    "name": "FastAPI",
-                    "level": "Avanzado",
-                    "years": 2,
-                    "icon": "fas fa-bolt"
-                },
-                {
-                    "name": "Flask",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fab fa-python"
-                },
-                {
-                    "name": "FastHTML",
-                    "level": "Intermedio",
-                    "years": 1,
-                    "icon": "fas fa-code"
-                },
-                {
-                    "name": "React",
-                    "level": "Básico",
-                    "years": 1,
-                    "icon": "fab fa-react"
-                },
-                {
-                    "name": "Node.js",
-                    "level": "Intermedio",
-                    "years": 1,
-                    "icon": "fab fa-node-js"
-                }
-            ],
-            "Cloud & DevOps": [
-                {
-                    "name": "AWS",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fab fa-aws"
-                },
-                {
-                    "name": "Docker",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fab fa-docker"
-                },
-                {
-                    "name": "GitHub Actions",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fab fa-github"
-                },
-                {
-                    "name": "Linux",
-                    "level": "Avanzado",
-                    "years": 4,
-                    "icon": "fab fa-linux"
-                },
-                {
-                    "name": "Kubernetes",
-                    "level": "Básico",
-                    "years": 1,
-                    "icon": "fas fa-dharmachakra"
-                }
-            ],
-            "Bases de Datos": [
-                {
-                    "name": "PostgreSQL",
-                    "level": "Avanzado",
-                    "years": 3,
-                    "icon": "fas fa-database"
-                },
-                {
-                    "name": "Redis",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fas fa-database"
-                },
-                {
-                    "name": "MongoDB",
-                    "level": "Básico",
-                    "years": 1,
-                    "icon": "fas fa-leaf"
-                },
-                {
-                    "name": "MySQL",
-                    "level": "Intermedio",
-                    "years": 2,
-                    "icon": "fas fa-database"
-                }
-            ]
+        "Lenguajes de Programación": [
+            {
+            "name": "Python",
+            "level": "Avanzado",
+            "years": 5,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "C",
+            "level": "Intermedio",
+            "years": 3,
+            "icon": "fas fa-code"
+            },
+            {
+            "name": "C++",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-code"
+            },
+            {
+            "name": "Go",
+            "level": "Básico",
+            "years": 0,
+            "icon": "fas fa-gopher"
+            }
+        ],
+        "Frameworks & Librerías": [
+            {
+            "name": "FastAPI",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fas fa-bolt"
+            },
+            {
+            "name": "Django",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "Django REST Framework",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "Flask",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "gRPC",
+            "level": "Avanzado",
+            "years": 2,
+            "icon": "fas fa-network-wired"
+            },
+            {
+            "name": "GraphQL",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-project-diagram"
+            },
+            {
+            "name": "WebSocket",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-exchange-alt"
+            }
+        ],
+        "Cloud & DevOps": [
+            {
+            "name": "AWS",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-aws"
+            },
+            {
+            "name": "Docker",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-docker"
+            },
+            {
+            "name": "GitHub Actions",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-github"
+            },
+            {
+            "name": "DigitalOcean",
+            "level": "Intermedio",
+            "years": 1,
+            "icon": "fas fa-cloud"
+            },
+            {
+            "name": "Kubernetes",
+            "level": "Básico",
+            "years": 0,
+            "icon": "fas fa-dharmachakra"
+            },
+            {
+            "name": "NGINX",
+            "level": "Intermedio",
+            "years": 1,
+            "icon": "fas fa-server"
+            }
+        ],
+        "Bases de Datos": [
+            {
+            "name": "PostgreSQL",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fas fa-database"
+            },
+            {
+            "name": "MongoDB",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-leaf"
+            },
+            {
+            "name": "Redis",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-database"
+            },
+            {
+            "name": "SQL",
+            "level": "Avanzado",
+            "years": 5,
+            "icon": "fas fa-database"
+            }
+        ]
         }
     },
     "projects": [

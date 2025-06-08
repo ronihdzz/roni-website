@@ -94,17 +94,17 @@ body {
     padding: 1rem 0.5rem;
 }
 
-/* Toggle button para sidebar */
+/* Toggle button rediseñado - más sutil e integrado */
 .sidebar-toggle {
     position: absolute;
-    top: 1rem;
-    right: -15px;
-    width: 30px;
-    height: 30px;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 50%;
+    top: 1.5rem;
+    right: 1rem;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -112,12 +112,51 @@ body {
     font-size: 0.75rem;
     transition: all var(--transition-speed) ease;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
+    opacity: 0.7;
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    right: 0.5rem;
+    background: var(--surface-light);
 }
 
 .sidebar-toggle:hover {
-    background: var(--primary-dark);
+    background: var(--surface-light);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+    opacity: 1;
     transform: scale(1.1);
+}
+
+/* Botón de idioma */
+.language-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    transition: all var(--transition-speed) ease;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.sidebar.collapsed .language-toggle {
+    right: 0.5rem;
+    top: 3.5rem;
+    padding: 0.25rem;
+    font-size: 0.625rem;
+}
+
+.language-toggle:hover {
+    background: var(--surface-light);
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    opacity: 1;
 }
 
 /* Imagen de perfil minimalista */
@@ -225,37 +264,60 @@ body {
 .nav-links li:nth-child(5) a::before { content: '\f0e0'; }
 .nav-links li:nth-child(6) a::before { content: '\f019'; }
 
-/* Submenu CV minimalista */
+/* Submenu CV minimalista sin iconos */
+.nav-links li ul a::before {
+    content: '';
+    display: none;
+}
+
 .nav-links li ul {
     list-style: none;
     margin-top: 0.25rem;
-    padding-left: 1rem;
+    padding-left: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition-speed) ease;
+    background: var(--surface-light);
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-links li:hover ul {
-    max-height: 100px;
+    max-height: 120px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-md);
 }
 
 .sidebar.collapsed .nav-links li ul {
     display: none;
 }
 
+.nav-links li ul li {
+    margin-bottom: 0.25rem;
+}
+
+.nav-links li ul li:last-child {
+    margin-bottom: 0;
+}
+
 .nav-links li ul a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
     transition: all var(--transition-speed) ease;
     font-size: 0.75rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
 }
 
 .nav-links li ul a:hover {
-    color: var(--accent-color);
-    background: rgba(6, 182, 212, 0.05);
+    color: var(--text-primary);
+    background: var(--primary-color);
+    transform: translateX(2px);
 }
 
 /* Enlaces sociales minimalistas */
@@ -292,11 +354,15 @@ body {
     transform: translateY(-1px);
 }
 
-/* Contenido principal */
+/* Contenido principal - mejor aprovechamiento del espacio */
 main {
     margin-left: var(--sidebar-width);
-    transition: margin-left var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
     width: calc(100% - var(--sidebar-width));
+    max-width: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar.collapsed ~ main {
@@ -311,6 +377,45 @@ main {
 .contact-section {
     padding: var(--content-padding);
     min-height: 100vh;
+    transition: all var(--transition-speed) ease;
+    width: 100%;
+}
+
+/* Mejorar el centrado cuando la sidebar está colapsada */
+.sidebar.collapsed ~ main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar.collapsed ~ main .main-section {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--content-padding) 2rem;
+}
+
+.sidebar.collapsed ~ main .experiences-section,
+.sidebar.collapsed ~ main .skills-section,
+.sidebar.collapsed ~ main .projects-section,
+.sidebar.collapsed ~ main .contact-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--content-padding) 2rem;
+}
+
+/* Asegurar que los grids también se centren */
+.sidebar.collapsed ~ main .experiences,
+.sidebar.collapsed ~ main .skills-grid,
+.sidebar.collapsed ~ main .projects-grid {
+    margin: 0 auto;
+}
+
+.sidebar.collapsed ~ main .contact-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Sección principal minimalista */
@@ -319,6 +424,13 @@ main {
     flex-direction: column;
     justify-content: center;
     max-width: 800px;
+    width: 100%;
+}
+
+/* Cuando la sidebar está expandida, mantener el ancho original */
+.sidebar:not(.collapsed) ~ main .main-section {
+    max-width: 800px;
+    margin: 0;
 }
 
 .title {
@@ -685,6 +797,14 @@ main {
     :root {
         --sidebar-width: 240px;
     }
+    
+    .sidebar.collapsed ~ main .main-section,
+    .sidebar.collapsed ~ main .experiences-section,
+    .sidebar.collapsed ~ main .skills-section,
+    .sidebar.collapsed ~ main .projects-section,
+    .sidebar.collapsed ~ main .contact-section {
+        padding: var(--content-padding) 1.5rem;
+    }
 }
 
 /* Mobile */
@@ -698,7 +818,8 @@ main {
         transform: translateX(0);
     }
     
-    .sidebar-toggle {
+    .sidebar-toggle,
+    .language-toggle {
         display: none;
     }
     
@@ -716,6 +837,29 @@ main {
         height: 40px;
         cursor: pointer;
         font-size: 1rem;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .mobile-language-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        background: var(--surface-color);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 0.375rem 0.75rem;
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 500;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .mobile-language-toggle:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
     }
     
     main {
@@ -730,6 +874,8 @@ main {
     .contact-section {
         padding: 1rem;
         padding-top: 4rem;
+        max-width: none;
+        margin: 0;
     }
     
     .experiences,
@@ -741,6 +887,7 @@ main {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        max-width: none;
     }
     
     .cta-buttons {
@@ -761,6 +908,11 @@ main {
     .skill-item {
         font-size: 0.625rem;
         padding: 0.125rem 0.375rem;
+    }
+    
+    .mobile-language-toggle {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.625rem;
     }
 }
 
@@ -817,5 +969,50 @@ main {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Loading state para cambio de idioma */
+.loading-language {
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Animación para cambio de idioma */
+.language-transition {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.language-transition.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo especial para el CV dropdown */
+.cv-dropdown {
+    position: relative;
+}
+
+.cv-dropdown-trigger {
+    position: relative;
+}
+
+.cv-dropdown-trigger::after {
+    content: '\f107'; /* Font Awesome chevron down */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: auto;
+    font-size: 0.75rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.cv-dropdown:hover .cv-dropdown-trigger::after {
+    transform: rotate(180deg);
+}
+
+.sidebar.collapsed .cv-dropdown-trigger::after {
+    display: none;
 }
 
