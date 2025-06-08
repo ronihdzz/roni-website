@@ -69,7 +69,7 @@ def sidebar():
                 A(I(cls="fab fa-github"), href=data['github']),
                 A(I(cls="fab fa-youtube"), href=data['youtube']),
                 A(I(cls="fab fa-medium"), href=data['medium']),
-                A(I(cls="fab fa-dev"), href=data['devto']),
+                # A(I(cls="fab fa-dev"), href=data['devto']),
                 cls="social-links"
             ),
             cls="sidebar"
@@ -106,9 +106,9 @@ def main_content():
             id="about"
         ),
         moments_section(data['experiences']),  # Renombrar la sección de experiencias a momentos
-        projects_section(),  # Agregar la sección de proyectos
-        blog_section(),  # Agregar la sección del blog
-        contact_section()  # Agregar la sección de contacto
+        # projects_section(),  # Agregar la sección de proyectos
+        # blog_section(),  # Agregar la sección del blog
+        # contact_section()  # Agregar la sección de contacto
     )
 
 def moments_section(experiences):
