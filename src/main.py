@@ -48,7 +48,9 @@ def home_view():
         Body(
             Div(
                 sidebar(),  # Menú lateral
-                main_content(),  # Contenido principal
+                Main(
+                    main_content(),  # Contenido principal
+                ),
                 cls="container"
             )
         )
@@ -58,30 +60,36 @@ def home_view():
 def sidebar():
     return Nav(
         Div(
-            Img(src="static/ronihdz_en_proyectos.jpeg", alt="Teaching", cls="teaching-image-sidebar"),
+            Button(
+                I(cls="fas fa-chevron-left"),
+                cls="sidebar-toggle",
+                onclick="toggleSidebar()",
+                title="Colapsar sidebar"
+            ),
+            Img(src="static/ronihdz_en_proyectos.jpeg", alt="Foto de perfil - Programador", cls="teaching-image-sidebar"),
             H2(data['personal']['name']),
             P(data['personal']['profession']),
             Ul(
-                Li(A("About", href="#about")),
-                Li(A("Moments", href="#moments")),
-                Li(A("Skills", href="#skills")),
-                Li(A("Projects", href="#projects")),
-                Li(A("Contact", href="#contact")),
+                Li(A(Span("About"), href="#about", role="menuitem")),
+                Li(A(Span("Moments"), href="#moments", role="menuitem")),
+                Li(A(Span("Skills"), href="#skills", role="menuitem")),
+                Li(A(Span("Projects"), href="#projects", role="menuitem")),
+                Li(A(Span("Contact"), href="#contact", role="menuitem")),
                 Li(
-                    "Download CV",
+                    Span("Download CV"),
                     Ul(
-                        Li(A("Español", href=data['personal']['cv']['spanish'], target="_blank")),
-                        Li(A("English", href=data['personal']['cv']['english'], target="_blank"))
+                        Li(A("Español", href=data['personal']['cv']['spanish'], target="_blank", rel="noopener noreferrer")),
+                        Li(A("English", href=data['personal']['cv']['english'], target="_blank", rel="noopener noreferrer"))
                     )
                 ),
-                cls="nav-links"
+                cls="nav-links",
+                role="menu"
             ),
             Div(
-                A(I(cls="fab fa-linkedin"), href=data['social_links']['linkedin']),
-                A(I(cls="fab fa-github"), href=data['social_links']['github']),
-                A(I(cls="fab fa-youtube"), href=data['social_links']['youtube']),
-                A(I(cls="fab fa-medium"), href=data['social_links']['medium']),
-                # A(I(cls="fab fa-dev"), href=data['social_links']['devto']),
+                A(I(cls="fab fa-linkedin"), href=data['social_links']['linkedin'], target="_blank", rel="noopener noreferrer", aria_label="LinkedIn"),
+                A(I(cls="fab fa-github"), href=data['social_links']['github'], target="_blank", rel="noopener noreferrer", aria_label="GitHub"),
+                A(I(cls="fab fa-youtube"), href=data['social_links']['youtube'], target="_blank", rel="noopener noreferrer", aria_label="YouTube"),
+                A(I(cls="fab fa-medium"), href=data['social_links']['medium'], target="_blank", rel="noopener noreferrer", aria_label="Medium"),
                 cls="social-links"
             ),
             cls="sidebar"
@@ -90,7 +98,7 @@ def sidebar():
 
 def main_content():
     about_me = data['personal']['about']
-    max_length = 500  # Aumenta este valor para mostrar más texto antes de "Ver más"
+    max_length = 400  # Reducido para ser más minimalista
     if len(about_me) > max_length:
         short_about_me = about_me[:max_length] + "..."
         full_about_me = about_me
@@ -102,7 +110,7 @@ def main_content():
     else:
         about_me_element = P(about_me, cls="about-me-description")
 
-    return Main(
+    return (
         Section(
             Div(
                 *[H1(title_part, cls="title-part") for title_part in data['personal']['title_parts']],
@@ -113,7 +121,7 @@ def main_content():
                 skills_preview(),
                 Div(
                     A("Ver mi trabajo", href="#moments", cls="read-more"),
-                    A("Contáctame", href="#contact", cls="read-more", style="margin-left: 1rem;"),
+                    A("Contáctame", href="#contact", cls="read-more"),
                     cls="cta-buttons"
                 ),
                 cls="about-me-section"
@@ -140,7 +148,7 @@ def moments_section(experiences):
 
 def skills_preview():
     """Preview de habilidades en la sección principal"""
-    featured_skills = data['skills']['featured']
+    featured_skills = data['skills']['featured'][:6]  # Limitar a 6 skills para ser más minimalista
     return Div(
         *[Span(skill, cls="skill-tag") for skill in featured_skills],
         cls="skills-preview"
@@ -188,9 +196,9 @@ def skill_item(skill):
 
 def projects_section():
     projects_data = data['projects']
-    # Filtrar solo proyectos destacados o mostrar todos
+    # Mostrar solo proyectos destacados para ser más minimalista
     featured_projects = [p for p in projects_data if p.get('featured', False)]
-    projects_to_show = featured_projects if featured_projects else projects_data
+    projects_to_show = featured_projects[:4] if featured_projects else projects_data[:4]  # Máximo 4 proyectos
     
     return Section(
         H2("Proyectos", cls="section-title"),
@@ -251,7 +259,6 @@ def contact_section():
                     contact_item("fas fa-phone", "Teléfono", contact_data['phone'], f"tel:{contact_data['phone']}"),
                     contact_item("fas fa-map-marker-alt", "Ubicación", contact_data['location'], "#"),
                     contact_item("fab fa-linkedin", "LinkedIn", "linkedin.com/in/ronihdz", data['social_links']['linkedin']),
-                    contact_item("fab fa-github", "GitHub", "github.com/ronihdzz", data['social_links']['github']),
                     cls="contact-items"
                 ),
                 cls="contact-info"
@@ -279,7 +286,7 @@ def contact_form():
     
     # Generar campos dinámicamente desde el JSON
     form_fields = []
-    for field in form_ data['fields']:
+    for field in form_data['fields']:
         if field['type'] == 'textarea':
             form_fields.append(
                 Textarea(
