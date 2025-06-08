@@ -55,7 +55,13 @@ def sidebar():
                 Li(A("Projects", href="#projects")),
                 Li(A("Blog", href="#blog")),
                 Li(A("Contact", href="#contact")),
-                Li(A("Download CV", href=data['cv'], target="_blank")),
+                Li(
+                    "Download CV",
+                    Ul(
+                        Li(A("Español", href=data['cv'], target="_blank")),
+                        Li(A("English", href=data['cv_en'], target="_blank"))
+                    )
+                ),
                 cls="nav-links"
             ),
             Div(
