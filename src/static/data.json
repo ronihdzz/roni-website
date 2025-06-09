@@ -1,47 +1,640 @@
 {
-    "name": "Roni Hernández",
-    "profession": "Squad Leader Back-end Developer Middle",
-    "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",     
-    "linkedin": "https://www.linkedin.com/in/ronihdz/",
-    "github": "https://github.com/ronihdzz",
-    "youtube": "https://www.youtube.com/@ronihdzz",
-    "medium": "https://ronihdz.medium.com/",
-    "devto": "https://dev.to/ronihdz",
-    "cv": "/static/cv.pdf",
-    "cv_en": "/static/cv_en.pdf",
-    "photo": "static/roni.jpg",
+    "personal": {
+        "name": "Roni Hernández",
+        "profession": "Squad Leader Back-end Developer",
+        "title_parts": [
+            "Hola,",
+            "Soy Roni Hernández,",
+            "Squad Leader Back-end Developer"
+        ],
+        "about": "Soy desarrollador backend con más de tres años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",
+        "photo": "static/roni.jpg",
+        "cv": {
+            "spanish": "/static/cv.pdf",
+            "english": "/static/cv_en.pdf"
+        }
+    },
+    "social_links": {
+        "linkedin": "https://www.linkedin.com/in/ronihdz/",
+        "github": "https://github.com/ronihdzz",
+        "youtube": "https://www.youtube.com/@ronihdzz",
+        "medium": "https://ronihdz.medium.com/",
+        "devto": "https://dev.to/ronihdz"
+    },
+    "contact": {
+        "email": "ronihdzbel@gmail.com",
+        "phone": "+52 55 13086150",
+        "location": "Ciudad de México, México",
+        "available_for_work": true,
+        "preferred_contact": "email",
+        "form": {
+            "title": "Envíame un mensaje",
+            "subtitle": "¿Tienes un proyecto en mente? ¡Me encantaría escuchar sobre él!",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "text",
+                    "placeholder": "Tu nombre",
+                    "required": true
+                },
+                {
+                    "name": "email",
+                    "type": "email",
+                    "placeholder": "Tu email",
+                    "required": true
+                },
+                {
+                    "name": "subject",
+                    "type": "text",
+                    "placeholder": "Asunto",
+                    "required": true
+                },
+                {
+                    "name": "message",
+                    "type": "textarea",
+                    "placeholder": "Tu mensaje",
+                    "required": true,
+                    "rows": 5
+                }
+            ],
+            "submit_text": "Enviar mensaje",
+            "action": "/contact",
+            "method": "post"
+        }
+    },
+    "skills": {
+        "featured": ["Python", "FastAPI", "AWS","LangChain", "GithubActions", "PostgreSQL"],
+        "categories": {
+        "Lenguajes de Programación": [
+            {
+            "name": "Python",
+            "level": "Avanzado",
+            "years": 5,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "C",
+            "level": "Intermedio",
+            "years": 3,
+            "icon": "fas fa-code"
+            },
+            {
+            "name": "C++",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-code"
+            },
+            {
+            "name": "Go",
+            "level": "Básico",
+            "years": 0,
+            "icon": "fas fa-gopher"
+            }
+        ],
+        "Frameworks & Librerías": [
+            {
+            "name": "FastAPI",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fas fa-bolt"
+            },
+            {
+            "name": "Django",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "Django REST Framework",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "Flask",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fab fa-python"
+            },
+            {
+            "name": "pyQT5",
+            "level": "Intermedio",
+            "years": 1,
+            "icon": "fab fa-python"
+            }
+        ],
+        "IA & Machine Learning": [
+            {
+                "name": "pandas",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-database"
+            },
+            {
+                "name": "numpy",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-database"
+            },
+            {
+                "name": "matplotlib",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-chart-line"
+            },
+            {
+                "name": "scikit-learn",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-chart-line"
+            },
+            {
+                "name": "TensorFlow",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-chart-line"
+            },
+            {
+                "name": "LangChain",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-chart-line"
+            }
+        ],
+        "Protocolos y Herramientas": [
+            {
+                "name": "gRPC",
+                "level": "Avanzado",
+                "years": 2,
+                "icon": "fas fa-network-wired"
+                },
+                {
+                "name": "GraphQL",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-project-diagram"
+                },
+                {
+                "name": "WebSocket",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-exchange-alt"
+                },
+                {
+                "name": "Webhooks",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-network-wired"
+                },
+                {
+                "name": "MQTT",
+                "level": "Intermedio",
+                "years": 1,
+                "icon": "fas fa-network-wired"
+                },
+                {
+                "name": "RabbitMQ",
+                "level": "Intermedio",
+                "years": 1,
+                "icon": "fas fa-network-wired"
+                },
+                {
+                "name": "OpenTelemetry",
+                "level": "Básico",
+                "years": 1,
+                "icon": "fas fa-network-wired" 
+                },
+                {
+                "name": "Git",
+                "level": "Avanzado",
+                "years": 3,
+                "icon": "fab fa-github"
+                },
+                {
+                "name": "GitHub",
+                "level": "Avanzado",
+                "years": 3,
+                "icon": "fab fa-github"
+                },
+                {
+                "name": "GitLab",
+                "level": "Intermedio",
+                "years": 1,
+                "icon": "fab fa-gitlab"
+                }
+        ],
+        "Cloud AWS": [
+            {
+                "name": "Lambda",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fab fa-aws"
+            },
+            {
+                "name": "API Gateway",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-random"
+            },
+            {
+                "name": "Step Functions",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-project-diagram"
+            },
+            {
+                "name": "SQS",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-envelope-open-text"
+            },
+            {
+                "name": "SNS",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-bell"
+            },
+            {
+                "name": "EC2",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-server"
+            },
+            {
+                "name": "ECR",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-database"
+            },
+            {
+                "name": "S3",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-hdd"
+            },
+            {
+                "name": "CloudWatch",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-chart-line"
+            },
+            {
+                "name": "IAM",
+                "level": "Intermedio",
+                "years": 2,
+                "icon": "fas fa-user-shield"
+            }
+        ],
+        "DevOps": [
+            {
+            "name": "Kubernetes",
+            "level": "Básico",
+            "years": 0,
+            "icon": "fas fa-dharmachakra"
+            },
+            {
+            "name": "NGINX",
+            "level": "Intermedio",
+            "years": 1,
+            "icon": "fas fa-server"
+            },
+            {
+            "name": "Bash/Shell Scripting",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-terminal" 
+            },
+            {
+            "name": "GitHub Actions",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-github"
+            },
+            {
+            "name": "DigitalOcean",
+            "level": "Intermedio",
+            "years": 1,
+            "icon": "fas fa-cloud"
+            },
+            {
+            "name": "Docker",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-docker"
+            },
+            {
+            "name": "Docker Compose",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fab fa-docker"
+            }
+        ],
+        "Bases de Datos": [
+            {
+            "name": "PostgreSQL",
+            "level": "Avanzado",
+            "years": 3,
+            "icon": "fas fa-database"
+            },
+            {
+            "name": "MongoDB",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-leaf"
+            },
+            {
+            "name": "Redis",
+            "level": "Intermedio",
+            "years": 2,
+            "icon": "fas fa-database"
+            }
+        ]
+        }
+    },
     "experiences": [
         {
+            "id": "swift-hackathon-2024",
             "title": "Ganadores de Swift Change Makers Hackathon 2024",
             "description": "Hackathon celebrado en Monterrey que reunió a los mejores equipos de todo México, cada uno habiendo ganado previamente hackathones locales para obtener su pase al evento. Mi equipo y yo fuimos seleccionados para participar en este Hakathon y logramos el primer lugar en el reto propuesto por FEMSA.Durante el hackathon, desarrollamos OXXO LINK, una solución innovadora diseñada para facilitar la colaboración entre vecinos y optimizar la compra de productos en OXXO. Este proyecto fue el resultado de un intenso trabajo en equipo, donde cada uno de nosotros aportó ideas que evolucionaron en una propuesta sólida y efectiva.Nuestra solución impresionó al jurado, tanto que comenzaron a utilizar nuestro término 'los paros' para describir la dinámica del proyecto. Ganar el Reto FEMSA fue una experiencia emocionante y muy gratificante, sobre todo por la calidad de los otros equipos participantes. Competir y destacar en un evento de esta magnitud fue una experiencia que recordaré siempre.",
+            "date": "2024-03-15",
+            "location": "Monterrey, México",
+            "type": "hackathon",
+            "award": "1er Lugar",
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["Hackathon", "FEMSA", "OXXO", "Innovation"]
         },
         {
+            "id": "nasa-space-apps-2023",
             "title": "Ganadores del hackathon NASA Space Apps Challenge 2023",
             "description": "La NASA Space Apps Challenge 2023 es un hackathon global que invita a participantes de todo el mundo a resolver desafíos relacionados con la ciencia y el espacio utilizando datos abiertos de la NASA y sus socios. En la edición de CDMX, junto con mi equipo, AstroFire, obtuvimos el primer lugar con nuestra innovadora propuesta llamada 'Sensores de Muerte'. Este proyecto consistía en una red de sensores estratégicamente colocados en áreas forestales para detectar la velocidad y dirección de incendios. Los sensores se comunicaban entre sí mediante el protocolo LORA, formando una red local que permitía emitir alertas tempranas y facilitar una respuesta rápida ante incendios forestales. Aunque se trataba de un prototipo inicial (no con todas las funciones), logramos que fuera completamente funcional. Además, desarrollamos tanto el hardware que capturaba los datos como el sitio web y la aplicación móvil, lo que nos permitió mostrar un prototipo que impresionó al jurado por su efectividad y potencial, a pesar de ser una versión preliminar.",
+            "date": "2023-10-07",
+            "location": "Ciudad de México, México",
+            "type": "hackathon",
+            "award": "1er Lugar",
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["NASA", "Space", "IoT", "Environmental"]
         },
         {
+            "id": "unam-telecom-talk",
             "title": "Congreso de telecomunicacion Facultad de Ingenieria UNAM",
             "description": "Como parte del ciclo de conferencias del departamento de telecomunicaciones de la Facultad de Ingeniería, tuve el honor de ser invitado como ponente por el Dr. Luis Francisco García Jiménez, profesor de Redes de Comunicaciones. Durante la charla, expuse sobre temas clave como el Internet de las Cosas, el desarrollo de software y algunos de mis proyectos open source. Fue una experiencia enriquecedora compartir mi conocimiento y pasión frente a un público interesado en estos campos tecnológicos.",
+            "date": "2023-11-15",
+            "location": "UNAM, Ciudad de México",
+            "type": "conference",
+            "award": null,
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
                 "type_resource": "video"
-            }
-        }, 
+            },
+            "tags": ["IoT", "Software Development", "Open Source", "UNAM"]
+        },
         {
+            "id": "conaces-acapulco",
             "title": "CONACES Acapulco",
             "description": "Mis amigos y yo tuvimos el honor de ser invitados como ponentes en el CONACES 2023, el evento espacial más importante de México, organizado por la Agencia Espacial Mexicana. Durante el congreso, coincidimos con figuras brillantes como Rodolfo Neri Vela, el primer astronauta mexicano, así como otros expertos del sector espacial. Tuvimos la oportunidad de presentar nuestros proyectos en un evento de tal magnitud, lo cual fue una experiencia increíble para compartir ideas y aprender de personas destacadas en la industria.",
+            "date": "2023-09-20",
+            "location": "Acapulco, México",
+            "type": "conference",
+            "award": null,
             "media": {
                 "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
                 "type_resource": "video"
-            }
+            },
+            "tags": ["Space", "Mexican Space Agency", "Innovation"]
         }
-    ]
+    ],
+    "projects": [
+        {
+            "id": "central_var_rxd",
+            "title": "Central Var RXD – CLI para gestión cifrada de archivos .env",
+            "description": "Interfaz de línea de comandos (CLI) en Python para cifrar, descifrar y procesar archivos `.env` utilizando GPG, adaptada a múltiples entornos (desarrollo, staging, producción).",
+            "long_description": "Central Var RXD es una herramienta CLI desarrollada en Python que permite cifrar y descifrar archivos de variables de entorno (`.env`) usando GPG. Facilita la gestión segura de credenciales según el entorno (dev, staging, prod) mediante comandos intuitivos. La arquitectura incorpora `Click` para la interfaz, un `Makefile` para flujos de trabajo automatizados y una estructura modular (`cli.py`, `docs/`, `examples/`). Mi rol incluyó diseñar el flujo CLI, integrar GPG, crear un sistema de comandos robusto y documentar la solución. Entre los desafíos destacados se encuentra asegurar que el cifrado/descifrado sea confiable, gestionar dependencias y mantener la usabilidad en entornos de desarrollo y producción.",
+            "technologies": ["Python", "Click", "GPG", "Makefile"],
+            "category": "DevOps / CLI Tool",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/central_var_rxd",
+              "documentation": "docs/README.md"
+            },
+            "images": [],
+            "date_created": "2025-06-08",
+            "date_updated": "2025-06-08"
+        },
+        {
+            "id": "aws_lambda_fastapi",
+            "title": "AWS Lambda FastAPI Template",
+            "description": "Plantilla base para desarrollar y desplegar APIs con FastAPI en AWS Lambda, con GitHub Actions para CI/CD (lint, tests con coverage, build y deploy automático).",
+            "long_description": "Esta plantilla provee una estructura completa para crear y desplegar una función AWS Lambda que expone un servicio HTTP mediante FastAPI y API Gateway. Incluye configuraciones de GitHub Actions para ejecutar linters (pre-commit, mypy), pruebas automatizadas con pytest y cobertura, construir la imagen Docker de la Lambda y desplegarla automáticamente en AWS. La organización de carpetas separa claramente el código fuente (`src/`), los flujos de trabajo CI/CD (`.github/workflows/`), la configuración de pre-commit y mypy, y ejemplos de despliegue local con Docker Compose. Mi aporte principal consistió en diseñar y documentar los pipelines de CI/CD, afinar la integración de FastAPI sobre Lambda y asegurar un proceso de despliegue reproducible y sencillo para equipos de desarrollo.",
+            "technologies": [
+                "FastAPI",
+                "AWS Lambda",
+                "GitHub Actions",
+                "Docker",
+                "Python"
+            ],
+            "category": "Serverless / CI/CD Template",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": null,
+                "github": "https://github.com/ronihdzz/aws-lambda-fastapi",
+                "documentation": "docs/README.md"
+            },
+            "images": [],
+            "date_created": "2025-06-08",
+            "date_updated": "2025-06-08"
+        },
+        {
+            "id": "cacpy",
+            "title": "Calificador Automático Classroom Python (CACPY)",
+            "description": "Aplicación de escritorio en Python + PyQt5 que automatiza la creación, ejecución de tests y calificación de tareas de programación en Google Classroom, además de compartir feedback personalizado via Google Drive.",
+            "long_description": "CACPY (Calificador Automático Classroom Python) es una herramienta completa para docentes que quieren automatizar el ciclo de vida de las tareas de programación. Se conecta a la API de Google Classroom y Google Drive para:\n\n1. Crear borradores de tareas en Classroom a partir de plantillas de NbGrader.\n2. Generar por alumno una copia de Google Colab, donde el estudiante responde y entrega.\n3. Ejecutar automáticamente los notebooks con nbgrader/nbconvert, capturar resultados de tests y calcular la nota.\n4. Guardar feedback (HTML/Markdown/PDF) por alumno y tarea en carpetas de Drive compartidas individualmente.\n5. Publicar las calificaciones finales en Classroom sin intervención manual.\n\nMi rol incluyó diseñar la interfaz con PyQt5, orquestar el flujo OAuth2, estructurar módulos de grading y asegurar la fiabilidad del proceso de cifrado/ejecución y entrega de feedback.",
+            "technologies": [
+                "Python 3",
+                "PyQt5",
+                "Google Classroom API",
+                "Google Drive API",
+                "nbgrader",
+                "nbconvert",
+                "jupyter-client",
+                "google-auth-httplib2",
+                "google-auth-oauthlib"
+            ],
+            "category": "Educational Automation / Desktop App",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": "https://www.youtube.com/watch?v=qlXhceBiqqE&list=PLbtbtYtX-i94iGpPavpdCilbOj9gABjMv",
+                "github": "https://github.com/ronihdzz/CACPY",
+                "documentation": "https://github.com/ronihdzz/CACPY#readme"
+            },
+            "date_created": "2021-07-15",
+            "date_updated": "2021-07-15"
+        },
+        {
+            "id": "iot_domotica",
+            "title": "Sistema de Domótica con Raspberry Pi",
+            "description": "Sistema de domótica con interfaz de escritorio en Raspberry Pi para controlar luz RGB, ventilador, detectar incendios, programar alarmas y gestionar tareas desde una GUI amigable.",
+            "long_description": "IoT_domotica es un sistema integrado de automatización del hogar desplegado en una Raspberry Pi, con una interfaz de escritorio construida en PyQt5. Está compuesto por dos circuitos comunicados por Bluetooth:\n\n• **Circuito 1** (Sensores y control): mide temperatura, detecta flama y sonido de aplauso, y envía comandos al segundo circuito para encender/apagar el ventilador o el LED RGB y cambiar su color entre siete opciones (blanco, verde, amarillo, rojo, magenta, azul, cian).\n• **Circuito 2** (Actuadores): recibe las órdenes Bluetooth y acciona físicamente el ventilador y el LED RGB según lo indicado.\n\nAdemás, la GUI ofrece:\n  - Un **sistema de deberes** para añadir, visualizar y eliminar tareas pendientes.\n  - Un **programador de alarmas** con selección de hora, repetición, y elección de melodía.\n  - **Alertas de incendio** en tiempo real.\n\nMi contribución incluyó el diseño de la arquitectura de hardware y software, la implementación de la comunicación Bluetooth, la programación de la GUI en PyQt5, la integración de sensores y actuadores con la Raspberry Pi y la documentación del ensamblaje y uso.",
+            "technologies": [
+                "Python 3",
+                "PyQt5",
+                "Raspberry Pi (GPIO)",
+                "Bluetooth (PySerial / BlueZ)",
+                "Sensor de flama KY-026",
+                "Sensor de sonido KY-037",
+                "Sensor de temperatura KY-013",
+                "Relé 5V KY-019",
+                "LED RGB KY-016"
+            ],
+            "category": "IoT / Embedded Systems",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": "https://www.youtube.com/watch?v=UfCgMUs2OLo",
+                "github": "https://github.com/ronihdzz/IoT_domotica",
+                "documentation": "https://github.com/ronihdzz/IoT_domotica#readme"
+            },
+            "images": [
+                "https://img.youtube.com/vi/UfCgMUs2OLo/0.jpg"
+            ],
+            "date_created": "2021-03-01",
+            "date_updated": "2021-03-01"
+        },
+
+        {
+            "id": "ai_voice_assistant_fastapi",
+            "title": "AI Voice Assistant en FastAPI con WebSockets",
+            "description": "Asistente de voz en tiempo real implementado en Python con FastAPI y WebSockets, que usa la Voice Real-Time API de OpenAI y se integra con Twilio para llamadas telefónicas.",
+            "long_description": "Este proyecto es un asistente de voz AI capaz de recibir y responder llamadas telefónicas en tiempo real. Construido sobre FastAPI, expone un endpoint WebSocket que captura audio entrante (voz del usuario), lo envía a la Voice Real-Time API de OpenAI para transcripción y generación de respuesta, y transmite de vuelta el audio sintetizado. La lógica de llamada se enlaza con Twilio para gestionar el flujo de la llamada y enrutar audio al WebSocket. Todo el backend está desplegado en Replit y Render.com, donde consumí créditos de OpenAI para llamadas de prueba y demostración.",
+            "technologies": [
+                "Python 3",
+                "FastAPI",
+                "WebSockets",
+                "Twilio Voice API",
+                "OpenAI Voice Real-Time API",
+                "asyncio",
+                "Uvicorn",
+                "Replit",
+                "Render.com"
+            ],
+            "category": "AI / Voice Assistant",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": null,
+                "github": "https://github.com/ronihdzz/asistant-python",
+                "documentation": "https://github.com/ronihdzz/asistant-python#readme"
+            },
+            "images": [],
+            "date_created": "2025-06-08",
+            "date_updated": "2025-06-08"
+        },
+        {
+            "id": "portfolio-fasthtml",
+            "title": "Personal Portfolio with FastHTML",
+            "description": "Personal website developed with FastHTML, featuring a modern and responsive design. Includes sections for experiences, skills, projects and contact with advanced CSS animations.",
+            "long_description": "Este proyecto es un asistente de voz AI capaz de recibir y responder llamadas telefónicas en tiempo real. Construido sobre FastAPI, expone un endpoint WebSocket que captura audio entrante (voz del usuario), lo envía a la Voice Real-Time API de OpenAI para transcripción y generación de respuesta, y transmite de vuelta el audio sintetizado. La lógica de llamada se enlaza con Twilio para gestionar el flujo de la llamada y enrutar audio al WebSocket. Todo el backend está desplegado en Replit y Render.com, donde consumí créditos de OpenAI para llamadas de prueba y demostración.",
+            "technologies": [
+                "FastHTML",
+                "Python",
+                "CSS3",
+                "JavaScript",
+                "HTML5"
+            ],
+            "category": "Web Development",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": "https://dev.ronihdz.com",
+                "github": "https://github.com/ronihdzz/website"
+            },
+            "date_created": "2025-06-08",
+            "date_updated": "2025-06-08"
+        },
+        {
+            "id": "simon_troni",
+            "title": "SimonTroni – Juego de Memoria con Arduino",
+            "description": "Juego electrónico de memoria estilo Simon, implementado en Arduino Uno con LEDs RGB, buzzer, botones y potenciómetro para ajustar volumen, controlado vía monitor serie.",
+            "long_description": "SimonTroni es un proyecto de programación física con Arduino desarrollado para el curso “Programación física con Arduino” de CODE IOT (Nokia). Consiste en un juego de memoria donde una secuencia de LEDs se enciende y el jugador debe repetirla usando botones; por cada nivel supera una LED adicional. El sistema comunica con el usuario a través del monitor serie: solicita nombre, muestra instrucciones, inicia juego y reporta puntuación o victoria final con una melodía de recompensa. La intensidad de sonido se ajusta dinámicamente con un potenciómetro.\n\nLa arquitectura de hardware incluye dos subsistemas:\n\n• **Circuito 1 (Sensado & Control)**: sensores de flama y clap para alertas de incendio, sensor de temperatura, potenciómetro para volumen y lógica de control que envía comandos por serial Bluetooth/USB al Arduino.\n• **Circuito 2 (Actuadores)**: módulo que recibe comandos y enciende/apaga el ventilador y los LEDs RGB en los colores especificados.\n\nMi rol abarcó el diseño y ensamblaje de circuitos, la implementación del firmware en C++ para Arduino, la configuración del monitor serie, y la documentación paso a paso del ensamblaje y uso completo.",
+            "technologies": [
+                "Arduino Uno (C/C++)",
+                "Protoboard y cables jumper",
+                "LED RGB",
+                "Buzzer pasivo",
+                "Potenciómetro 5 kΩ",
+                "Sensores: KY-026 (flama), KY-037 (sonido), KY-013 (temperatura)",
+                "Monitor serie (Serial)",
+                "Bluetooth Serial / USB"
+            ],
+            "category": "Embedded Systems / Arduino",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": "https://www.youtube.com/watch?v=YSqHKkHPByw",
+                "github": "https://github.com/ronihdzz/Simon_Dice_Troni",
+                "documentation": "README.md"
+            },
+            "images": [
+                "https://img.youtube.com/vi/YSqHKkHPByw/0.jpg"
+            ],
+            "date_created": "2021-03-01",
+            "date_updated": "2021-03-01"
+        },
+        {
+            "id": "mi_web_personal",
+            "title": "Mi Web Personal",
+            "description": "Sitio web personal desarrollado con Django, con una interfaz administrable que permite gestionar secciones de presentación, portafolio, blog y contacto, además de descargar el currículum en PDF.",
+            "long_description": "Mi Web Personal es mi primer proyecto web completo, construido sobre Django y desplegado en PythonAnywhere. Cuenta con:\n\n- **Apartado de presentación**: editables desde el admin de Django, donde el usuario sube su foto, descripción personal, logros y enlaces.\n- **Portafolio dinámico**: muestra proyectos, especializaciones, cursos impartidos y tomados con paginación y búsquedas por categoría o palabra clave. Cada ítem enlaza a su detalle y certificado.\n- **Blog personal**: lista de artículos con filtros por categoría y búsqueda por título.\n- **Contacto**: formulario que envía emails automáticos (Gmail SMTP) al propietario y confirma al remitente.\n- **Descarga de CV**: botón para descargar el currículum en PDF.\n- **Pie de página** dinámico: muestra medios de contacto (email, GitHub, LinkedIn, teléfono) configurables desde el admin.\n\nLa aplicación incluye configuración de correo Gmail automatizado, un sistema de alarmas por Django admin y personalización de imágenes de portada por sección.",
+            "technologies": [
+                "Python 3",
+                "Django 3.2",
+                "django-ckeditor",
+                "django-model-utils",
+                "Pillow",
+                "MySQL",
+                "Bootstrap",
+                "SMTP (Gmail)"
+            ],
+            "category": "Web Development",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+                "demo": "https://davidronihdz99.pythonanywhere.com/proyecto/3/detalle/",
+                "github": "https://github.com/ronihdzz/miWebPersonal",
+                "documentation": "https://github.com/ronihdzz/miWebPersonal#readme"
+            },
+            "images": [
+                "/recursos_readme/93.png",
+                "/recursos_readme/94.png"
+            ],
+            "date_created": "2021-03-01",
+            "date_updated": "2025-06-08"
+        }
+    ],
+    "meta": {
+        "version": "2.0",
+        "last_updated": "2024-01-20",
+        "sections_enabled": {
+            "about": true,
+            "skills": true,
+            "projects": true,
+            "experiences": true,
+            "work_experience": true,
+            "education": true,
+            "contact": true
+        },
+        "seo": {
+            "keywords": ["full-stack developer", "web developer", "React", "Node.js", "Python", "JavaScript", "freelance", "portfolio"],
+            "description": "Ronaldo Hernández - Full-stack Developer specialized in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations."
+        }
+    }
 }
