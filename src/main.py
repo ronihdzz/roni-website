@@ -56,6 +56,7 @@ def home_view():
                 sidebar(),
                 Main(
                     main_content(),
+                    footer_section(),
                 ),
                 cls="container"
             )
@@ -93,7 +94,16 @@ def get_ui_text(key):
             'work_together': '¡Trabajemos juntos!',
             'email': 'Email',
             'phone': 'Teléfono',
-            'location': 'Ubicación'
+            'location': 'Ubicación',
+            'current_lang': 'ES',
+            'switch_to': 'EN',
+            'footer_rights': 'Todos los derechos reservados',
+            'footer_source': 'Código fuente disponible en',
+            'footer_built': 'Desarrollado con',
+            'footer_heart': 'amor',
+            'spanish_cv': 'CV en Español',
+            'english_cv': 'CV en Inglés',
+            'language_selector': 'Idioma'
         },
         'en': {
             'about': 'About',
@@ -113,7 +123,16 @@ def get_ui_text(key):
             'work_together': 'Let\'s work together!',
             'email': 'Email',
             'phone': 'Phone',
-            'location': 'Location'
+            'location': 'Location',
+            'current_lang': 'EN',
+            'switch_to': 'ES',
+            'footer_rights': 'All rights reserved',
+            'footer_source': 'Source code available on',
+            'footer_built': 'Built with',
+            'footer_heart': 'love',
+            'spanish_cv': 'Spanish CV',
+            'english_cv': 'English CV',
+            'language_selector': 'Language'
         }
     }
     return ui_texts.get(current_language, ui_texts['es']).get(key, key)
@@ -129,11 +148,34 @@ def sidebar():
                 onclick="toggleSidebar()",
                 title="Colapsar sidebar"
             ),
-            Button(
-                get_ui_text('english') if current_language == 'es' else get_ui_text('spanish'),
-                cls="language-toggle",
-                onclick=f"window.location.href='/change-language/{'en' if current_language == 'es' else 'es'}'",
-                title="Cambiar idioma / Change language"
+            Div(
+                Button(
+                    Span(get_ui_text('current_lang'), cls="current-lang"),
+                    I(cls="fas fa-chevron-down dropdown-arrow"),
+                    cls="language-toggle",
+                    onclick="toggleLanguageDropdown()",
+                    id="language-dropdown-trigger",
+                    title="Seleccionar idioma / Select language"
+                ),
+                Div(
+                    A(
+                        I(cls="fas fa-globe flag-icon"),
+                        get_ui_text('spanish'), 
+                        href="/change-language/es", 
+                        cls="language-option",
+                        **{"data-lang": "es"}
+                    ),
+                    A(
+                        I(cls="fas fa-globe flag-icon"),
+                        get_ui_text('english'), 
+                        href="/change-language/en", 
+                        cls="language-option",
+                        **{"data-lang": "en"}
+                    ),
+                    cls="language-dropdown-menu",
+                    id="language-dropdown-menu"
+                ),
+                cls="language-dropdown-container"
             ),
             Img(src="static/ronihdz_en_proyectos.jpeg", alt="Foto de perfil - Programador", cls="teaching-image-sidebar"),
             H2(data['personal']['name']),
@@ -145,14 +187,32 @@ def sidebar():
                 Li(A(Span(get_ui_text('projects')), href="#projects", role="menuitem")),
                 Li(A(Span(get_ui_text('contact')), href="#contact", role="menuitem")),
                 Li(
-                    A(
+                    Button(
                         Span(get_ui_text('download_cv')),
-                        href="#",
-                        cls="cv-dropdown-trigger"
+                        I(cls="fas fa-chevron-down dropdown-arrow"),
+                        cls="cv-dropdown-btn",
+                        onclick="toggleCVDropdown()",
+                        id="cv-dropdown-trigger"
                     ),
-                    Ul(
-                        Li(A(get_ui_text('spanish'), href=data['personal']['cv']['spanish'], target="_blank", rel="noopener noreferrer")),
-                        Li(A(get_ui_text('english'), href=data['personal']['cv']['english'], target="_blank", rel="noopener noreferrer"))
+                    Div(
+                        A(
+                            I(cls="fas fa-file-pdf cv-icon"),
+                            get_ui_text('spanish_cv'), 
+                            href=data['personal']['cv']['spanish'], 
+                            target="_blank", 
+                            rel="noopener noreferrer",
+                            cls="cv-option"
+                        ),
+                        A(
+                            I(cls="fas fa-file-pdf cv-icon"),
+                            get_ui_text('english_cv'), 
+                            href=data['personal']['cv']['english'], 
+                            target="_blank", 
+                            rel="noopener noreferrer",
+                            cls="cv-option"
+                        ),
+                        cls="cv-dropdown-menu",
+                        id="cv-dropdown-menu"
                     ),
                     cls="cv-dropdown"
                 ),
@@ -168,10 +228,32 @@ def sidebar():
             ),
             # Botón de idioma para móvil
             Button(
-                get_ui_text('english') if current_language == 'es' else get_ui_text('spanish'),
+                Span(get_ui_text('current_lang'), cls="current-lang-mobile"),
+                I(cls="fas fa-chevron-down dropdown-arrow-mobile"),
                 cls="mobile-language-toggle",
-                onclick=f"window.location.href='/change-language/{'en' if current_language == 'es' else 'es'}'",
-                title="Cambiar idioma / Change language",
+                onclick="toggleMobileLanguageDropdown()",
+                id="mobile-language-dropdown-trigger",
+                title="Seleccionar idioma / Select language",
+                style="display: none;"
+            ),
+            # Dropdown de idioma para móvil
+            Div(
+                A(
+                    I(cls="fas fa-globe flag-icon"),
+                    get_ui_text('spanish'), 
+                    href="/change-language/es", 
+                    cls="language-option-mobile",
+                    **{"data-lang": "es"}
+                ),
+                A(
+                    I(cls="fas fa-globe flag-icon"),
+                    get_ui_text('english'), 
+                    href="/change-language/en", 
+                    cls="language-option-mobile",
+                    **{"data-lang": "en"}
+                ),
+                cls="mobile-language-dropdown-menu",
+                id="mobile-language-dropdown-menu",
                 style="display: none;"
             ),
             cls="sidebar"
@@ -403,6 +485,57 @@ def contact_form():
             method=form_data['method']
         ),
         cls="form-container"
+    )
+
+def footer_section():
+    data = get_current_data()
+    current_year = "2024"
+    
+    return Footer(
+        Div(
+            Div(
+                P(
+                    f"© {current_year} {data['personal']['name']}. ",
+                    get_ui_text('footer_rights'),
+                    ".",
+                    cls="footer-copyright"
+                ),
+                P(
+                    get_ui_text('footer_source'),
+                    " ",
+                    A(
+                        I(cls="fab fa-github"),
+                        " GitHub",
+                        href="https://github.com/ronihdzz/website",
+                        target="_blank",
+                        rel="noopener noreferrer",
+                        cls="footer-link"
+                    ),
+                    cls="footer-source"
+                ),
+                cls="footer-left"
+            ),
+            Div(
+                P(
+                    get_ui_text('footer_built'),
+                    " ",
+                    A(
+                        "FastHTML",
+                        href="https://fastht.ml",
+                        target="_blank",
+                        rel="noopener noreferrer",
+                        cls="footer-tech"
+                    ),
+                    " ",
+                    get_ui_text('footer_heart'),
+                    " ❤️",
+                    cls="footer-tech-info"
+                ),
+                cls="footer-right"
+            ),
+            cls="footer-content"
+        ),
+        cls="footer-section"
     )
 
 def experience_item(exp):

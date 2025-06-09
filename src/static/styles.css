@@ -128,35 +128,136 @@ body {
     transform: scale(1.1);
 }
 
-/* Botón de idioma */
-.language-toggle {
+/* Contenedor del dropdown de idioma */
+.language-dropdown-container {
     position: absolute;
     top: 1.5rem;
     right: 3rem;
-    background: transparent;
-    color: var(--text-muted);
+    z-index: 1002;
+}
+
+/* Botón de idioma mejorado con dropdown */
+.language-toggle {
+    background: var(--surface-light);
+    color: var(--text-secondary);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
+    padding: 0.375rem 0.75rem;
     font-size: 0.75rem;
     transition: all var(--transition-speed) ease;
     font-weight: 500;
-    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    min-width: 60px;
+    justify-content: center;
+}
+
+.language-toggle .current-lang {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.language-toggle .dropdown-arrow {
+    color: var(--text-muted);
+    font-size: 0.625rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.sidebar.collapsed .language-dropdown-container {
+    right: 0.5rem;
+    top: 3.5rem;
 }
 
 .sidebar.collapsed .language-toggle {
-    right: 0.5rem;
-    top: 3.5rem;
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
     font-size: 0.625rem;
+    min-width: 40px;
+    flex-direction: column;
+    gap: 0.125rem;
 }
 
-.language-toggle:hover {
+.language-toggle:hover,
+.language-toggle.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.language-toggle:hover .current-lang,
+.language-toggle:hover .dropdown-arrow,
+.language-toggle.active .current-lang,
+.language-toggle.active .dropdown-arrow {
+    color: white;
+}
+
+/* Language Dropdown Menu */
+.language-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
     background: var(--surface-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 0.5rem;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-speed) ease;
+    min-width: 120px;
+    display: block !important; /* Force display */
+}
+
+.language-dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: all var(--transition-speed) ease;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.language-option:last-child {
+    margin-bottom: 0;
+}
+
+.language-option .flag-icon {
+    color: var(--accent-color);
+    font-size: 0.875rem;
+}
+
+.language-option:hover {
     color: var(--text-primary);
-    border-color: var(--accent-color);
-    opacity: 1;
+    background: var(--primary-color);
+    transform: translateX(2px);
+}
+
+.language-option:hover .flag-icon {
+    color: white;
+}
+
+/* En sidebar colapsada, mostrar dropdown a la derecha */
+.sidebar.collapsed .language-dropdown-menu {
+    left: calc(100% + 0.5rem);
+    top: 0;
+    min-width: 140px;
 }
 
 /* Imagen de perfil minimalista */
@@ -219,37 +320,49 @@ body {
     margin-bottom: 0.125rem;
 }
 
-.nav-links > li > a {
+.nav-links > li > a,
+.nav-links > li > button {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     color: var(--text-muted);
     text-decoration: none;
+    background: transparent;
+    border: none;
     padding: 0.5rem 0.75rem;
     border-radius: var(--border-radius);
     transition: all var(--transition-speed) ease;
     font-weight: 400;
     font-size: 0.875rem;
     position: relative;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
 }
 
 .nav-links > li > a:hover,
-.nav-links > li > a.active {
+.nav-links > li > a.active,
+.nav-links > li > button:hover,
+.nav-links > li > button.active {
     color: var(--text-primary);
     background: rgba(37, 99, 235, 0.1);
 }
 
-.sidebar.collapsed .nav-links > li > a {
+.sidebar.collapsed .nav-links > li > a,
+.sidebar.collapsed .nav-links > li > button {
     justify-content: center;
     padding: 0.5rem;
 }
 
-.sidebar.collapsed .nav-links > li > a span {
+.sidebar.collapsed .nav-links > li > a span,
+.sidebar.collapsed .nav-links > li > button span {
     display: none;
 }
 
 /* Iconos minimalistas */
-.nav-links > li > a::before {
+.nav-links > li > a::before,
+.nav-links > li > button::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     width: 16px;
@@ -262,62 +375,127 @@ body {
 .nav-links li:nth-child(3) a::before { content: '\f121'; }
 .nav-links li:nth-child(4) a::before { content: '\f0e8'; }
 .nav-links li:nth-child(5) a::before { content: '\f0e0'; }
-.nav-links li:nth-child(6) a::before { content: '\f019'; }
+.nav-links li:nth-child(6) button::before { content: '\f019'; }
 
-/* Submenu CV minimalista sin iconos */
-.nav-links li ul a::before {
-    content: '';
-    display: none;
+/* CV Dropdown mejorado y táctil-friendly */
+.cv-dropdown {
+    position: relative;
 }
 
-.nav-links li ul {
-    list-style: none;
-    margin-top: 0.25rem;
-    padding-left: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-speed) ease;
-    background: var(--surface-light);
-    border-radius: var(--border-radius);
+.cv-dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    background: transparent;
     border: none;
-    box-shadow: var(--shadow-sm);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed) ease;
+    font-weight: 400;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
 }
 
-.nav-links li:hover ul {
-    max-height: 120px;
+.cv-dropdown-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: '\f019';
+    width: 16px;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.cv-dropdown-btn .dropdown-arrow {
+    margin-left: auto;
+    font-size: 0.75rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.cv-dropdown-btn:hover,
+.cv-dropdown-btn.active {
+    color: var(--text-primary);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.sidebar.collapsed .cv-dropdown-btn {
+    justify-content: center;
     padding: 0.5rem;
-    box-shadow: var(--shadow-md);
 }
 
-.sidebar.collapsed .nav-links li ul {
+.sidebar.collapsed .cv-dropdown-btn span,
+.sidebar.collapsed .cv-dropdown-btn .dropdown-arrow {
     display: none;
 }
 
-.nav-links li ul li {
-    margin-bottom: 0.25rem;
+/* Menu dropdown del CV */
+.cv-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 0.5rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-speed) ease;
+    margin-top: 0.25rem;
+    display: block !important; /* Force display */
 }
 
-.nav-links li ul li:last-child {
-    margin-bottom: 0;
+.cv-dropdown-menu.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
 }
 
-.nav-links li ul a {
+.cv-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--text-secondary);
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
     transition: all var(--transition-speed) ease;
     font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     font-weight: 500;
+    margin-bottom: 0.25rem;
 }
 
-.nav-links li ul a:hover {
+.cv-option:last-child {
+    margin-bottom: 0;
+}
+
+.cv-option .cv-icon {
+    color: #dc2626;
+    font-size: 0.875rem;
+}
+
+.cv-option:hover {
     color: var(--text-primary);
     background: var(--primary-color);
     transform: translateX(2px);
+}
+
+.cv-option:hover .cv-icon {
+    color: white;
+}
+
+/* En sidebar colapsada, mostrar dropdown a la derecha */
+.sidebar.collapsed .cv-dropdown-menu {
+    left: calc(100% + 0.5rem);
+    top: 0;
+    min-width: 140px;
 }
 
 /* Enlaces sociales minimalistas */
@@ -790,6 +968,82 @@ main {
     background: var(--primary-dark);
 }
 
+/* ====== FOOTER ====== */
+.footer-section {
+    background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem var(--content-padding);
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.footer-source {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.footer-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.footer-tech-info {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin: 0;
+    text-align: right;
+}
+
+.footer-tech {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-tech:hover {
+    color: var(--accent-color);
+}
+
+/* Centrar footer cuando sidebar está colapsada */
+.sidebar.collapsed ~ main .footer-section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* RESPONSIVE */
 
 /* Tablet */
@@ -804,6 +1058,16 @@ main {
     .sidebar.collapsed ~ main .projects-section,
     .sidebar.collapsed ~ main .contact-section {
         padding: var(--content-padding) 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-tech-info {
+        text-align: center;
     }
 }
 
@@ -845,8 +1109,8 @@ main {
         top: 1rem;
         right: 1rem;
         z-index: 1001;
-        background: var(--surface-color);
-        color: var(--text-primary);
+        background: var(--surface-light);
+        color: var(--text-secondary);
         border: 1px solid var(--border-color);
         border-radius: 20px;
         padding: 0.375rem 0.75rem;
@@ -854,12 +1118,83 @@ main {
         font-size: 0.75rem;
         font-weight: 500;
         box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        min-width: 60px;
+        justify-content: center;
     }
     
-    .mobile-language-toggle:hover {
+    .mobile-language-toggle .current-lang-mobile {
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+    
+    .mobile-language-toggle .dropdown-arrow-mobile {
+        color: var(--text-muted);
+        font-size: 0.625rem;
+        transition: transform var(--transition-speed) ease;
+    }
+    
+    .mobile-language-toggle:hover,
+    .mobile-language-toggle.active {
         background: var(--primary-color);
         color: white;
         border-color: var(--primary-color);
+    }
+    
+    .mobile-language-toggle:hover .current-lang-mobile,
+    .mobile-language-toggle:hover .dropdown-arrow-mobile,
+    .mobile-language-toggle.active .current-lang-mobile,
+    .mobile-language-toggle.active .dropdown-arrow-mobile {
+        color: white;
+    }
+    
+    /* Mobile Language Dropdown */
+    .mobile-language-dropdown-menu {
+        position: fixed;
+        top: 3.5rem;
+        right: 1rem;
+        background: var(--surface-light);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-xl);
+        padding: 0.5rem;
+        z-index: 1002;
+        min-width: 120px;
+        display: none;
+    }
+    
+    .language-option-mobile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.25rem;
+        transition: all var(--transition-speed) ease;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+    }
+    
+    .language-option-mobile:last-child {
+        margin-bottom: 0;
+    }
+    
+    .language-option-mobile .flag-icon {
+        color: var(--accent-color);
+        font-size: 0.875rem;
+    }
+    
+    .language-option-mobile:hover {
+        color: var(--text-primary);
+        background: var(--primary-color);
+    }
+    
+    .language-option-mobile:hover .flag-icon {
+        color: white;
     }
     
     main {
@@ -878,6 +1213,10 @@ main {
         margin: 0;
     }
     
+    .footer-section {
+        padding: 1.5rem 1rem;
+    }
+    
     .experiences,
     .skills-grid,
     .projects-grid {
@@ -893,6 +1232,17 @@ main {
     .cta-buttons {
         flex-direction: column;
         max-width: 200px;
+    }
+    
+    /* CV dropdown en móvil - mejor posicionamiento */
+    .cv-dropdown-menu {
+        position: fixed;
+        top: auto;
+        bottom: 2rem;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        box-shadow: var(--shadow-xl);
     }
 }
 
@@ -913,6 +1263,7 @@ main {
     .mobile-language-toggle {
         padding: 0.25rem 0.5rem;
         font-size: 0.625rem;
+        min-width: 50px;
     }
 }
 
@@ -988,31 +1339,5 @@ main {
 .language-transition.loaded {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Estilo especial para el CV dropdown */
-.cv-dropdown {
-    position: relative;
-}
-
-.cv-dropdown-trigger {
-    position: relative;
-}
-
-.cv-dropdown-trigger::after {
-    content: '\f107'; /* Font Awesome chevron down */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-left: auto;
-    font-size: 0.75rem;
-    transition: transform var(--transition-speed) ease;
-}
-
-.cv-dropdown:hover .cv-dropdown-trigger::after {
-    transform: rotate(180deg);
-}
-
-.sidebar.collapsed .cv-dropdown-trigger::after {
-    display: none;
 }
 

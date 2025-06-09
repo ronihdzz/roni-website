@@ -13,6 +13,8 @@ function initializeApp() {
     initializeActiveNavigation();
     initializeIntersectionObserver();
     initializeLanguageToggle();
+    initializeCVDropdown();
+    initializeLanguageDropdown();
 }
 
 // ====== TOGGLE SIDEBAR DESKTOP ======
@@ -84,6 +86,211 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// ====== CV DROPDOWN TÁCTIL-FRIENDLY ======
+function initializeCVDropdown() {
+    const cvDropdown = document.querySelector('.cv-dropdown');
+    
+    // Cerrar dropdown si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (cvDropdown && !cvDropdown.contains(event.target)) {
+            closeCVDropdown();
+        }
+    });
+    
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeCVDropdown();
+        }
+    });
+    
+    // Manejar eventos táctiles para móviles
+    if ('ontouchstart' in window) {
+        const cvTrigger = document.querySelector('#cv-dropdown-trigger');
+        if (cvTrigger) {
+            cvTrigger.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                toggleCVDropdown();
+            });
+        }
+    }
+}
+
+function toggleCVDropdown() {
+    const cvDropdownMenu = document.querySelector('#cv-dropdown-menu');
+    const cvTrigger = document.querySelector('#cv-dropdown-trigger');
+    const arrow = cvTrigger?.querySelector('.dropdown-arrow');
+    
+    if (!cvDropdownMenu) {
+        console.error('No se encontró el dropdown menu de CV');
+        return;
+    }
+    
+    const isOpen = cvDropdownMenu.classList.contains('show');
+    
+    // Cerrar otros dropdowns
+    closeLanguageDropdown();
+    closeMobileLanguageDropdown();
+    
+    if (isOpen) {
+        closeCVDropdown();
+    } else {
+        openCVDropdown();
+    }
+}
+
+function openCVDropdown() {
+    const cvDropdownMenu = document.querySelector('#cv-dropdown-menu');
+    const cvTrigger = document.querySelector('#cv-dropdown-trigger');
+    const arrow = cvTrigger?.querySelector('.dropdown-arrow');
+    
+    if (cvDropdownMenu) {
+        cvDropdownMenu.classList.add('show');
+        cvTrigger?.classList.add('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(180deg)';
+        }
+    }
+}
+
+function closeCVDropdown() {
+    const cvDropdownMenu = document.querySelector('#cv-dropdown-menu');
+    const cvTrigger = document.querySelector('#cv-dropdown-trigger');
+    const arrow = cvTrigger?.querySelector('.dropdown-arrow');
+    
+    if (cvDropdownMenu) {
+        cvDropdownMenu.classList.remove('show');
+        cvTrigger?.classList.remove('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+}
+
+// ====== LANGUAGE DROPDOWN TÁCTIL-FRIENDLY ======
+function initializeLanguageDropdown() {
+    const languageDropdown = document.querySelector('.language-toggle');
+    
+    // Manejar eventos táctiles para móviles
+    if ('ontouchstart' in window) {
+        const languageTrigger = document.querySelector('#language-dropdown-trigger');
+        if (languageTrigger) {
+            languageTrigger.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                toggleLanguageDropdown();
+            });
+        }
+        
+        const mobileLanguageTrigger = document.querySelector('#mobile-language-dropdown-trigger');
+        if (mobileLanguageTrigger) {
+            mobileLanguageTrigger.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                toggleMobileLanguageDropdown();
+            });
+        }
+    }
+}
+
+function toggleLanguageDropdown() {
+    const languageDropdownMenu = document.querySelector('#language-dropdown-menu');
+    const languageTrigger = document.querySelector('#language-dropdown-trigger');
+    const arrow = languageTrigger?.querySelector('.dropdown-arrow');
+    
+    if (!languageDropdownMenu) {
+        console.error('No se encontró el dropdown menu de idiomas');
+        return;
+    }
+    
+    const isOpen = languageDropdownMenu.classList.contains('show');
+    
+    // Cerrar otros dropdowns
+    closeCVDropdown();
+    closeMobileLanguageDropdown();
+    
+    if (isOpen) {
+        closeLanguageDropdown();
+    } else {
+        openLanguageDropdown();
+    }
+}
+
+function openLanguageDropdown() {
+    const languageDropdownMenu = document.querySelector('#language-dropdown-menu');
+    const languageTrigger = document.querySelector('#language-dropdown-trigger');
+    const arrow = languageTrigger?.querySelector('.dropdown-arrow');
+    
+    if (languageDropdownMenu) {
+        languageDropdownMenu.classList.add('show');
+        languageTrigger?.classList.add('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(180deg)';
+        }
+    }
+}
+
+function closeLanguageDropdown() {
+    const languageDropdownMenu = document.querySelector('#language-dropdown-menu');
+    const languageTrigger = document.querySelector('#language-dropdown-trigger');
+    const arrow = languageTrigger?.querySelector('.dropdown-arrow');
+    
+    if (languageDropdownMenu) {
+        languageDropdownMenu.classList.remove('show');
+        languageTrigger?.classList.remove('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+}
+
+// ====== MOBILE LANGUAGE DROPDOWN ======
+function toggleMobileLanguageDropdown() {
+    const mobileLanguageDropdownMenu = document.querySelector('#mobile-language-dropdown-menu');
+    const mobileTrigger = document.querySelector('#mobile-language-dropdown-trigger');
+    const arrow = mobileTrigger?.querySelector('.dropdown-arrow-mobile');
+    
+    if (!mobileLanguageDropdownMenu) return;
+    
+    const isOpen = mobileLanguageDropdownMenu.style.display === 'block';
+    
+    // Cerrar otros dropdowns
+    closeCVDropdown();
+    closeLanguageDropdown();
+    
+    if (isOpen) {
+        closeMobileLanguageDropdown();
+    } else {
+        openMobileLanguageDropdown();
+    }
+}
+
+function openMobileLanguageDropdown() {
+    const mobileLanguageDropdownMenu = document.querySelector('#mobile-language-dropdown-menu');
+    const mobileTrigger = document.querySelector('#mobile-language-dropdown-trigger');
+    const arrow = mobileTrigger?.querySelector('.dropdown-arrow-mobile');
+    
+    if (mobileLanguageDropdownMenu) {
+        mobileLanguageDropdownMenu.style.display = 'block';
+        mobileTrigger?.classList.add('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(180deg)';
+        }
+    }
+}
+
+function closeMobileLanguageDropdown() {
+    const mobileLanguageDropdownMenu = document.querySelector('#mobile-language-dropdown-menu');
+    const mobileTrigger = document.querySelector('#mobile-language-dropdown-trigger');
+    const arrow = mobileTrigger?.querySelector('.dropdown-arrow-mobile');
+    
+    if (mobileLanguageDropdownMenu) {
+        mobileLanguageDropdownMenu.style.display = 'none';
+        mobileTrigger?.classList.remove('active');
+        if (arrow) {
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+}
+
 // ====== TOGGLE DE IDIOMA ======
 function initializeLanguageToggle() {
     // Manejar visibilidad del botón de idioma móvil
@@ -95,6 +302,7 @@ function initializeLanguageToggle() {
                 mobileLanguageToggle.style.display = 'block';
             } else {
                 mobileLanguageToggle.style.display = 'none';
+                closeMobileLanguageDropdown();
             }
         }
     }
@@ -104,6 +312,26 @@ function initializeLanguageToggle() {
     
     // Ejecutar en redimensionamiento
     window.addEventListener('resize', debounce(handleResize, 250));
+    
+    // Cerrar dropdowns al hacer clic fuera
+    document.addEventListener('click', function(event) {
+        const languageDropdown = document.querySelector('#language-dropdown-trigger');
+        const languageMenu = document.querySelector('#language-dropdown-menu');
+        const mobileLanguageDropdown = document.querySelector('#mobile-language-dropdown-trigger');
+        const mobileLanguageMenu = document.querySelector('#mobile-language-dropdown-menu');
+        
+        if (languageDropdown && languageMenu && 
+            !languageDropdown.contains(event.target) && 
+            !languageMenu.contains(event.target)) {
+            closeLanguageDropdown();
+        }
+        
+        if (mobileLanguageDropdown && mobileLanguageMenu && 
+            !mobileLanguageDropdown.contains(event.target) && 
+            !mobileLanguageMenu.contains(event.target)) {
+            closeMobileLanguageDropdown();
+        }
+    });
 }
 
 // ====== MENÚ MÓVIL ======
@@ -123,8 +351,13 @@ function initializeMobileMenu() {
     
     // Cerrar con tecla Escape
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
-            closeMobileMenu();
+        if (e.key === 'Escape') {
+            if (sidebar && sidebar.classList.contains('active')) {
+                closeMobileMenu();
+            }
+            closeCVDropdown();
+            closeLanguageDropdown();
+            closeMobileLanguageDropdown();
         }
     });
     
@@ -180,6 +413,11 @@ function closeMobileMenu() {
         toggle.innerHTML = '<i class="fas fa-bars"></i>';
     }
     document.body.style.overflow = '';
+    
+    // También cerrar todos los dropdowns
+    closeCVDropdown();
+    closeLanguageDropdown();
+    closeMobileLanguageDropdown();
 }
 
 // ====== NAVEGACIÓN SUAVE ======
@@ -324,29 +562,7 @@ function toggleDescription(shortDescription, fullDescription, readMoreLink) {
     }
 }
 
-// ====== UTILIDADES ======
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// ====== FUNCIONES GLOBALES ======
-window.toggleSidebar = toggleSidebar;
-window.showFullDescription = showFullDescription;
-window.toggleAboutMe = toggleAboutMe;
-
-// ====== LOG DE INICIALIZACIÓN ======
-console.log('🚀 Portfolio minimalista inicializado');
-console.log('📱 Modo:', window.innerWidth <= 768 ? 'Móvil' : 'Escritorio');
-console.log('🌐 Idioma detectado desde la URL o configuración del servidor');
-
+// ====== CONTACT FORM MAILTO ======
 function initializeContactFormMailto() {
     const form = document.querySelector('.contact-form');
     if (!form) return;
@@ -370,3 +586,32 @@ function initializeContactFormMailto() {
         window.location.href = mailto;
     });
 }
+
+// ====== UTILIDADES ======
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// ====== FUNCIONES GLOBALES ======
+window.toggleSidebar = toggleSidebar;
+window.toggleCVDropdown = toggleCVDropdown;
+window.toggleLanguageDropdown = toggleLanguageDropdown;
+window.toggleMobileLanguageDropdown = toggleMobileLanguageDropdown;
+window.showFullDescription = showFullDescription;
+window.toggleAboutMe = toggleAboutMe;
+
+// ====== LOG DE INICIALIZACIÓN ======
+console.log('🚀 Portfolio minimalista inicializado');
+console.log('📱 Modo:', window.innerWidth <= 768 ? 'Móvil' : 'Escritorio');
+console.log('🌐 Idioma detectado desde la URL o configuración del servidor');
+console.log('📋 CV dropdown mejorado para dispositivos táctiles');
+console.log('🌍 Selector de idiomas con dropdown hermoso');
+console.log('📧 Formulario de contacto con mailto integrado');
