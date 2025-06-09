@@ -15,7 +15,7 @@ def read_data(file_path):
     return data
 
 # Variables globales para manejar los idiomas
-current_language = 'es'  # Idioma por defecto
+current_language = 'en'  # Idioma por defecto
 data_es = read_data(os.path.join('.', 'static', 'data.json'))
 data_en = read_data(os.path.join('.', 'static', 'data_en.json'))
 
@@ -270,7 +270,7 @@ def skill_item(skill):
         skill_span = Span(
             icon,
             Span(skill['name'], cls="skill-name"),
-            Span(f"{skill['level']} ({skill['years']} años)" if current_language == 'es' else f"{skill['level']} ({skill['years']} years)", cls="skill-level"),
+            # Span(f"{skill['level']} ({skill['years']} años)" if current_language == 'es' else f"{skill['level']} ({skill['years']} years)", cls="skill-level"),
             cls="skill-item detailed",
             title=f"{skill['name']} - {skill['level']} ({skill['years']} años de experiencia)" if current_language == 'es' else f"{skill['name']} - {skill['level']} ({skill['years']} years of experience)"
         )
@@ -283,7 +283,7 @@ def projects_section():
     data = get_current_data()
     projects_data = data['projects']
     featured_projects = [p for p in projects_data if p.get('featured', False)]
-    projects_to_show = featured_projects[:4] if featured_projects else projects_data[:4]
+    projects_to_show = featured_projects[:10] if featured_projects else projects_data[:10]
     
     return Section(
         H2(get_ui_text('projects_title'), cls="section-title"),

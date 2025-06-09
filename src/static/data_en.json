@@ -1,379 +1,573 @@
 {
     "personal": {
-        "name": "Ronaldo Hernández",
-        "profession": "Full-stack Developer",
-        "title_parts": [
-            "Hello, I'm",
-            "Ronaldo Hernández",
-            "Full-stack Developer"
-        ],
-        "about": "I'm a passionate full-stack developer with over 3 years of experience creating modern web and mobile applications. I specialize in JavaScript, Python, React, and Node.js. I love solving complex problems and turning ideas into functional digital products. I'm always learning new technologies and looking for opportunities to collaborate on innovative projects.",
-        "photo": "static/roni.jpg",
-        "cv": {
-            "spanish": "/static/cv.pdf",
-            "english": "/static/cv_en.pdf"
-        }
+      "name": "Roni Hernández",
+      "profession": "Squad-Leader Back-end Developer",
+      "title_parts": [
+        "Hello,",
+        "I’m Roni Hernández,",
+        "Squad-Leader Back-end Developer"
+      ],
+      "about": "I’m a back-end developer with more than three years of experience in the tech industry, especially in start-ups. I currently work at Fairplay, a fintech start-up where I began maintaining the company monolith, which allowed me to understand the inherited systems in depth. Later, I was assigned to the core-banking project, where, together with other engineers, we built the system from scratch, tackling challenges of efficiency, scalability, and system configuration.\n\nOne of the things I’m most passionate about in core banking is tangibly seeing how the code I write directly impacts revenue, money transfers, and payment orders. It’s thrilling to observe how my technological solutions move large sums of money, giving every project—and every line of code—a unique relevance.\n\nI’ve also had the opportunity to collaborate with Data Engineering, Data Science, Cybersecurity, Product, Sales, and DevOps, giving me a holistic vision of how different areas interrelate inside a tech company. This interaction lets me deliver solutions better aligned to the company’s overall needs.\n\nBefore joining Fairplay, I worked at Telmex in the Cybersecurity division. Although I have always been interested in infosec and networking, at that point in my career I felt the need to *push more code* and deepen my back-end knowledge. I therefore sought a more dynamic, development-oriented experience—and what better place than a start-up, where technical challenges are continuous and varied.\n\nMy tech stack includes extensive experience with Linux, networks, and AWS services (Lambda, S3, SQS, SNS, Step Functions, CloudWatch, IAM), plus deployment and automation tools such as Docker, Docker Compose, and GitHub Actions. I mainly code in Python, C, C++, and Java, and I’ve built APIs and microservices with Django REST Framework, FastAPI, and Flask. I’m also experienced with PostgreSQL and Redis.\n\nAlthough I’m not currently leading a team, I have supervised people in the past, which helped me develop leadership and management skills. My approach has always been to work closely with teammates to achieve efficient and scalable results.\n\nMy current interests include software architecture and integrating artificial intelligence in innovative solutions, exploring technologies such as TensorFlow and LangChain. I’m always looking for new challenges and learning opportunities.",
+      "photo": "static/roni.jpg",
+      "cv": {
+        "spanish": "/static/cv.pdf",
+        "english": "/static/cv_en.pdf"
+      }
     },
     "social_links": {
-        "linkedin": "https://linkedin.com/in/ronihdz",
-        "github": "https://github.com/ronihdzz",
-        "youtube": "https://youtube.com/@ronihdz",
-        "medium": "https://medium.com/@ronihdz"
+      "linkedin": "https://www.linkedin.com/in/ronihdz/",
+      "github": "https://github.com/ronihdzz",
+      "youtube": "https://www.youtube.com/@ronihdzz",
+      "medium": "https://ronihdz.medium.com/",
+      "devto": "https://dev.to/ronihdz"
     },
     "contact": {
-        "email": "ronaldo@example.com",
-        "phone": "+1 (555) 123-4567",
-        "location": "Mexico City, Mexico",
-        "available_for_work": true,
-        "preferred_contact": "email",
-        "form": {
-            "title": "Send me a message",
-            "subtitle": "Do you have a project in mind? Let's talk and bring your ideas to life!",
-            "fields": [
-                {
-                    "name": "name",
-                    "type": "text",
-                    "placeholder": "Your name",
-                    "required": true
-                },
-                {
-                    "name": "email",
-                    "type": "email",
-                    "placeholder": "your.email@example.com",
-                    "required": true
-                },
-                {
-                    "name": "subject",
-                    "type": "text",
-                    "placeholder": "Message subject",
-                    "required": true
-                },
-                {
-                    "name": "message",
-                    "type": "textarea",
-                    "placeholder": "Tell me about your project...",
-                    "rows": 5,
-                    "required": true
-                }
-            ],
-            "submit_text": "Send Message",
-            "action": "/contact",
-            "method": "post"
-        }
+      "email": "ronihdzbel@gmail.com",
+      "phone": "+52 55 13086150",
+      "location": "Mexico City, Mexico",
+      "available_for_work": true,
+      "preferred_contact": "email",
+      "form": {
+        "title": "Send me a message",
+        "subtitle": "Got a project in mind? I’d love to hear about it!",
+        "fields": [
+          {
+            "name": "name",
+            "type": "text",
+            "placeholder": "Your name",
+            "required": true
+          },
+          {
+            "name": "email",
+            "type": "email",
+            "placeholder": "Your email",
+            "required": true
+          },
+          {
+            "name": "subject",
+            "type": "text",
+            "placeholder": "Subject",
+            "required": true
+          },
+          {
+            "name": "message",
+            "type": "textarea",
+            "placeholder": "Your message",
+            "required": true,
+            "rows": 5
+          }
+        ],
+        "submit_text": "Send message",
+        "action": "/contact",
+        "method": "post"
+      }
     },
     "skills": {
-        "featured": ["JavaScript", "Python", "React", "Node.js", "FastAPI", "PostgreSQL"],
-        "categories": {
-            "Frontend": [
-                {
-                    "name": "React",
-                    "level": "Advanced",
-                    "years": 3,
-                    "icon": "fab fa-react"
-                },
-                {
-                    "name": "JavaScript",
-                    "level": "Advanced",
-                    "years": 4,
-                    "icon": "fab fa-js-square"
-                },
-                {
-                    "name": "TypeScript",
-                    "level": "Intermediate",
-                    "years": 2,
-                    "icon": "fas fa-code"
-                },
-                {
-                    "name": "Next.js",
-                    "level": "Intermediate",
-                    "years": 2,
-                    "icon": "fas fa-layer-group"
-                }
-            ],
-            "Backend": [
-                {
-                    "name": "Node.js",
-                    "level": "Advanced",
-                    "years": 3,
-                    "icon": "fab fa-node-js"
-                },
-                {
-                    "name": "Python",
-                    "level": "Advanced",
-                    "years": 4,
-                    "icon": "fab fa-python"
-                },
-                {
-                    "name": "FastAPI",
-                    "level": "Advanced",
-                    "years": 2,
-                    "icon": "fas fa-bolt"
-                },
-                {
-                    "name": "Django",
-                    "level": "Intermediate",
-                    "years": 1,
-                    "icon": "fas fa-server"
-                }
-            ],
-            "Database": [
-                {
-                    "name": "PostgreSQL",
-                    "level": "Advanced",
-                    "years": 3,
-                    "icon": "fas fa-database"
-                },
-                {
-                    "name": "MongoDB",
-                    "level": "Intermediate",
-                    "years": 2,
-                    "icon": "fas fa-leaf"
-                },
-                {
-                    "name": "Redis",
-                    "level": "Intermediate",
-                    "years": 1,
-                    "icon": "fas fa-memory"
-                }
-            ],
-            "Tools": [
-                "Git", "Docker", "AWS", "Vercel", "Figma", "Postman"
-            ]
-        }
+      "featured": ["Python", "FastAPI", "AWS", "LangChain", "GitHub Actions", "PostgreSQL"],
+      "categories": {
+        "Programming Languages": [
+          {
+            "name": "Python",
+            "level": "Advanced",
+            "years": 5,
+            "icon": "fab fa-python"
+          },
+          {
+            "name": "C",
+            "level": "Intermediate",
+            "years": 3,
+            "icon": "fas fa-code"
+          },
+          {
+            "name": "C++",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-code"
+          },
+          {
+            "name": "Go",
+            "level": "Basic",
+            "years": 0,
+            "icon": "fas fa-gopher"
+          }
+        ],
+        "Frameworks & Libraries": [
+          {
+            "name": "FastAPI",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fas fa-bolt"
+          },
+          {
+            "name": "Django",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-python"
+          },
+          {
+            "name": "Django REST Framework",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-python"
+          },
+          {
+            "name": "Flask",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fab fa-python"
+          },
+          {
+            "name": "PyQt5",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fab fa-python"
+          }
+        ],
+        "AI & Machine Learning": [
+          {
+            "name": "pandas",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-database"
+          },
+          {
+            "name": "numpy",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-database"
+          },
+          {
+            "name": "matplotlib",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-chart-line"
+          },
+          {
+            "name": "scikit-learn",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-chart-line"
+          },
+          {
+            "name": "TensorFlow",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-chart-line"
+          },
+          {
+            "name": "LangChain",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-chart-line"
+          }
+        ],
+        "Protocols & Tools": [
+          {
+            "name": "gRPC",
+            "level": "Advanced",
+            "years": 2,
+            "icon": "fas fa-network-wired"
+          },
+          {
+            "name": "GraphQL",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-project-diagram"
+          },
+          {
+            "name": "WebSocket",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-exchange-alt"
+          },
+          {
+            "name": "Webhooks",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-network-wired"
+          },
+          {
+            "name": "MQTT",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fas fa-network-wired"
+          },
+          {
+            "name": "RabbitMQ",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fas fa-network-wired"
+          },
+          {
+            "name": "OpenTelemetry",
+            "level": "Basic",
+            "years": 1,
+            "icon": "fas fa-network-wired"
+          },
+          {
+            "name": "Git",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-github"
+          },
+          {
+            "name": "GitHub",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-github"
+          },
+          {
+            "name": "GitLab",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fab fa-gitlab"
+          }
+        ],
+        "AWS Cloud": [
+          {
+            "name": "Lambda",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fab fa-aws"
+          },
+          {
+            "name": "API Gateway",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-random"
+          },
+          {
+            "name": "Step Functions",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-project-diagram"
+          },
+          {
+            "name": "SQS",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-envelope-open-text"
+          },
+          {
+            "name": "SNS",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-bell"
+          },
+          {
+            "name": "EC2",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-server"
+          },
+          {
+            "name": "ECR",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-database"
+          },
+          {
+            "name": "S3",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-hdd"
+          },
+          {
+            "name": "CloudWatch",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-chart-line"
+          },
+          {
+            "name": "IAM",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-user-shield"
+          }
+        ],
+        "DevOps": [
+          {
+            "name": "Kubernetes",
+            "level": "Basic",
+            "years": 0,
+            "icon": "fas fa-dharmachakra"
+          },
+          {
+            "name": "NGINX",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fas fa-server"
+          },
+          {
+            "name": "Bash/Shell scripting",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-terminal"
+          },
+          {
+            "name": "GitHub Actions",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-github"
+          },
+          {
+            "name": "DigitalOcean",
+            "level": "Intermediate",
+            "years": 1,
+            "icon": "fas fa-cloud"
+          },
+          {
+            "name": "Docker",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-docker"
+          },
+          {
+            "name": "Docker Compose",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fab fa-docker"
+          }
+        ],
+        "Databases": [
+          {
+            "name": "PostgreSQL",
+            "level": "Advanced",
+            "years": 3,
+            "icon": "fas fa-database"
+          },
+          {
+            "name": "MongoDB",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-leaf"
+          },
+          {
+            "name": "Redis",
+            "level": "Intermediate",
+            "years": 2,
+            "icon": "fas fa-database"
+          }
+        ]
+      }
     },
-    "projects": [
-        {
-            "id": "portfolio-fasthtml",
-            "title": "Personal Portfolio with FastHTML",
-            "description": "Personal website developed with FastHTML, featuring a modern and responsive design. Includes sections for experiences, skills, projects and contact with advanced CSS animations.",
-            "long_description": "This project represents my personal portfolio built from scratch using FastHTML, a modern Python framework for web development. The site includes a fully responsive design with a dark theme color system, advanced CSS animations, and a reusable component architecture. I implemented features such as lazy loading, intersection observer for animations, and a functional form system.",
-            "technologies": ["FastHTML", "Python", "CSS3", "JavaScript", "HTML5"],
-            "category": "Web Development",
-            "status": "Completed",
-            "featured": true,
-            "links": {
-                "demo": "https://ronihdz.com",
-                "github": "https://github.com/ronihdzz/portfolio-fasthtml",
-                "documentation": null
-            },
-            "images": [
-                "/static/projects/portfolio-1.jpg",
-                "/static/projects/portfolio-2.jpg"
-            ],
-            "date_created": "2024-01-15",
-            "date_updated": "2024-01-20"
-        },
-        {
-            "id": "oxxo-link",
-            "title": "OXXO LINK - Swift Change Makers",
-            "description": "Winning solution of the Swift Change Makers Hackathon 2024 to facilitate collaboration between neighbors in OXXO purchases.",
-            "long_description": "OXXO LINK is an innovative application developed during the Swift Change Makers Hackathon 2024, where we won first place in the FEMSA challenge. The solution allows neighbors to collaborate on their purchases, optimizing costs and time through a community 'stops' system. The application includes geolocation, points system, and real-time notifications.",
-            "technologies": ["React Native", "Node.js", "MongoDB", "Socket.io", "Google Maps API"],
-            "category": "Mobile App",
-            "status": "Prototype",
-            "featured": true,
-            "links": {
-                "demo": "https://oxxolink-demo.com",
-                "github": "https://github.com/team/oxxo-link",
-                "presentation": "/static/projects/oxxo-link-presentation.pdf"
-            },
-            "images": [
-                "/static/projects/oxxo-link-1.jpg",
-                "/static/projects/oxxo-link-2.jpg"
-            ],
-            "date_created": "2024-03-15",
-            "date_updated": "2024-03-17",
-            "awards": ["1st Place Swift Change Makers Hackathon 2024", "FEMSA Challenge"]
-        },
-        {
-            "id": "sensores-muerte",
-            "title": "Death Sensors - NASA Space Apps",
-            "description": "IoT sensor network for early wildfire detection. Project winner of NASA Space Apps Challenge 2023.",
-            "long_description": "Comprehensive wildfire detection system that combines IoT hardware, LORA communication, and web/mobile applications. The sensors detect changes in temperature, humidity and air quality to alert about potential fires. The system includes a mesh network of communication between sensors and a real-time monitoring platform.",
-            "technologies": ["Arduino", "LORA", "Python", "React", "Firebase", "IoT"],
-            "category": "IoT",
-            "status": "Prototype",
-            "featured": true,
-            "links": {
-                "demo": "https://sensores-muerte-demo.com",
-                "github": "https://github.com/astrofire/sensores-muerte",
-                "nasa_page": "https://www.spaceappschallenge.org/2023/find-a-team/astrofire/"
-            },
-            "images": [
-                "/static/projects/sensores-1.jpg",
-                "/static/projects/sensores-2.jpg"
-            ],
-            "date_created": "2023-10-07",
-            "date_updated": "2023-10-08",
-            "awards": ["1st Place NASA Space Apps Challenge 2023 CDMX"]
-        },
-        {
-            "id": "banking-core",
-            "title": "Banking Core - Fairplay",
-            "description": "Banking core system developed from scratch for fintech startup, handling transactions and payments at scale.",
-            "long_description": "Development of Fairplay's banking core system from scratch, implementing microservices architecture to handle financial transactions, payment orders, and banking operations at scale. The system processes millions of daily transactions with high availability and compliance with financial regulations.",
-            "title": "Core Bancario - Fairplay",
-            "description": "Sistema core bancario desarrollado desde cero para startup fintech, manejando transacciones y pagos a escala.",
-            "long_description": "Desarrollo del sistema core bancario de Fairplay desde cero, implementando arquitectura de microservicios para manejar transacciones financieras, órdenes de pago, y operaciones bancarias a gran escala. El sistema procesa millones de transacciones diarias con alta disponibilidad y cumplimiento de regulaciones financieras.",
-            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"],
-            "category": "Fintech",
-            "status": "In Production",
-            "featured": false,
-            "links": {
-                "company": "https://fairplay.mx",
-                "github": null,
-                "documentation": null
-            },
-            "images": [],
-            "date_created": "2022-06-01",
-            "date_updated": "2024-01-01",
-            "confidential": true
-        }
-    ],
     "experiences": [
-        {
-            "id": "swift-hackathon-2024",
-            "title": "Winners of Swift Change Makers Hackathon 2024",
-            "description": "Hackathon held in Monterrey that brought together the best teams from across Mexico, each having previously won local hackathons to earn their spot in the event. My team and I were selected to participate in this Hackathon and achieved first place in the challenge proposed by FEMSA. During the hackathon, we developed OXXO LINK, an innovative solution designed to facilitate collaboration between neighbors and optimize product purchases at OXXO. This project was the result of intense teamwork, where each of us contributed ideas that evolved into a solid and effective proposal. Our solution impressed the jury so much that they began using our term 'los paros' to describe the project's dynamics. Winning the FEMSA Challenge was an exciting and very rewarding experience, especially given the quality of the other participating teams. Competing and standing out in an event of this magnitude was an experience I will always remember.",
-            "date": "2024-03-15",
-            "location": "Monterrey, Mexico",
-            "type": "hackathon",
-            "award": "1st Place",
-            "media": {
-                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
-                "type_resource": "video"
-            },
-            "tags": ["Hackathon", "FEMSA", "OXXO", "Innovation"]
+      {
+        "id": "swift-hackathon-2024",
+        "title": "Winners of the Swift Change Makers Hackathon 2024",
+        "description": "Hackathon held in Monterrey that brought together the best teams from across Mexico, each having previously won local hackathons to earn a spot. My team and I were selected to participate and took first place in FEMSA’s challenge. During the event we developed **OXXO LINK**, an innovative solution designed to facilitate neighbor collaboration and streamline product purchases at OXXO. The project grew from an intense team effort where everyone contributed ideas that evolved into a solid and effective proposal.\n\nOur solution impressed the judges so much that they started using our coined term *los paros* to describe the project’s dynamic. Winning the FEMSA challenge was exciting and rewarding, especially given the caliber of the other teams. Competing—and prevailing—at an event of this scale is an experience I’ll always remember.",
+        "date": "2024-03-15",
+        "location": "Monterrey, Mexico",
+        "type": "hackathon",
+        "award": "1st Place",
+        "media": {
+          "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
+          "type_resource": "video"
         },
-        {
-            "id": "nasa-space-apps-2023",
-            "title": "Winners of NASA Space Apps Challenge 2023",
-            "description": "The NASA Space Apps Challenge 2023 is a global hackathon that invites participants from around the world to solve challenges related to science and space using open data from NASA and its partners. In the CDMX edition, together with my team, AstroFire, we won first place with our innovative proposal called 'Death Sensors'. This project consisted of a network of strategically placed sensors in forest areas to detect the speed and direction of fires. The sensors communicated with each other using the LORA protocol, forming a local network that enabled early alerts and facilitated rapid response to forest fires. Although it was an initial prototype (not with all functions), we managed to make it fully functional. Additionally, we developed both the hardware that captured the data and the website and mobile application, allowing us to showcase a prototype that impressed the jury with its effectiveness and potential, despite being a preliminary version.",
-            "date": "2023-10-07",
-            "location": "Mexico City, Mexico",
-            "type": "hackathon",
-            "award": "1st Place",
-            "media": {
-                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
-                "type_resource": "video"
-            },
-            "tags": ["NASA", "Space", "IoT", "Environmental"]
+        "tags": ["Hackathon", "FEMSA", "OXXO", "Innovation"]
+      },
+      {
+        "id": "nasa-space-apps-2023",
+        "title": "Winners of the NASA Space Apps Challenge 2023",
+        "description": "The NASA Space Apps Challenge 2023 is a global hackathon inviting participants worldwide to solve science-and-space challenges using open data from NASA and its partners. In the Mexico City edition, my team **AstroFire** earned first place with our innovative proposal **“Sensores de Muerte” (Death Sensors)**. The project consisted of a network of sensors strategically placed in forest areas to detect wildfire speed and direction. The sensors communicated via LoRa, creating a local network that enabled early alerts and facilitated rapid response to forest fires. Although it was an initial prototype, we made it fully functional. We also built the hardware capturing the data plus the website and mobile app, allowing us to showcase a prototype that impressed judges with its effectiveness and potential despite being a preliminary version.",
+        "date": "2023-10-07",
+        "location": "Mexico City, Mexico",
+        "type": "hackathon",
+        "award": "1st Place",
+        "media": {
+          "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
+          "type_resource": "video"
         },
-        {
-            "id": "unam-telecom-talk",
-            "title": "Telecommunications Congress - UNAM Engineering Faculty",
-            "description": "As part of the lecture series of the telecommunications department at the Engineering Faculty, I had the honor of being invited as a speaker by Dr. Luis Francisco García Jiménez, professor of Communication Networks. During the talk, I presented on key topics such as the Internet of Things, software development, and some of my open source projects. It was an enriching experience to share my knowledge and passion with an audience interested in these technological fields.",
-            "date": "2023-11-15",
-            "location": "UNAM, Mexico City",
-            "type": "conference",
-            "award": null,
-            "media": {
-                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
-                "type_resource": "video"
-            },
-            "tags": ["IoT", "Software Development", "Open Source", "UNAM"]
+        "tags": ["NASA", "Space", "IoT", "Environmental"]
+      },
+      {
+        "id": "unam-telecom-talk",
+        "title": "Telecommunications Congress – UNAM Faculty of Engineering",
+        "description": "As part of the lecture series of the Telecommunications Department at UNAM’s Faculty of Engineering, I had the honor of being invited as a speaker by Dr. Luis Francisco García Jiménez (Communications Networks professor). During the talk I covered key topics such as the **Internet of Things**, **software development**, and some of my **open-source projects**. It was a rewarding experience to share my knowledge and passion with an audience interested in those technological fields.",
+        "date": "2023-11-15",
+        "location": "UNAM, Mexico City",
+        "type": "conference",
+        "award": null,
+        "media": {
+          "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
+          "type_resource": "video"
         },
-        {
-            "id": "conaces-acapulco",
-            "title": "CONACES Acapulco",
-            "description": "My friends and I had the honor of being invited as speakers at CONACES 2023, Mexico's most important space event, organized by the Mexican Space Agency. During the congress, we met brilliant figures such as Rodolfo Neri Vela, Mexico's first astronaut, as well as other experts from the space sector. We had the opportunity to present our projects at such a significant event, which was an incredible experience to share ideas and learn from prominent people in the industry.",
-            "date": "2023-09-20",
-            "location": "Acapulco, Mexico",
-            "type": "conference",
-            "award": null,
-            "media": {
-                "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
-                "type_resource": "video"
-            },
-            "tags": ["Space", "Mexican Space Agency", "Innovation"]
-        }
+        "tags": ["IoT", "Software Development", "Open Source", "UNAM"]
+      },
+      {
+        "id": "conaces-acapulco",
+        "title": "CONACES 2023 – Acapulco",
+        "description": "My friends and I had the honor of being invited as speakers at **CONACES 2023**, Mexico’s most important space event, organized by the **Mexican Space Agency**. We shared the stage with brilliant figures such as Rodolfo Neri Vela—the first Mexican astronaut—along with other experts from the space sector. Presenting our projects at an event of such magnitude was an incredible opportunity to exchange ideas and learn from leading industry voices.",
+        "date": "2023-09-20",
+        "location": "Acapulco, Mexico",
+        "type": "conference",
+        "award": null,
+        "media": {
+          "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
+          "type_resource": "video"
+        },
+        "tags": ["Space", "Mexican Space Agency", "Innovation"]
+      }
     ],
-    "work_experience": [
-        {
-            "company": "Fairplay",
-            "position": "Squad Leader Back-end Developer",
-            "location": "Mexico City (Remote)",
-            "start_date": "2022-06-01",
-            "end_date": null,
-            "current": true,
-            "description": "Development of the banking core system from scratch, leading microservices architecture for financial transactions and payments at scale.",
-            "achievements": [
-                "Building the banking core from scratch",
-                "Implementation of microservices architecture",
-                "Handling millions of daily transactions",
-                "Collaboration with Data, DevOps, and Product teams"
-            ],
-            "technologies": ["Python", "Django", "PostgreSQL", "Redis", "AWS", "Docker"]
+    "projects": [
+      {
+        "id": "central_var_rxd",
+        "title": "Central Var RXD – CLI for Encrypted .env Management",
+        "description": "Python command-line interface to encrypt, decrypt, and process `.env` files using GPG, tailored to multiple environments (development, staging, production).",
+        "long_description": "Central Var RXD is a Python CLI tool that lets you encrypt and decrypt environment-variable files (`.env`) with GPG. It streamlines secure credential management per environment (dev, staging, prod) through intuitive commands. The architecture incorporates **Click** for the interface, a **Makefile** for automated workflows, and a modular structure (`cli.py`, `docs/`, `examples/`). My role included designing the CLI flow, integrating GPG, creating a robust command system, and documenting the solution. Key challenges involved ensuring reliable encryption/decryption, dependency management, and maintaining usability across development and production.",
+        "technologies": ["Python", "Click", "GPG", "Makefile"],
+        "category": "DevOps / CLI Tool",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": null,
+          "github": "https://github.com/ronihdzz/central_var_rxd",
+          "documentation": "docs/README.md"
         },
-        {
-            "company": "Telmex",
-            "position": "Cybersecurity Analyst",
-            "location": "Mexico City",
-            "start_date": "2021-01-01",
-            "end_date": "2022-05-31",
-            "current": false,
-            "description": "Computer and network security analysis, threat monitoring, and implementation of protection measures.",
-            "achievements": [
-                "Implementation of security monitoring systems",
-                "Network vulnerability analysis",
-                "Security incident response"
-            ],
-            "technologies": ["Linux", "Network Security", "Firewalls", "SIEM"]
-        }
-    ],
-    "education": [
-        {
-            "institution": "National Autonomous University of Mexico (UNAM)",
-            "degree": "Telecommunications Engineering",
-            "field": "Telecommunications and Electronics",
-            "start_date": "2018-08-01",
-            "end_date": "2023-07-01",
-            "status": "Completed",
-            "location": "Mexico City",
-            "relevant_courses": [
-                "Communication Networks",
-                "Programming",
-                "Embedded Systems",
-                "Digital Signal Processing"
-            ]
-        }
-    ],
-    "certifications": [
-        {
-            "name": "AWS Certified Solutions Architect",
-            "issuer": "Amazon Web Services",
-            "date": "2023-06-15",
-            "credential_id": "AWS-SA-2023-001",
-            "url": "https://aws.amazon.com/certification/"
-        }
-    ],
-    "languages": [
-        {
-            "language": "Español",
-            "level": "Nativo",
-            "code": "es"
+        "images": [],
+        "date_created": "2025-06-08",
+        "date_updated": "2025-06-08"
+      },
+      {
+        "id": "aws_lambda_fastapi",
+        "title": "AWS Lambda FastAPI Template",
+        "description": "Base template for developing and deploying FastAPI APIs on AWS Lambda, with GitHub Actions for CI/CD (lint, test coverage, build, and automatic deploy).",
+        "long_description": "This template provides a complete structure for creating and deploying an AWS Lambda function that exposes an HTTP service via FastAPI and API Gateway. It includes GitHub Actions configurations to run linters (pre-commit, mypy), automated tests with pytest and coverage, build the Lambda’s Docker image, and deploy it automatically to AWS. The folder organization clearly separates source code (`src/`), CI/CD workflows (`.github/workflows/`), and local deployment examples with Docker Compose. My main contribution was designing and documenting the CI/CD pipelines, refining the FastAPI-on-Lambda integration, and ensuring a reproducible, simple deployment process for dev teams.",
+        "technologies": ["FastAPI", "AWS Lambda", "GitHub Actions", "Docker", "Python"],
+        "category": "Serverless / CI/CD Template",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": null,
+          "github": "https://github.com/ronihdzz/aws-lambda-fastapi",
+          "documentation": "docs/README.md"
         },
-        {
-            "language": "English",
-            "level": "Intermedio-Avanzado",
-            "code": "en"
-        }
+        "images": [],
+        "date_created": "2025-06-08",
+        "date_updated": "2025-06-08"
+      },
+      {
+        "id": "cacpy",
+        "title": "CACPY – Automatic Grader for Google Classroom (Python)",
+        "description": "Desktop application (Python + PyQt5) that automates creation, test execution, and grading of programming assignments in Google Classroom, and shares personalized feedback via Google Drive.",
+        "long_description": "CACPY (Automatic Grader for Google Classroom in Python) is an end-to-end tool for teachers wanting to automate programming assignment workflows. It connects to the Google Classroom and Google Drive APIs to:\n\n1. Create draft assignments in Classroom from NbGrader templates.\n2. Generate a per-student copy in Google Colab where the student works and submits.\n3. Automatically run the notebooks with nbgrader/nbconvert, capture test results, and calculate the grade.\n4. Store feedback (HTML/Markdown/PDF) per student and assignment in individually shared Drive folders.\n5. Post final grades to Classroom with no manual intervention.\n\nMy role included designing the PyQt5 interface, orchestrating the OAuth2 flow, structuring grading modules, and ensuring reliable encryption/execution and feedback delivery.",
+        "technologies": ["Python 3", "PyQt5", "Google Classroom API", "Google Drive API", "nbgrader", "nbconvert", "jupyter-client", "google-auth-httplib2", "google-auth-oauthlib"],
+        "category": "Educational Automation / Desktop App",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": "https://www.youtube.com/watch?v=qlXhceBiqqE&list=PLbtbtYtX-i94iGpPavpdCilbOj9gABjMv",
+          "github": "https://github.com/ronihdzz/CACPY",
+          "documentation": "https://github.com/ronihdzz/CACPY#readme"
+        },
+        "date_created": "2021-07-15",
+        "date_updated": "2021-07-15"
+      },
+      {
+        "id": "iot_domotica",
+        "title": "Home Automation System with Raspberry Pi",
+        "description": "Raspberry Pi desktop-interface automation system to control RGB lighting, a fan, detect fires, schedule alarms, and manage tasks from a friendly GUI.",
+        "long_description": "IoT_domotica is an integrated home-automation system deployed on a Raspberry Pi with a PyQt5 desktop interface. It consists of two circuits communicating via Bluetooth:\n\n• **Circuit 1 (Sensors & Control)** – measures temperature, detects flame and clap sound, and sends commands to the second circuit to toggle a fan or RGB LED and change its color among seven options (white, green, yellow, red, magenta, blue, cyan).\n• **Circuit 2 (Actuators)** – receives Bluetooth commands and physically drives the fan and RGB LED as instructed.\n\nThe GUI additionally offers:\n  • A **task system** to add, view, and delete to-dos.\n  • An **alarm scheduler** with hour selection, repeat options, and melody choice.\n  • **Real-time fire alerts**.\n\nMy contribution covered hardware-and-software architecture design, Bluetooth communication implementation, GUI programming in PyQt5, sensor/actuator integration with Raspberry Pi, and full assembly and usage documentation.",
+        "technologies": ["Python 3", "PyQt5", "Raspberry Pi (GPIO)", "Bluetooth (PySerial / BlueZ)", "KY-026 flame sensor", "KY-037 sound sensor", "KY-013 temperature sensor", "KY-019 5 V relay", "KY-016 RGB LED"],
+        "category": "IoT / Embedded Systems",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": "https://www.youtube.com/watch?v=UfCgMUs2OLo",
+          "github": "https://github.com/ronihdzz/IoT_domotica",
+          "documentation": "https://github.com/ronihdzz/IoT_domotica#readme"
+        },
+        "images": ["https://img.youtube.com/vi/UfCgMUs2OLo/0.jpg"],
+        "date_created": "2021-03-01",
+        "date_updated": "2021-03-01"
+      },
+      {
+        "id": "ai_voice_assistant_fastapi",
+        "title": "AI Voice Assistant in FastAPI with WebSockets",
+        "description": "Real-time voice assistant in Python using FastAPI and WebSockets, leveraging OpenAI’s Voice Real-Time API and integrating with Twilio for phone calls.",
+        "long_description": "This project is a voice AI assistant capable of receiving and responding to phone calls in real time. Built on FastAPI, it exposes a WebSocket endpoint that captures incoming audio (user voice), sends it to OpenAI’s Voice Real-Time API for transcription and response generation, and streams back the synthesized audio. Call logic is bridged with Twilio to manage call flow and route audio to the WebSocket. The full back-end is deployed on Replit and Render.com where I used OpenAI credits for test and demo calls.",
+        "technologies": ["Python 3", "FastAPI", "WebSockets", "Twilio Voice API", "OpenAI Voice Real-Time API", "asyncio", "Uvicorn", "Replit", "Render.com"],
+        "category": "AI / Voice Assistant",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": null,
+          "github": "https://github.com/ronihdzz/asistant-python",
+          "documentation": "https://github.com/ronihdzz/asistant-python#readme"
+        },
+        "images": [],
+        "date_created": "2025-06-08",
+        "date_updated": "2025-06-08"
+      },
+      {
+        "id": "portfolio-fasthtml",
+        "title": "Personal Portfolio with FastHTML",
+        "description": "Personal website built with FastHTML, boasting a modern responsive design and sections for experiences, skills, projects, and contact with advanced CSS animations.",
+        "long_description": "This personal website showcases my professional profile using FastHTML. It features sections for my experience, skills, projects, and a contact form, all wrapped in a modern responsive design with CSS animations. The project serves as a playground for advanced front-end techniques while keeping a simple Python-centered workflow.",
+        "technologies": ["FastHTML", "Python", "CSS3", "JavaScript", "HTML5"],
+        "category": "Web Development",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": "https://dev.ronihdz.com",
+          "github": "https://github.com/ronihdzz/website"
+        },
+        "date_created": "2025-06-08",
+        "date_updated": "2025-06-08"
+      },
+      {
+        "id": "simon_troni",
+        "title": "SimonTroni – Memory Game with Arduino",
+        "description": "Simon-style electronic memory game on Arduino Uno with RGB LEDs, buzzer, buttons, and potentiometer for volume, controlled via the serial monitor.",
+        "long_description": "SimonTroni is a physical-computing project developed for the **“Physical Programming with Arduino”** course by CODE IoT (Nokia). It’s a memory game where an LED sequence lights up and the player must repeat it using buttons; each level adds one more LED. The system interacts with the player via the serial monitor: requests the name, shows instructions, starts the game, and reports scores or final victory with a reward melody. Sound intensity is dynamically adjusted with a potentiometer.\n\nThe hardware architecture involves two subsystems:\n\n• **Subsystem 1 (Sensing & Control)** – flame and clap sensors for fire alerts, temperature sensor, volume potentiometer, and control logic sending commands via Bluetooth/USB serial to the Arduino.\n• **Subsystem 2 (Actuators)** – module that receives commands and controls the fan and RGB LEDs in the specified colors.\n\nMy role covered circuit design and assembly, firmware implementation in C++ for Arduino, serial-monitor configuration, and step-by-step assembly and usage documentation.",
+        "technologies": ["Arduino Uno (C/C++)", "Breadboard & jumper wires", "RGB LED", "Passive buzzer", "5 kΩ potentiometer", "Sensors: KY-026 (flame), KY-037 (sound), KY-013 (temperature)", "Serial monitor", "Bluetooth Serial / USB"],
+        "category": "Embedded Systems / Arduino",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": "https://www.youtube.com/watch?v=YSqHKkHPByw",
+          "github": "https://github.com/ronihdzz/Simon_Dice_Troni",
+          "documentation": "README.md"
+        },
+        "images": ["https://img.youtube.com/vi/YSqHKkHPByw/0.jpg"],
+        "date_created": "2021-03-01",
+        "date_updated": "2021-03-01"
+      },
+      {
+        "id": "mi_web_personal",
+        "title": "My Personal Website",
+        "description": "Personal site built with Django featuring an admin-editable interface to manage intro, portfolio, blog, and contact sections, plus CV download in PDF.",
+        "long_description": "My Personal Website was my first full web project, built on Django and deployed on PythonAnywhere. It includes:\n\n- **Intro section** editable via Django admin where users upload their photo, bio, achievements, and links.\n- **Dynamic portfolio** displaying projects, specializations, courses taught and taken, with pagination and category/keyword search. Each item links to its details and certificate.\n- **Personal blog** listing posts with category filters and title search.\n- **Contact** form sending automated emails (Gmail SMTP) to me and confirmation to the sender.\n- **CV download** button for the PDF résumé.\n- **Dynamic footer** showing contact methods (email, GitHub, LinkedIn, phone) configurable from admin.\n\nThe app includes automated Gmail configuration, an alarm system via Django admin, and customizable cover images per section.",
+        "technologies": ["Python 3", "Django 3.2", "django-ckeditor", "django-model-utils", "Pillow", "MySQL", "Bootstrap", "SMTP (Gmail)"],
+        "category": "Web Development",
+        "status": "Completed",
+        "featured": false,
+        "links": {
+          "demo": "https://davidronihdz99.pythonanywhere.com/proyecto/3/detalle/",
+          "github": "https://github.com/ronihdzz/miWebPersonal",
+          "documentation": "https://github.com/ronihdzz/miWebPersonal#readme"
+        },
+        "images": ["/recursos_readme/93.png", "/recursos_readme/94.png"],
+        "date_created": "2021-03-01",
+        "date_updated": "2025-06-08"
+      }
     ],
     "meta": {
-        "version": "2.0",
-        "last_updated": "2024-01-20",
-        "sections_enabled": {
-            "about": true,
-            "skills": true,
-            "projects": true,
-            "experiences": true,
-            "work_experience": true,
-            "education": true,
-            "contact": true
-        },
-        "seo": {
-            "keywords": ["full-stack developer", "web developer", "React", "Node.js", "Python", "JavaScript", "freelance", "portfolio"],
-            "description": "Ronaldo Hernández - Full-stack Developer specialized in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations."
-        }
+      "version": "2.0",
+      "last_updated": "2024-01-20",
+      "sections_enabled": {
+        "about": true,
+        "skills": true,
+        "projects": true,
+        "experiences": true,
+        "work_experience": true,
+        "education": true,
+        "contact": true
+      },
+      "seo": {
+        "keywords": ["full-stack developer", "web developer", "React", "Node.js", "Python", "JavaScript", "freelance", "portfolio"],
+        "description": "Ronaldo Hernández – Full-stack Developer specializing in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations."
+      }
     }
-}
+  }
+  

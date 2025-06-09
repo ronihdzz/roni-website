@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+    initializeContactFormMailto();
 });
 
 // Inicialización principal
@@ -345,3 +346,27 @@ window.toggleAboutMe = toggleAboutMe;
 console.log('🚀 Portfolio minimalista inicializado');
 console.log('📱 Modo:', window.innerWidth <= 768 ? 'Móvil' : 'Escritorio');
 console.log('🌐 Idioma detectado desde la URL o configuración del servidor');
+
+function initializeContactFormMailto() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = form.querySelector('[name="name"]')?.value || '';
+        const email = form.querySelector('[name="email"]')?.value || '';
+        const subject = form.querySelector('[name="subject"]')?.value || '';
+        const message = form.querySelector('[name="message"]')?.value || '';
+
+        // Correo de destino
+        const to = 'troni.hdz@gmail.com';
+
+        // Construir mailto
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Nombre: ${name}\nEmail: ${email}\n\n${message}`
+        )}`;
+
+        window.location.href = mailto;
+    });
+}
