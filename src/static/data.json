@@ -793,7 +793,70 @@
             "images": [],
             "date_created": "2025-06-13",
             "date_updated": "2025-06-13"
+          },
+
+
+
+          {
+            "id": "simon_dice_troni",
+            "title": "Simon Dice Troni",
+            "description": "Juego de memoria Simon Says con Arduino, LEDs, botones y sonido.",
+            "long_description": "Simon Dice Troni es una recreación interactiva del clásico juego Simon Says, programada en C para una placa Arduino UNO. El sistema emplea cuatro LEDs de colores y cuatro pulsadores para mostrar y captar las secuencias de luces que el usuario debe memorizar y repetir. Incorpora un zumbador piezoeléctrico con control de volumen para efectos sonoros y melodías de recompensa al superar niveles. El firmware implementa generación de secuencias pseudoaleatorias, varios niveles de dificultad escalables y comunicación serie para depuración o supervisión externa desde un monitor serial. Este proyecto demuestra conceptos de computación física, manejo de E/S digital, temporización no bloqueante y diseño de juegos embebidos, siendo ideal para fines educativos en electrónica e IoT.",
+            "technologies": [
+              "C",
+              "Arduino",
+              "LEDs",
+              "Botones (push buttons)",
+              "Zumbador piezoeléctrico",
+              "Comunicación serie",
+              "Electrónica",
+              "Sistemas embebidos"
+            ],
+            "category": "Computación física e IoT",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/simon-dice-troni",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+
+          {
+            "id": "iot_domotica",
+            "title": "IoT Domótica",
+            "description": "Sistema de automatización doméstica con Raspberry Pi, PyQt5 y microcontroladores.",
+            "long_description": "IoT Domótica es una plataforma de control y monitoreo para el hogar basada en Raspberry Pi con una interfaz gráfica de escritorio desarrollada en PyQt5. Permite encender y regular iluminación RGB, activar un ventilador, detectar incendios mediante sensores de llama, programar alarmas y gestionar tareas desde una GUI intuitiva. El sistema se comunica con microcontroladores Arduino y ESP-32 a través de puertos serie y/o Wi-Fi para accionar periféricos externos, mientras que la Raspberry Pi orquesta la lógica de negocio, el cron de eventos y el registro de estados. La aplicación demuestra integración de hardware y software en entornos IoT, manejo de GPIO, comunicación serial y redes inalámbricas, así como diseño de interfaces de usuario responsivas para domótica.",
+            "technologies": [
+              "Python",
+              "PyQt5",
+              "Raspberry Pi",
+              "Arduino",
+              "ESP-32",
+              "GPIO",
+              "RGB LEDs",
+              "Sensores de llama",
+              "IoT"
+            ],
+            "category": "Domótica e IoT",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/IoT_domotica",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
           }
+          
+          
           
           
           
