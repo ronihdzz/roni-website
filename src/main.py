@@ -365,7 +365,7 @@ def projects_section():
     data = get_current_data()
     projects_data = data['projects']
     featured_projects = [p for p in projects_data if p.get('featured', False)]
-    projects_to_show = featured_projects[:10] if featured_projects else projects_data[:10]
+    projects_to_show = featured_projects[:35] if featured_projects else projects_data[:35]
     
     return Section(
         H2(get_ui_text('projects_title'), cls="section-title"),

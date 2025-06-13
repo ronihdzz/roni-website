@@ -566,7 +566,189 @@
             "images": [],
             "date_created": "2025-06-12",
             "date_updated": "2025-06-12"
+          },
+
+          {
+            "id": "opentelemetry_microservices",
+            "title": "OpenTelemetry Microservices",
+            "description": "Microservicios en Python con observabilidad distribuida mediante OpenTelemetry y Jaeger.",
+            "long_description": "Este proyecto implementa una arquitectura de microservicios en Python cuyo objetivo es calcular promedios de manera distribuida. Cada microservicio trabaja de forma colaborativa aprovechando técnicas de procesamiento paralelo y sistemas distribuidos. Se ha integrado OpenTelemetry para el rastreo distribuido, permitiendo una visibilidad completa del flujo de peticiones a través de los distintos componentes. Además, se utiliza Jaeger como backend de trazas, ofreciendo capacidades de observabilidad avanzada y facilitando la detección de cuellos de botella o problemas de latencia. El despliegue y orquestación de los servicios se realiza mediante Docker, y se emplea FastAPI como framework principal para exponer las APIs de los microservicios.",
+            "technologies": [
+              "Python",
+              "API",
+              "Docker",
+              "Distributed Systems",
+              "Microservices",
+              "Observability",
+              "Distributed Tracing",
+              "Python Multiprocessing",
+              "Jaeger",
+              "FastAPI",
+              "OpenTelemetry"
+            ],
+            "category": "Sistemas Distribuidos",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/opentelemtry-microservices",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "central_var_rxd",
+            "title": "Central Var RXD",
+            "description": "CLI para la gestión segura de variables de entorno con cifrado GPG y soporte multiambiente.",
+            "long_description": "Central Var RXD es una herramienta de línea de comandos (CLI) desarrollada en Python, orientada a la gestión segura de variables de entorno. Permite manejar configuraciones para múltiples entornos (desarrollo, staging, producción) de forma organizada, garantizando la confidencialidad de los valores mediante cifrado GPG. Además, facilita la integración en flujos de trabajo DevOps y CI/CD al utilizar Makefile para automatizaciones. Gracias a su enfoque en seguridad, soporta el manejo centralizado de secretos, almacenamiento seguro, y el versionamiento de configuraciones sensibles para diferentes fases del ciclo de vida de las aplicaciones.",
+            "technologies": [
+              "Python",
+              "CLI",
+              "Security",
+              "DevOps",
+              "Encryption",
+              "Makefile",
+              "GPG",
+              "Environment Variables",
+              "Command Line Tool",
+              "Development Tools",
+              "Secure Storage",
+              "Secrets Management",
+              "Env Management"
+            ],
+            "category": "Herramientas de Desarrollo",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/central_var_rxd",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+
+          
+          {
+            "id": "git_archive_action",
+            "title": "Git Archive Action",
+            "description": "GitHub Action para persistir artefactos de workflows en ramas dedicadas dentro del mismo repositorio.",
+            "long_description": "Git Archive Action es una GitHub Action diseñada para almacenar de forma persistente los artefactos generados por los workflows de integración continua, como los reportes de cobertura de pruebas. Los artefactos se guardan en una rama de Git dedicada dentro del mismo repositorio, permitiendo desacoplar el almacenamiento de artefactos del historial principal del código fuente. Esto proporciona un registro histórico y accesible de los resultados de cada ejecución de workflow, facilitando auditorías, análisis de calidad de código y mantenibilidad en entornos de CI/CD complejos.",
+            "technologies": [
+              "Git",
+              "DevOps",
+              "CI/CD",
+              "Artifacts",
+              "Workflow Automation",
+              "GitHub Actions",
+              "Persist Artifacts"
+            ],
+            "category": "Automatización de Workflows",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/git-archive-action",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          
+
+          {
+            "id": "push_to_dockerhub_action",
+            "title": "Push to DockerHub Action",
+            "description": "GitHub Action para automatizar el versionado y despliegue de imágenes en Docker Hub con control de entornos.",
+            "long_description": "Push to DockerHub Action es una GitHub Action altamente configurable que automatiza el proceso de versionado y despliegue de imágenes Docker hacia Docker Hub. La acción permite mapear ramas de Git a distintos entornos (desarrollo, staging, producción), facilitando flujos de trabajo CI/CD robustos y controlados. También soporta la creación de tags de rollback, lo cual habilita revertir versiones de forma segura en caso de fallos. Su diseño está orientado a simplificar el manejo de imágenes, evitando errores manuales en los pipelines de despliegue y asegurando consistencia en los entornos de ejecución.",
+            "technologies": [
+              "Docker",
+              "DevOps",
+              "Automation",
+              "CI/CD",
+              "Docker Hub",
+              "GitHub Actions"
+            ],
+            "category": "Automatización de Deployments",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/push-to-dockerhub-action",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "push_to_digitalocean_action",
+            "title": "Push to DigitalOcean Action",
+            "description": "GitHub Action para construir y publicar imágenes Docker en DigitalOcean Container Registry con control de entornos.",
+            "long_description": "Push to DigitalOcean Action es una GitHub Action personalizable diseñada para automatizar el proceso de construcción y despliegue de imágenes Docker hacia el Container Registry de DigitalOcean. Permite mapear ramas de Git a entornos específicos (desarrollo, staging, producción), facilitando estrategias de versionado y despliegue controlado. Además, soporta la generación de tags de rollback para revertir versiones fácilmente en caso de fallos. Esta acción es ideal para pipelines de CI/CD que buscan una integración fluida con la infraestructura de DigitalOcean, reduciendo la intervención manual y mejorando la confiabilidad del despliegue de contenedores.",
+            "technologies": [
+              "Docker",
+              "DigitalOcean",
+              "DevOps",
+              "Automation",
+              "CI/CD",
+              "Container Registry",
+              "GitHub Actions"
+            ],
+            "category": "Automatización de Deployments",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/push-to-digitalocean-action",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+
+          {
+            "id": "git_archive_action_testing_example",
+            "title": "Git Archive Action Testing Example",
+            "description": "Ejemplo práctico de CI/CD integrando múltiples servicios y almacenamiento de artefactos con Git Archive Action.",
+            "long_description": "Git Archive Action Testing Example es un repositorio de demostración que integra de manera realista un flujo completo de CI/CD. Ejecuta pruebas de integración contra múltiples servicios (PostgreSQL, MongoDB, Redis) levantados dentro de un contenedor Docker, generando reportes de cobertura de pruebas automatizadas. Finalmente, utiliza la GitHub Action 'git-archive-action' para almacenar de forma persistente dichos artefactos de prueba dentro de ramas dedicadas del repositorio. Este ejemplo permite visualizar el uso combinado de herramientas de testing, automatización de pipelines y almacenamiento histórico de reportes dentro de un entorno distribuido de servicios.",
+            "technologies": [
+              "Testing",
+              "Docker",
+              "Redis",
+              "DevOps",
+              "Demo",
+              "MongoDB",
+              "Example",
+              "PostgreSQL",
+              "CI/CD",
+              "GitHub Actions"
+            ],
+            "category": "Automatización de Workflows",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/git-archive-action-testing-example",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
           }
+          
+          
+
+
+
+
+
+
     ],
     "meta": {
         "version": "2.0",
