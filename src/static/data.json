@@ -411,214 +411,519 @@
     ],
     "projects": [
         {
+            "id": "aws_lambda_fastapi_template",
+            "title": "AWS Lambda FastAPI Template",
+            "description": "Plantilla profesional para construir APIs REST serverless usando FastAPI, Docker y AWS Lambda.",
+            "long_description": "AWS Lambda FastAPI Template es una plantilla profesional diseñada para desarrollar APIs REST serverless de forma modular y escalable. Utiliza FastAPI como framework principal, desplegado sobre AWS Lambda mediante contenedores Docker. Integra arquitectura modular, pruebas de base de datos reales y un flujo completo de CI/CD automatizado a través de GitHub Actions. La plantilla permite definir modelos de datos con SQLAlchemy y Pydantic, soportando bases de datos como PostgreSQL y MongoDB. Además, aprovecha Mangum como adaptador ASGI para Lambda y soporta microservicios cloud-native, ideal para proyectos modernos orientados a la nube.",
+            "technologies": [
+              "python",
+              "testing",
+              "docker",
+              "template",
+              "sqlalchemy",
+              "cloud",
+              "microservices",
+              "mongodb",
+              "aws-lambda",
+              "serverless",
+              "rest-api",
+              "postgresql",
+              "ci-cd",
+              "github-actions",
+              "pydantic",
+              "fastapi",
+              "mangum"
+            ],
+            "category": "backend",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/aws-lambda-fastapi-template",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "aws_lambda_go",
+            "title": "AWS Lambda Go",
+            "description": "API REST construida con Go y Gin Framework para ejecución híbrida en AWS Lambda.",
+            "long_description": "AWS Lambda Go es un proyecto que implementa una API REST utilizando el lenguaje Go junto con el framework Gin. Su arquitectura permite una ejecución híbrida, donde las funciones Lambda son utilizadas en ambientes de producción serverless, mientras que para desarrollo local se expone un servidor HTTP tradicional. El proyecto emplea contenedores Docker para la empaquetación de funciones, integración con API Gateway para el enrutamiento de solicitudes HTTP, y flujos completos de CI/CD automatizados mediante GitHub Actions. Además, soporta despliegue de microservicios, modelos serverless, y arquitecturas cloud-native bajo AWS.",
+            "technologies": [
+              "go",
+              "docker",
+              "golang",
+              "microservices",
+              "aws-lambda",
+              "serverless",
+              "containers",
+              "api-gateway",
+              "rest-api",
+              "ci-cd",
+              "cloud-computing",
+              "gin-framework",
+              "github-actions"
+            ],
+            "category": "backend",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/aws-lambda-go",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "voice_ai_assistant_python",
+            "title": "VOICE AI Assistant Python",
+            "description": "Asistente de voz AI para llamadas telefónicas en tiempo real, construido con Python, Twilio y OpenAI Realtime API.",
+            "long_description": "VOICE AI Assistant Python es un asistente de voz basado en inteligencia artificial diseñado para manejar conversaciones telefónicas en tiempo real. Implementado con Python y FastAPI, utiliza la API Realtime de OpenAI para la transcripción y generación de respuestas durante la llamada, mientras que Twilio gestiona el enrutamiento y manejo de las llamadas telefónicas. El sistema soporta flujos bidireccionales de audio, procesando la voz entrante y respondiendo dinámicamente. El despliegue está containerizado con Docker, permitiendo un entorno flexible para pruebas y producción. Este proyecto integra capacidades avanzadas de IA conversacional, comunicación en tiempo real y control de llamadas telefónicas.",
+            "technologies": [
+              "python",
+              "docker",
+              "real-time",
+              "twilio",
+              "voice-assistant",
+              "conversational-ai",
+              "fastapi",
+              "openai-api",
+              "gpt-4o"
+            ],
+            "category": "ai",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/voice-ai-asistant-python",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "telegram_connector",
+            "title": "Telegram Connector",
+            "description": "Solución completa para integrar aplicaciones con bots de Telegram mediante comunicación bidireccional.",
+            "long_description": "Telegram Connector es una solución diseñada para integrar aplicaciones backend con la plataforma de bots de Telegram, permitiendo comunicación bidireccional en tiempo real para enviar y recibir mensajes. Construido sobre Python y FastAPI, expone endpoints REST y webhooks que manejan la recepción de eventos desde Telegram y la emisión de respuestas automatizadas o asistidas. Utiliza Docker para la contenerización, PostgreSQL como base de datos de persistencia y soporta integración con arquitecturas modulares para sistemas de mensajería avanzados. Es ideal como microservicio conector dentro de plataformas multicanal o CRM con soporte para bots de mensajería.",
+            "technologies": [
+              "python",
+              "api",
+              "docker",
+              "telegram",
+              "connector",
+              "integration",
+              "telegram-bot",
+              "rest-api",
+              "webhook",
+              "postgresql",
+              "fastapi"
+            ],
+            "category": "backend",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/telegram-connector",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "cacpy",
+            "title": "CACPY",
+            "description": "Herramienta automática de calificación de programas Python en Google Classroom.",
+            "long_description": "CACPY es una herramienta desarrollada en Python que permite automatizar la calificación de programas entregados en Google Classroom. Utiliza PyQt5 para proporcionar una interfaz gráfica amigable, integra el acceso a Google Drive y Google Classroom para la descarga, revisión y devolución automática de tareas, junto con sus respectivos feedbacks individuales. Además, incorpora nbgrader como motor de evaluación para notebooks Jupyter y maneja flujos de corrección masiva mediante procesos de automatización. Está pensado como un sistema de apoyo para docentes, reduciendo el tiempo manual de revisión y mejorando la eficiencia del proceso educativo.",
+            "technologies": [
+              "python",
+              "classroom",
+              "education",
+              "gui",
+              "automation",
+              "pyqt5",
+              "google-drive",
+              "nbgrader",
+              "google-classroom",
+              "auto-grading",
+              "teacher-tools",
+              "grading-tools"
+            ],
+            "category": "education",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/CACPY",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+
+          {
+            "id": "opentelemetry_microservices",
+            "title": "OpenTelemetry Microservices",
+            "description": "Microservicios en Python con observabilidad distribuida mediante OpenTelemetry y Jaeger.",
+            "long_description": "Este proyecto implementa una arquitectura de microservicios en Python cuyo objetivo es calcular promedios de manera distribuida. Cada microservicio trabaja de forma colaborativa aprovechando técnicas de procesamiento paralelo y sistemas distribuidos. Se ha integrado OpenTelemetry para el rastreo distribuido, permitiendo una visibilidad completa del flujo de peticiones a través de los distintos componentes. Además, se utiliza Jaeger como backend de trazas, ofreciendo capacidades de observabilidad avanzada y facilitando la detección de cuellos de botella o problemas de latencia. El despliegue y orquestación de los servicios se realiza mediante Docker, y se emplea FastAPI como framework principal para exponer las APIs de los microservicios.",
+            "technologies": [
+              "Python",
+              "API",
+              "Docker",
+              "Distributed Systems",
+              "Microservices",
+              "Observability",
+              "Distributed Tracing",
+              "Python Multiprocessing",
+              "Jaeger",
+              "FastAPI",
+              "OpenTelemetry"
+            ],
+            "category": "Sistemas Distribuidos",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/opentelemtry-microservices",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
             "id": "central_var_rxd",
-            "title": "Central Var RXD – CLI para gestión cifrada de archivos .env",
-            "description": "Interfaz de línea de comandos (CLI) en Python para cifrar, descifrar y procesar archivos `.env` utilizando GPG, adaptada a múltiples entornos (desarrollo, staging, producción).",
-            "long_description": "Central Var RXD es una herramienta CLI desarrollada en Python que permite cifrar y descifrar archivos de variables de entorno (`.env`) usando GPG. Facilita la gestión segura de credenciales según el entorno (dev, staging, prod) mediante comandos intuitivos. La arquitectura incorpora `Click` para la interfaz, un `Makefile` para flujos de trabajo automatizados y una estructura modular (`cli.py`, `docs/`, `examples/`). Mi rol incluyó diseñar el flujo CLI, integrar GPG, crear un sistema de comandos robusto y documentar la solución. Entre los desafíos destacados se encuentra asegurar que el cifrado/descifrado sea confiable, gestionar dependencias y mantener la usabilidad en entornos de desarrollo y producción.",
-            "technologies": ["Python", "Click", "GPG", "Makefile"],
-            "category": "DevOps / CLI Tool",
+            "title": "Central Var RXD",
+            "description": "CLI para la gestión segura de variables de entorno con cifrado GPG y soporte multiambiente.",
+            "long_description": "Central Var RXD es una herramienta de línea de comandos (CLI) desarrollada en Python, orientada a la gestión segura de variables de entorno. Permite manejar configuraciones para múltiples entornos (desarrollo, staging, producción) de forma organizada, garantizando la confidencialidad de los valores mediante cifrado GPG. Además, facilita la integración en flujos de trabajo DevOps y CI/CD al utilizar Makefile para automatizaciones. Gracias a su enfoque en seguridad, soporta el manejo centralizado de secretos, almacenamiento seguro, y el versionamiento de configuraciones sensibles para diferentes fases del ciclo de vida de las aplicaciones.",
+            "technologies": [
+              "Python",
+              "CLI",
+              "Security",
+              "DevOps",
+              "Encryption",
+              "Makefile",
+              "GPG",
+              "Environment Variables",
+              "Command Line Tool",
+              "Development Tools",
+              "Secure Storage",
+              "Secrets Management",
+              "Env Management"
+            ],
+            "category": "Herramientas de Desarrollo",
             "status": "Completed",
             "featured": false,
             "links": {
               "demo": null,
               "github": "https://github.com/ronihdzz/central_var_rxd",
-              "documentation": "docs/README.md"
+              "documentation": null
             },
             "images": [],
-            "date_created": "2025-06-08",
-            "date_updated": "2025-06-08"
-        },
-        {
-            "id": "aws_lambda_fastapi",
-            "title": "AWS Lambda FastAPI Template",
-            "description": "Plantilla base para desarrollar y desplegar APIs con FastAPI en AWS Lambda, con GitHub Actions para CI/CD (lint, tests con coverage, build y deploy automático).",
-            "long_description": "Esta plantilla provee una estructura completa para crear y desplegar una función AWS Lambda que expone un servicio HTTP mediante FastAPI y API Gateway. Incluye configuraciones de GitHub Actions para ejecutar linters (pre-commit, mypy), pruebas automatizadas con pytest y cobertura, construir la imagen Docker de la Lambda y desplegarla automáticamente en AWS. La organización de carpetas separa claramente el código fuente (`src/`), los flujos de trabajo CI/CD (`.github/workflows/`), la configuración de pre-commit y mypy, y ejemplos de despliegue local con Docker Compose. Mi aporte principal consistió en diseñar y documentar los pipelines de CI/CD, afinar la integración de FastAPI sobre Lambda y asegurar un proceso de despliegue reproducible y sencillo para equipos de desarrollo.",
-            "technologies": [
-                "FastAPI",
-                "AWS Lambda",
-                "GitHub Actions",
-                "Docker",
-                "Python"
-            ],
-            "category": "Serverless / CI/CD Template",
-            "status": "Completed",
-            "featured": false,
-            "links": {
-                "demo": null,
-                "github": "https://github.com/ronihdzz/aws-lambda-fastapi",
-                "documentation": "docs/README.md"
-            },
-            "images": [],
-            "date_created": "2025-06-08",
-            "date_updated": "2025-06-08"
-        },
-        {
-            "id": "cacpy",
-            "title": "Calificador Automático Classroom Python (CACPY)",
-            "description": "Aplicación de escritorio en Python + PyQt5 que automatiza la creación, ejecución de tests y calificación de tareas de programación en Google Classroom, además de compartir feedback personalizado via Google Drive.",
-            "long_description": "CACPY (Calificador Automático Classroom Python) es una herramienta completa para docentes que quieren automatizar el ciclo de vida de las tareas de programación. Se conecta a la API de Google Classroom y Google Drive para:\n\n1. Crear borradores de tareas en Classroom a partir de plantillas de NbGrader.\n2. Generar por alumno una copia de Google Colab, donde el estudiante responde y entrega.\n3. Ejecutar automáticamente los notebooks con nbgrader/nbconvert, capturar resultados de tests y calcular la nota.\n4. Guardar feedback (HTML/Markdown/PDF) por alumno y tarea en carpetas de Drive compartidas individualmente.\n5. Publicar las calificaciones finales en Classroom sin intervención manual.\n\nMi rol incluyó diseñar la interfaz con PyQt5, orquestar el flujo OAuth2, estructurar módulos de grading y asegurar la fiabilidad del proceso de cifrado/ejecución y entrega de feedback.",
-            "technologies": [
-                "Python 3",
-                "PyQt5",
-                "Google Classroom API",
-                "Google Drive API",
-                "nbgrader",
-                "nbconvert",
-                "jupyter-client",
-                "google-auth-httplib2",
-                "google-auth-oauthlib"
-            ],
-            "category": "Educational Automation / Desktop App",
-            "status": "Completed",
-            "featured": false,
-            "links": {
-                "demo": "https://www.youtube.com/watch?v=qlXhceBiqqE&list=PLbtbtYtX-i94iGpPavpdCilbOj9gABjMv",
-                "github": "https://github.com/ronihdzz/CACPY",
-                "documentation": "https://github.com/ronihdzz/CACPY#readme"
-            },
-            "date_created": "2021-07-15",
-            "date_updated": "2021-07-15"
-        },
-        {
-            "id": "iot_domotica",
-            "title": "Sistema de Domótica con Raspberry Pi",
-            "description": "Sistema de domótica con interfaz de escritorio en Raspberry Pi para controlar luz RGB, ventilador, detectar incendios, programar alarmas y gestionar tareas desde una GUI amigable.",
-            "long_description": "IoT_domotica es un sistema integrado de automatización del hogar desplegado en una Raspberry Pi, con una interfaz de escritorio construida en PyQt5. Está compuesto por dos circuitos comunicados por Bluetooth:\n\n• **Circuito 1** (Sensores y control): mide temperatura, detecta flama y sonido de aplauso, y envía comandos al segundo circuito para encender/apagar el ventilador o el LED RGB y cambiar su color entre siete opciones (blanco, verde, amarillo, rojo, magenta, azul, cian).\n• **Circuito 2** (Actuadores): recibe las órdenes Bluetooth y acciona físicamente el ventilador y el LED RGB según lo indicado.\n\nAdemás, la GUI ofrece:\n  - Un **sistema de deberes** para añadir, visualizar y eliminar tareas pendientes.\n  - Un **programador de alarmas** con selección de hora, repetición, y elección de melodía.\n  - **Alertas de incendio** en tiempo real.\n\nMi contribución incluyó el diseño de la arquitectura de hardware y software, la implementación de la comunicación Bluetooth, la programación de la GUI en PyQt5, la integración de sensores y actuadores con la Raspberry Pi y la documentación del ensamblaje y uso.",
-            "technologies": [
-                "Python 3",
-                "PyQt5",
-                "Raspberry Pi (GPIO)",
-                "Bluetooth (PySerial / BlueZ)",
-                "Sensor de flama KY-026",
-                "Sensor de sonido KY-037",
-                "Sensor de temperatura KY-013",
-                "Relé 5V KY-019",
-                "LED RGB KY-016"
-            ],
-            "category": "IoT / Embedded Systems",
-            "status": "Completed",
-            "featured": false,
-            "links": {
-                "demo": "https://www.youtube.com/watch?v=UfCgMUs2OLo",
-                "github": "https://github.com/ronihdzz/IoT_domotica",
-                "documentation": "https://github.com/ronihdzz/IoT_domotica#readme"
-            },
-            "images": [
-                "https://img.youtube.com/vi/UfCgMUs2OLo/0.jpg"
-            ],
-            "date_created": "2021-03-01",
-            "date_updated": "2021-03-01"
-        },
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
 
-        {
-            "id": "ai_voice_assistant_fastapi",
-            "title": "AI Voice Assistant en FastAPI con WebSockets",
-            "description": "Asistente de voz en tiempo real implementado en Python con FastAPI y WebSockets, que usa la Voice Real-Time API de OpenAI y se integra con Twilio para llamadas telefónicas.",
-            "long_description": "Este proyecto es un asistente de voz AI capaz de recibir y responder llamadas telefónicas en tiempo real. Construido sobre FastAPI, expone un endpoint WebSocket que captura audio entrante (voz del usuario), lo envía a la Voice Real-Time API de OpenAI para transcripción y generación de respuesta, y transmite de vuelta el audio sintetizado. La lógica de llamada se enlaza con Twilio para gestionar el flujo de la llamada y enrutar audio al WebSocket. Todo el backend está desplegado en Replit y Render.com, donde consumí créditos de OpenAI para llamadas de prueba y demostración.",
+          
+          {
+            "id": "git_archive_action",
+            "title": "Git Archive Action",
+            "description": "GitHub Action para persistir artefactos de workflows en ramas dedicadas dentro del mismo repositorio.",
+            "long_description": "Git Archive Action es una GitHub Action diseñada para almacenar de forma persistente los artefactos generados por los workflows de integración continua, como los reportes de cobertura de pruebas. Los artefactos se guardan en una rama de Git dedicada dentro del mismo repositorio, permitiendo desacoplar el almacenamiento de artefactos del historial principal del código fuente. Esto proporciona un registro histórico y accesible de los resultados de cada ejecución de workflow, facilitando auditorías, análisis de calidad de código y mantenibilidad en entornos de CI/CD complejos.",
             "technologies": [
-                "Python 3",
-                "FastAPI",
-                "WebSockets",
-                "Twilio Voice API",
-                "OpenAI Voice Real-Time API",
-                "asyncio",
-                "Uvicorn",
-                "Replit",
-                "Render.com"
+              "Git",
+              "DevOps",
+              "CI/CD",
+              "Artifacts",
+              "Workflow Automation",
+              "GitHub Actions",
+              "Persist Artifacts"
             ],
-            "category": "AI / Voice Assistant",
+            "category": "Automatización de Workflows",
             "status": "Completed",
             "featured": false,
             "links": {
-                "demo": null,
-                "github": "https://github.com/ronihdzz/voice-ai-asistant-python",
-                "documentation": "https://github.com/ronihdzz/voice-ai-asistant-python#readme"
+              "demo": null,
+              "github": "https://github.com/ronihdzz/git-archive-action",
+              "documentation": null
             },
             "images": [],
-            "date_created": "2025-06-08",
-            "date_updated": "2025-06-08"
-        },
-        {
-            "id": "portfolio-fasthtml",
-            "title": "Personal Portfolio with FastHTML",
-            "description": "Personal website developed with FastHTML, featuring a modern and responsive design. Includes sections for experiences, skills, projects and contact with advanced CSS animations.",
-            "long_description": "Este proyecto es un asistente de voz AI capaz de recibir y responder llamadas telefónicas en tiempo real. Construido sobre FastAPI, expone un endpoint WebSocket que captura audio entrante (voz del usuario), lo envía a la Voice Real-Time API de OpenAI para transcripción y generación de respuesta, y transmite de vuelta el audio sintetizado. La lógica de llamada se enlaza con Twilio para gestionar el flujo de la llamada y enrutar audio al WebSocket. Todo el backend está desplegado en Replit y Render.com, donde consumí créditos de OpenAI para llamadas de prueba y demostración.",
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          
+
+          {
+            "id": "push_to_dockerhub_action",
+            "title": "Push to DockerHub Action",
+            "description": "GitHub Action para automatizar el versionado y despliegue de imágenes en Docker Hub con control de entornos.",
+            "long_description": "Push to DockerHub Action es una GitHub Action altamente configurable que automatiza el proceso de versionado y despliegue de imágenes Docker hacia Docker Hub. La acción permite mapear ramas de Git a distintos entornos (desarrollo, staging, producción), facilitando flujos de trabajo CI/CD robustos y controlados. También soporta la creación de tags de rollback, lo cual habilita revertir versiones de forma segura en caso de fallos. Su diseño está orientado a simplificar el manejo de imágenes, evitando errores manuales en los pipelines de despliegue y asegurando consistencia en los entornos de ejecución.",
             "technologies": [
-                "FastHTML",
-                "Python",
-                "CSS3",
-                "JavaScript",
-                "HTML5"
+              "Docker",
+              "DevOps",
+              "Automation",
+              "CI/CD",
+              "Docker Hub",
+              "GitHub Actions"
             ],
-            "category": "Web Development",
+            "category": "Automatización de Deployments",
             "status": "Completed",
             "featured": false,
             "links": {
-                "demo": "https://dev.ronihdz.com",
-                "github": "https://github.com/ronihdzz/website"
+              "demo": null,
+              "github": "https://github.com/ronihdzz/push-to-dockerhub-action",
+              "documentation": null
             },
-            "date_created": "2025-06-08",
-            "date_updated": "2025-06-08"
-        },
-        {
-            "id": "simon_troni",
-            "title": "SimonTroni – Juego de Memoria con Arduino",
-            "description": "Juego electrónico de memoria estilo Simon, implementado en Arduino Uno con LEDs RGB, buzzer, botones y potenciómetro para ajustar volumen, controlado vía monitor serie.",
-            "long_description": "SimonTroni es un proyecto de programación física con Arduino desarrollado para el curso “Programación física con Arduino” de CODE IOT (Nokia). Consiste en un juego de memoria donde una secuencia de LEDs se enciende y el jugador debe repetirla usando botones; por cada nivel supera una LED adicional. El sistema comunica con el usuario a través del monitor serie: solicita nombre, muestra instrucciones, inicia juego y reporta puntuación o victoria final con una melodía de recompensa. La intensidad de sonido se ajusta dinámicamente con un potenciómetro.\n\nLa arquitectura de hardware incluye dos subsistemas:\n\n• **Circuito 1 (Sensado & Control)**: sensores de flama y clap para alertas de incendio, sensor de temperatura, potenciómetro para volumen y lógica de control que envía comandos por serial Bluetooth/USB al Arduino.\n• **Circuito 2 (Actuadores)**: módulo que recibe comandos y enciende/apaga el ventilador y los LEDs RGB en los colores especificados.\n\nMi rol abarcó el diseño y ensamblaje de circuitos, la implementación del firmware en C++ para Arduino, la configuración del monitor serie, y la documentación paso a paso del ensamblaje y uso completo.",
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+          {
+            "id": "push_to_digitalocean_action",
+            "title": "Push to DigitalOcean Action",
+            "description": "GitHub Action para construir y publicar imágenes Docker en DigitalOcean Container Registry con control de entornos.",
+            "long_description": "Push to DigitalOcean Action es una GitHub Action personalizable diseñada para automatizar el proceso de construcción y despliegue de imágenes Docker hacia el Container Registry de DigitalOcean. Permite mapear ramas de Git a entornos específicos (desarrollo, staging, producción), facilitando estrategias de versionado y despliegue controlado. Además, soporta la generación de tags de rollback para revertir versiones fácilmente en caso de fallos. Esta acción es ideal para pipelines de CI/CD que buscan una integración fluida con la infraestructura de DigitalOcean, reduciendo la intervención manual y mejorando la confiabilidad del despliegue de contenedores.",
             "technologies": [
-                "Arduino Uno (C/C++)",
-                "Protoboard y cables jumper",
-                "LED RGB",
-                "Buzzer pasivo",
-                "Potenciómetro 5 kΩ",
-                "Sensores: KY-026 (flama), KY-037 (sonido), KY-013 (temperatura)",
-                "Monitor serie (Serial)",
-                "Bluetooth Serial / USB"
+              "Docker",
+              "DigitalOcean",
+              "DevOps",
+              "Automation",
+              "CI/CD",
+              "Container Registry",
+              "GitHub Actions"
             ],
-            "category": "Embedded Systems / Arduino",
+            "category": "Automatización de Deployments",
             "status": "Completed",
             "featured": false,
             "links": {
-                "demo": "https://www.youtube.com/watch?v=YSqHKkHPByw",
-                "github": "https://github.com/ronihdzz/Simon_Dice_Troni",
-                "documentation": "README.md"
+              "demo": null,
+              "github": "https://github.com/ronihdzz/push-to-digitalocean-action",
+              "documentation": null
             },
-            "images": [
-                "https://img.youtube.com/vi/YSqHKkHPByw/0.jpg"
-            ],
-            "date_created": "2021-03-01",
-            "date_updated": "2021-03-01"
-        },
-        {
-            "id": "mi_web_personal",
-            "title": "Mi Web Personal",
-            "description": "Sitio web personal desarrollado con Django, con una interfaz administrable que permite gestionar secciones de presentación, portafolio, blog y contacto, además de descargar el currículum en PDF.",
-            "long_description": "Mi Web Personal es mi primer proyecto web completo, construido sobre Django y desplegado en PythonAnywhere. Cuenta con:\n\n- **Apartado de presentación**: editables desde el admin de Django, donde el usuario sube su foto, descripción personal, logros y enlaces.\n- **Portafolio dinámico**: muestra proyectos, especializaciones, cursos impartidos y tomados con paginación y búsquedas por categoría o palabra clave. Cada ítem enlaza a su detalle y certificado.\n- **Blog personal**: lista de artículos con filtros por categoría y búsqueda por título.\n- **Contacto**: formulario que envía emails automáticos (Gmail SMTP) al propietario y confirma al remitente.\n- **Descarga de CV**: botón para descargar el currículum en PDF.\n- **Pie de página** dinámico: muestra medios de contacto (email, GitHub, LinkedIn, teléfono) configurables desde el admin.\n\nLa aplicación incluye configuración de correo Gmail automatizado, un sistema de alarmas por Django admin y personalización de imágenes de portada por sección.",
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+
+          {
+            "id": "git_archive_action_testing_example",
+            "title": "Git Archive Action Testing Example",
+            "description": "Ejemplo práctico de CI/CD integrando múltiples servicios y almacenamiento de artefactos con Git Archive Action.",
+            "long_description": "Git Archive Action Testing Example es un repositorio de demostración que integra de manera realista un flujo completo de CI/CD. Ejecuta pruebas de integración contra múltiples servicios (PostgreSQL, MongoDB, Redis) levantados dentro de un contenedor Docker, generando reportes de cobertura de pruebas automatizadas. Finalmente, utiliza la GitHub Action 'git-archive-action' para almacenar de forma persistente dichos artefactos de prueba dentro de ramas dedicadas del repositorio. Este ejemplo permite visualizar el uso combinado de herramientas de testing, automatización de pipelines y almacenamiento histórico de reportes dentro de un entorno distribuido de servicios.",
             "technologies": [
-                "Python 3",
-                "Django 3.2",
-                "django-ckeditor",
-                "django-model-utils",
-                "Pillow",
-                "MySQL",
-                "Bootstrap",
-                "SMTP (Gmail)"
+              "Testing",
+              "Docker",
+              "Redis",
+              "DevOps",
+              "Demo",
+              "MongoDB",
+              "Example",
+              "PostgreSQL",
+              "CI/CD",
+              "GitHub Actions"
             ],
-            "category": "Web Development",
+            "category": "Automatización de Workflows",
             "status": "Completed",
             "featured": false,
             "links": {
-                "demo": "https://davidronihdz99.pythonanywhere.com/proyecto/3/detalle/",
-                "github": "https://github.com/ronihdzz/miWebPersonal",
-                "documentation": "https://github.com/ronihdzz/miWebPersonal#readme"
+              "demo": null,
+              "github": "https://github.com/ronihdzz/git-archive-action-testing-example",
+              "documentation": null
             },
-            "images": [
-                "/recursos_readme/93.png",
-                "/recursos_readme/94.png"
+            "images": [],
+            "date_created": "2025-06-12",
+            "date_updated": "2025-06-12"
+          },
+
+
+          {
+            "id": "roni_website",
+            "title": "Roni Website",
+            "description": "Sitio web personal construido con FastHTML y diseño responsivo moderno.",
+            "long_description": "Roni Website es un sitio web personal desarrollado utilizando el framework FastHTML, el cual permite una estructura modular y eficiente para la creación de páginas web. El proyecto implementa un diseño completamente responsivo, optimizado para distintos dispositivos, e integra secciones organizadas para mostrar experiencias profesionales, habilidades técnicas, proyectos realizados y un formulario de contacto. Además, emplea animaciones avanzadas en CSS para mejorar la experiencia visual y la interacción del usuario. La solución combina tecnologías como JavaScript, Python, HTML5, CSS3 y FastHTML, ofreciendo un despliegue profesional y moderno ideal para portafolios personales.",
+            "technologies": [
+              "JavaScript",
+              "Python",
+              "HTML5",
+              "CSS3",
+              "FastHTML"
             ],
-            "date_created": "2021-03-01",
-            "date_updated": "2025-06-08"
-        }
+            "category": "portfolio-website",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": "https://ronihdz.com/",
+              "github": "https://github.com/ronihdzz/roni-website",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+          {
+            "id": "web_personal_django",
+            "title": "Web Personal Django",
+            "description": "Sitio web personal completo desarrollado en Django con portafolio, blog y sistema de contacto automático.",
+            "long_description": "Web Personal Django es un sitio web personal profesionalmente desarrollado utilizando el framework Django. La aplicación incluye un portafolio profesional para mostrar proyectos y certificaciones, un blog personal para publicar artículos y experiencias laborales, así como un sistema de contacto automatizado que facilita la comunicación con visitantes. Además, cuenta con un completo panel de administración de Django para gestionar contenido dinámico, publicaciones, formularios de contacto y administración de datos. El despliegue está realizado sobre PythonAnywhere y emplea tecnologías como Python, MySQL, Django, HTML, CSS, automatización de correo electrónico y diseño web responsivo, ofreciendo una experiencia organizada, profesional y de fácil mantenimiento.",
+            "technologies": [
+              "Python",
+              "Django",
+              "MySQL",
+              "HTML",
+              "CSS",
+              "PythonAnywhere",
+              "Email Automation"
+            ],
+            "category": "portfolio-website",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "github": "https://github.com/ronihdzz/web-personal-django",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+
+          {
+            "id": "simon_dice_troni",
+            "title": "Simon Dice Troni",
+            "description": "Juego de memoria Simon Says con Arduino, LEDs, botones y sonido.",
+            "long_description": "Simon Dice Troni es una recreación interactiva del clásico juego Simon Says, programada en C para una placa Arduino UNO. El sistema emplea cuatro LEDs de colores y cuatro pulsadores para mostrar y captar las secuencias de luces que el usuario debe memorizar y repetir. Incorpora un zumbador piezoeléctrico con control de volumen para efectos sonoros y melodías de recompensa al superar niveles. El firmware implementa generación de secuencias pseudoaleatorias, varios niveles de dificultad escalables y comunicación serie para depuración o supervisión externa desde un monitor serial. Este proyecto demuestra conceptos de computación física, manejo de E/S digital, temporización no bloqueante y diseño de juegos embebidos, siendo ideal para fines educativos en electrónica e IoT.",
+            "technologies": [
+              "C",
+              "Arduino",
+              "LEDs",
+              "Botones (push buttons)",
+              "Zumbador piezoeléctrico",
+              "Comunicación serie",
+              "Electrónica",
+              "Sistemas embebidos"
+            ],
+            "category": "Computación física e IoT",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/simon-dice-troni",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+
+          {
+            "id": "iot_domotica",
+            "title": "IoT Domótica",
+            "description": "Sistema de automatización doméstica con Raspberry Pi, PyQt5 y microcontroladores.",
+            "long_description": "IoT Domótica es una plataforma de control y monitoreo para el hogar basada en Raspberry Pi con una interfaz gráfica de escritorio desarrollada en PyQt5. Permite encender y regular iluminación RGB, activar un ventilador, detectar incendios mediante sensores de llama, programar alarmas y gestionar tareas desde una GUI intuitiva. El sistema se comunica con microcontroladores Arduino y ESP-32 a través de puertos serie y/o Wi-Fi para accionar periféricos externos, mientras que la Raspberry Pi orquesta la lógica de negocio, el cron de eventos y el registro de estados. La aplicación demuestra integración de hardware y software en entornos IoT, manejo de GPIO, comunicación serial y redes inalámbricas, así como diseño de interfaces de usuario responsivas para domótica.",
+            "technologies": [
+              "Python",
+              "PyQt5",
+              "Raspberry Pi",
+              "Arduino",
+              "ESP-32",
+              "GPIO",
+              "RGB LEDs",
+              "Sensores de llama",
+              "IoT"
+            ],
+            "category": "Domótica e IoT",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/IoT_domotica",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+          {
+            "id": "metro_maps_cdmx",
+            "title": "Metro Maps CDMX",
+            "description": "Aplicación de escritorio que muestra toda la red del Metro de la Ciudad de México y calcula la ruta más corta entre estaciones.",
+            "long_description": "Metro Maps CDMX es una aplicación de escritorio desarrollada en Python 3 con PyQt5 para la interfaz gráfica. Modela la red completa del Sistema de Transporte Colectivo Metro de la Ciudad de México usando NetworkX, representando cada estación como nodo y los tramos como aristas ponderadas. Implementa algoritmos de búsqueda de ruta más corta (Dijkstra y A*) para determinar el trayecto óptimo entre dos estaciones, considerando transbordos y distancias. Adopta una arquitectura cliente-servidor: la GUI envía solicitudes de cálculo al servidor mediante sockets y recibe la ruta resultante para renderizarla sobre un lienzo interactivo. Este flujo desacoplado facilita pruebas, mantenimiento y posibles despliegues distribuidos. El proyecto sirve como herramienta educativa en algoritmos de grafos y como apoyo a la planificación de desplazamientos urbanos, y puede ejecutarse en Windows, macOS y Linux sin dependencias externas aparte de Python y las bibliotecas mencionadas.",
+            "technologies": [
+              "Python 3",
+              "PyQt5",
+              "NetworkX",
+              "Algoritmo de Dijkstra",
+              "Algoritmo A*",
+              "Sockets TCP/IP"
+            ],
+            "category": "Transporte y movilidad",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/metro-maps-cdmx",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+          
+
+          {
+            "id": "circuirtos_rf_punto_q",
+            "title": "Circuirtos RF punto Q",
+            "description": "Herramienta educativa para encontrar el punto de operación Q de transistores FET (JFET y MOSFET) con distintos métodos.",
+            "long_description": "Circuirtos RF punto Q es una herramienta educativa desarrollada en Python, diseñada para calcular el punto de operación Q de transistores de efecto de campo (FET), incluyendo JFET y MOSFET, bajo diversas configuraciones de polarización. La aplicación implementa múltiples métodos de análisis: iterativo, analítico y gráfico, permitiendo el estudio y comparación de resultados en distintos escenarios de diseño electrónico. El flujo de trabajo está construido sobre notebooks de Jupyter, donde se incluyen ejemplos detallados, explicaciones numéricas, soluciones analíticas y representaciones gráficas interactivas. Es ideal para estudiantes y profesionales de ingeniería electrónica que buscan comprender el comportamiento de circuitos de polarización, análisis de RF, y optimización de diseños de transistores en aplicaciones educativas y de simulación electrónica.",
+            "technologies": [
+              "Python",
+              "Jupyter Notebook",
+              "Métodos numéricos",
+              "Análisis de circuitos",
+              "Análisis gráfico",
+              "Ingeniería electrónica"
+            ],
+            "category": "Educación y simulación electrónica",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/Circuitos-RF-punto-Q",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          }
+          
+          
+          
+          
+          
+          
+          
+          
+
+
+
+
+
+
     ],
     "meta": {
         "version": "2.0",
