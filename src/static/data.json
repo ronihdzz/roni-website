@@ -854,7 +854,64 @@
             "images": [],
             "date_created": "2025-06-13",
             "date_updated": "2025-06-13"
+          },
+
+
+          {
+            "id": "metro_maps_cdmx",
+            "title": "Metro Maps CDMX",
+            "description": "Aplicación de escritorio que muestra toda la red del Metro de la Ciudad de México y calcula la ruta más corta entre estaciones.",
+            "long_description": "Metro Maps CDMX es una aplicación de escritorio desarrollada en Python 3 con PyQt5 para la interfaz gráfica. Modela la red completa del Sistema de Transporte Colectivo Metro de la Ciudad de México usando NetworkX, representando cada estación como nodo y los tramos como aristas ponderadas. Implementa algoritmos de búsqueda de ruta más corta (Dijkstra y A*) para determinar el trayecto óptimo entre dos estaciones, considerando transbordos y distancias. Adopta una arquitectura cliente-servidor: la GUI envía solicitudes de cálculo al servidor mediante sockets y recibe la ruta resultante para renderizarla sobre un lienzo interactivo. Este flujo desacoplado facilita pruebas, mantenimiento y posibles despliegues distribuidos. El proyecto sirve como herramienta educativa en algoritmos de grafos y como apoyo a la planificación de desplazamientos urbanos, y puede ejecutarse en Windows, macOS y Linux sin dependencias externas aparte de Python y las bibliotecas mencionadas.",
+            "technologies": [
+              "Python 3",
+              "PyQt5",
+              "NetworkX",
+              "Algoritmo de Dijkstra",
+              "Algoritmo A*",
+              "Sockets TCP/IP"
+            ],
+            "category": "Transporte y movilidad",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/metro-maps-cdmx",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+          
+
+          {
+            "id": "circuirtos_rf_punto_q",
+            "title": "Circuirtos RF punto Q",
+            "description": "Herramienta educativa para encontrar el punto de operación Q de transistores FET (JFET y MOSFET) con distintos métodos.",
+            "long_description": "Circuirtos RF punto Q es una herramienta educativa desarrollada en Python, diseñada para calcular el punto de operación Q de transistores de efecto de campo (FET), incluyendo JFET y MOSFET, bajo diversas configuraciones de polarización. La aplicación implementa múltiples métodos de análisis: iterativo, analítico y gráfico, permitiendo el estudio y comparación de resultados en distintos escenarios de diseño electrónico. El flujo de trabajo está construido sobre notebooks de Jupyter, donde se incluyen ejemplos detallados, explicaciones numéricas, soluciones analíticas y representaciones gráficas interactivas. Es ideal para estudiantes y profesionales de ingeniería electrónica que buscan comprender el comportamiento de circuitos de polarización, análisis de RF, y optimización de diseños de transistores en aplicaciones educativas y de simulación electrónica.",
+            "technologies": [
+              "Python",
+              "Jupyter Notebook",
+              "Métodos numéricos",
+              "Análisis de circuitos",
+              "Análisis gráfico",
+              "Ingeniería electrónica"
+            ],
+            "category": "Educación y simulación electrónica",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": null,
+              "github": "https://github.com/ronihdzz/Circuitos-RF-punto-Q",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
           }
+          
+          
           
           
           
