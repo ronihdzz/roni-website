@@ -740,7 +740,62 @@
             "images": [],
             "date_created": "2025-06-12",
             "date_updated": "2025-06-12"
+          },
+
+
+          {
+            "id": "roni_website",
+            "title": "Roni Website",
+            "description": "Sitio web personal construido con FastHTML y diseño responsivo moderno.",
+            "long_description": "Roni Website es un sitio web personal desarrollado utilizando el framework FastHTML, el cual permite una estructura modular y eficiente para la creación de páginas web. El proyecto implementa un diseño completamente responsivo, optimizado para distintos dispositivos, e integra secciones organizadas para mostrar experiencias profesionales, habilidades técnicas, proyectos realizados y un formulario de contacto. Además, emplea animaciones avanzadas en CSS para mejorar la experiencia visual y la interacción del usuario. La solución combina tecnologías como JavaScript, Python, HTML5, CSS3 y FastHTML, ofreciendo un despliegue profesional y moderno ideal para portafolios personales.",
+            "technologies": [
+              "JavaScript",
+              "Python",
+              "HTML5",
+              "CSS3",
+              "FastHTML"
+            ],
+            "category": "portfolio-website",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "demo": "https://ronihdz.com/",
+              "github": "https://github.com/ronihdzz/roni-website",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
+          },
+
+
+          {
+            "id": "web_personal_django",
+            "title": "Web Personal Django",
+            "description": "Sitio web personal completo desarrollado en Django con portafolio, blog y sistema de contacto automático.",
+            "long_description": "Web Personal Django es un sitio web personal profesionalmente desarrollado utilizando el framework Django. La aplicación incluye un portafolio profesional para mostrar proyectos y certificaciones, un blog personal para publicar artículos y experiencias laborales, así como un sistema de contacto automatizado que facilita la comunicación con visitantes. Además, cuenta con un completo panel de administración de Django para gestionar contenido dinámico, publicaciones, formularios de contacto y administración de datos. El despliegue está realizado sobre PythonAnywhere y emplea tecnologías como Python, MySQL, Django, HTML, CSS, automatización de correo electrónico y diseño web responsivo, ofreciendo una experiencia organizada, profesional y de fácil mantenimiento.",
+            "technologies": [
+              "Python",
+              "Django",
+              "MySQL",
+              "HTML",
+              "CSS",
+              "PythonAnywhere",
+              "Email Automation"
+            ],
+            "category": "portfolio-website",
+            "status": "Completed",
+            "featured": false,
+            "links": {
+              "github": "https://github.com/ronihdzz/web-personal-django",
+              "documentation": null
+            },
+            "images": [],
+            "date_created": "2025-06-13",
+            "date_updated": "2025-06-13"
           }
+          
+          
           
           
 
