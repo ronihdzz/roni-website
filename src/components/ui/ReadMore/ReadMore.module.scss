@@ -1,0 +1,14 @@
+.paragraph {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+
+  &:last-of-type {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.toggle {
+  @include button-reset;
+  @include ghost-button;
+}

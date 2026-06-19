@@ -1,78 +1,239 @@
-name: Dokploy CI/CD
+name: CI/CD
 
 on:
   push:
-    branches: [main, development]
-  pull_request:
-    branches: [main, development]
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
 
 permissions:
   contents: write
 
-# Re‐usar versiones y directorios en todos los jobs
-env:
-  PYTHON_VERSION: "3.12"
-  COVERAGE_REPORTS: coverage-reports
-
 jobs:
-
-###############################################################################
-# 3.  BUILD 
-###############################################################################
-
-  build-and-push-docker-hub:
-    name: Push to Docker Hub
+  debug-context:
+    name: Debug context
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Build and Push
-        uses: ronihdzz/push-to-dockerhub-action@v2
-        with:
-          dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
-          dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          dockerhub-repository: ${{ vars.DOCKERHUB_REPOSITORY }}
-          dockerfile-path: "docker_images/app/Dockerfile.app"
-          branch-environment-map: '{"main": "prod", "development": "dev", "staging": "stg", "testing": "tst"}'
-
-
-###############################################################################
-# 4.  DEPLOY – Dokploy webhook
-###############################################################################
-  deploy-dokploy:
-    name: 🚀 Redeploy on Dokploy
-    runs-on: ubuntu-latest
-    needs: build-and-push-docker-hub
-
-    steps:
-      - name: 🔗 Trigger Dokploy webhook
-        id: dokploy
-        env:
-          WEBHOOK_URL: ${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_URL }}
+      - name: Show event/refs
         run: |
-          echo "🌐  Calling Dokploy redeploy webhook…"
-          set -euo pipefail
+          echo "event_name=${{ github.event_name }}"
+          echo "ref=${{ github.ref }}"
+          echo "ref_name=${{ github.ref_name }}"
 
-          # ▸ Hacemos la petición y separamos cuerpo + status
-          RAW_RESPONSE=$(curl -sSL -w "\n%{http_code}" -X POST "${WEBHOOK_URL}")
-          BODY=$(echo "${RAW_RESPONSE}" | head -n -1)
-          HTTP_CODE=$(echo "${RAW_RESPONSE}" | tail -n 1)
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    needs: debug-context
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
 
-          echo "🔢 HTTP status: ${HTTP_CODE}"
-          echo "📨 Response body:"
-          echo "${BODY}"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-          # Guardar en outputs (compacto, sin saltos de línea)
-          BODY_ESCAPED=$(echo "${BODY}" | tr -d '\n' | tr -d '\r')
-          echo "response=${BODY_ESCAPED}" >> "$GITHUB_OUTPUT"
+      - name: Validate required configuration
+        run: |
+          echo "::group::Validating required variables and secrets"
 
-          # Fallar si el código HTTP indica error
-          if [ "${HTTP_CODE}" -ge 400 ]; then
-            echo "::error::Deploy failed – API returned ${HTTP_CODE}"
+          ERRORS=0
+
+          if [ -z "${{ vars.BRANCH_TAG_MAP }}" ]; then
+            echo "::error::BRANCH_TAG_MAP variable is required but not set"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          if [ -z "${{ vars.REGISTRY_PROJECT }}" ]; then
+            echo "::error::REGISTRY_PROJECT variable is required but not set"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          if [ -z "${{ vars.REGISTRY_IMAGE_NAME }}" ]; then
+            echo "::error::REGISTRY_IMAGE_NAME variable is required but not set"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          if [ -z "${{ secrets.REGISTRY_USERNAME }}" ]; then
+            echo "::error::REGISTRY_USERNAME secret is required but not set"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          if [ -z "${{ secrets.REGISTRY_PASSWORD }}" ]; then
+            echo "::error::REGISTRY_PASSWORD secret is required but not set"
+            ERRORS=$((ERRORS + 1))
+          fi
+
+          echo "::endgroup::"
+
+          if [ $ERRORS -gt 0 ]; then
+            echo "::error::Configuration validation failed with $ERRORS error(s)"
             exit 1
           fi
 
-      - name: ✅ Deploy summary
+          echo "All required configuration is present"
+
+      - name: Determine environment tag and version
+        id: env_vars
+        env:
+          BRANCH_TAG_MAP: ${{ vars.BRANCH_TAG_MAP }}
         run: |
-          echo "### Dokploy answered:" >> "$GITHUB_STEP_SUMMARY"
-          echo '${{ steps.dokploy.outputs.response }}' >> "$GITHUB_STEP_SUMMARY"
+          echo "::group::Determining tag and version"
+
+          BRANCH_NAME="${{ github.ref_name }}"
+          echo "Branch: $BRANCH_NAME"
+          echo "Branch-Tag Map: $BRANCH_TAG_MAP"
+
+          TAG=$(echo "$BRANCH_TAG_MAP" | jq -r --arg branch "$BRANCH_NAME" '.[$branch]')
+
+          if [[ "$TAG" == "null" || -z "$TAG" ]]; then
+            echo "::warning::Branch '$BRANCH_NAME' not found in BRANCH_TAG_MAP"
+            echo "::error::Cannot determine environment tag for branch '$BRANCH_NAME'"
+            exit 1
+          fi
+
+          VERSION=$(date -u +"%Y%m%dT%H%M%SZ")
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+          echo "Tag: $TAG"
+          echo "Version: $VERSION"
+          echo "::endgroup::"
+
+      - name: Login to Docker Registry
+        env:
+          REGISTRY_TYPE: ${{ vars.REGISTRY_TYPE }}
+          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
+          REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+        run: |
+          echo "::group::Authenticating to registry"
+
+          if [ "$REGISTRY_TYPE" == "dockerhub" ]; then
+            echo "Logging into Docker Hub..."
+            echo "${REGISTRY_PASSWORD}" | docker login -u "${REGISTRY_USERNAME}" --password-stdin
+          else
+            REGISTRY="${REGISTRY_URL:-docker.io}"
+            echo "Logging into custom registry: $REGISTRY"
+            echo "${REGISTRY_PASSWORD}" | docker login "$REGISTRY" -u "${REGISTRY_USERNAME}" --password-stdin
+          fi
+
+          echo "::endgroup::"
+
+      - name: Create rollback tag
+        continue-on-error: true
+        env:
+          REGISTRY_TYPE: ${{ vars.REGISTRY_TYPE }}
+          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
+          REGISTRY_PROJECT: ${{ vars.REGISTRY_PROJECT }}
+          REGISTRY_IMAGE_NAME: ${{ vars.REGISTRY_IMAGE_NAME }}
+          TAG: ${{ steps.env_vars.outputs.tag }}
+        run: |
+          echo "::group::Creating rollback tag from existing image"
+
+          if [ "$REGISTRY_TYPE" == "dockerhub" ]; then
+            IMAGE_BASE="${REGISTRY_PROJECT}/${REGISTRY_IMAGE_NAME}"
+          else
+            REGISTRY="${REGISTRY_URL:-docker.io}"
+            IMAGE_BASE="${REGISTRY}/${REGISTRY_PROJECT}/${REGISTRY_IMAGE_NAME}"
+          fi
+
+          LATEST_IMAGE="${IMAGE_BASE}:${TAG}-latest"
+          ROLLBACK_IMAGE="${IMAGE_BASE}:${TAG}-rollback"
+
+          if docker pull "$LATEST_IMAGE" 2>/dev/null; then
+            docker tag "$LATEST_IMAGE" "$ROLLBACK_IMAGE"
+            docker push "$ROLLBACK_IMAGE"
+            echo "rollback_created=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No existing image found (first deployment)"
+            echo "rollback_created=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "::endgroup::"
+
+      - name: Build Docker image
+        id: build
+        env:
+          REGISTRY_TYPE: ${{ vars.REGISTRY_TYPE }}
+          REGISTRY_URL: ${{ vars.REGISTRY_URL }}
+          REGISTRY_PROJECT: ${{ vars.REGISTRY_PROJECT }}
+          REGISTRY_IMAGE_NAME: ${{ vars.REGISTRY_IMAGE_NAME }}
+          TAG: ${{ steps.env_vars.outputs.tag }}
+          VERSION: ${{ steps.env_vars.outputs.version }}
+          DOCKERFILE_PATH: ${{ vars.DOCKERFILE_PATH }}
+        run: |
+          echo "::group::Building Docker image"
+
+          if [ "$REGISTRY_TYPE" == "dockerhub" ]; then
+            IMAGE_BASE="${REGISTRY_PROJECT}/${REGISTRY_IMAGE_NAME}"
+          else
+            REGISTRY="${REGISTRY_URL:-docker.io}"
+            IMAGE_BASE="${REGISTRY}/${REGISTRY_PROJECT}/${REGISTRY_IMAGE_NAME}"
+          fi
+
+          DOCKERFILE="${DOCKERFILE_PATH:-docker_images/app/Dockerfile.app}"
+          IMAGE_VERSIONED="${IMAGE_BASE}:${TAG}-${VERSION}"
+          IMAGE_LATEST="${IMAGE_BASE}:${TAG}-latest"
+
+          docker build -t "$IMAGE_VERSIONED" -f "$DOCKERFILE" .
+          docker tag "$IMAGE_VERSIONED" "$IMAGE_LATEST"
+
+          echo "image_versioned=$IMAGE_VERSIONED" >> "$GITHUB_OUTPUT"
+          echo "image_latest=$IMAGE_LATEST" >> "$GITHUB_OUTPUT"
+
+          echo "::endgroup::"
+
+      - name: Push Docker images
+        env:
+          IMAGE_VERSIONED: ${{ steps.build.outputs.image_versioned }}
+          IMAGE_LATEST: ${{ steps.build.outputs.image_latest }}
+        run: |
+          echo "::group::Pushing images to registry"
+          docker push "$IMAGE_VERSIONED"
+          docker push "$IMAGE_LATEST"
+          echo "::endgroup::"
+
+      - name: Build Summary
+        if: always()
+        env:
+          IMAGE_VERSIONED: ${{ steps.build.outputs.image_versioned }}
+          IMAGE_LATEST: ${{ steps.build.outputs.image_latest }}
+          TAG: ${{ steps.env_vars.outputs.tag }}
+          VERSION: ${{ steps.env_vars.outputs.version }}
+          REGISTRY_TYPE: ${{ vars.REGISTRY_TYPE }}
+        run: |
+          echo "### Docker Build & Push Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Property | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|----------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Branch | \`${{ github.ref_name }}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Tag | \`$TAG\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Version | \`$VERSION\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Registry Type | \`${REGISTRY_TYPE:-custom}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Event | \`${{ github.event_name }}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "#### Pushed Images" >> "$GITHUB_STEP_SUMMARY"
+          echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "$IMAGE_VERSIONED" >> "$GITHUB_STEP_SUMMARY"
+          echo "$IMAGE_LATEST" >> "$GITHUB_STEP_SUMMARY"
+          echo "\`\`\`" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy-development:
+    name: Deploy to Development
+    needs: build-and-push
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop'
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      environment: development
+    secrets:
+      DOKPLOY_DEPLOY_WEBHOOK_URL: ${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_URL }}
+
+  deploy-production:
+    name: Deploy to Production
+    needs: build-and-push
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref_name == 'main'
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      environment: production
+    secrets:
+      DOKPLOY_DEPLOY_WEBHOOK_URL: ${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_URL }}

@@ -1,0 +1,126 @@
+.section {
+  padding: var(--content-padding);
+  min-height: 100vh;
+
+  @include tablet-down {
+    padding: 1rem;
+    padding-top: 4rem;
+    min-height: auto;
+  }
+}
+
+.title {
+  @include section-title;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: none;
+  }
+}
+
+.infoTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.infoSubtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.itemIcon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.itemText {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  a,
+  span {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    transition: color var(--transition-speed) ease;
+  }
+
+  a:hover {
+    color: var(--accent-color);
+  }
+}
+
+// --- Formulario ---
+.formTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  input,
+  textarea {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.75rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.875rem;
+    transition: border-color var(--transition-speed) ease;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+.submit {
+  @include button-reset;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background var(--transition-speed) ease;
+
+  &:hover {
+    background: var(--primary-dark);
+  }
+}

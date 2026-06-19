@@ -1,0 +1,18 @@
+// =============================================================================
+// Variables SCSS - Roni Web
+// Auto-importadas en cada *.scss vía next.config.ts (sassOptions.additionalData)
+//
+// NOTA: los TOKENS DE COLOR viven como CSS custom properties en globals.scss
+// (:root) para permitir theming en runtime. Aqui solo van valores que SCSS
+// necesita en tiempo de compilacion (breakpoints, medidas usadas en calc()).
+// =============================================================================
+
+// --- Breakpoints (px) ---
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// --- Layout ---
+$sidebar-width: 260px;
+$sidebar-width-collapsed: 50px;
+$content-padding: 1.5rem;

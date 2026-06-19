@@ -1,0 +1,39 @@
+name: Deploy Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+    secrets:
+      DOKPLOY_DEPLOY_WEBHOOK_URL:
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Trigger Dokploy webhook
+        id: dokploy
+        env:
+          WEBHOOK_URL: ${{ secrets.DOKPLOY_DEPLOY_WEBHOOK_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${WEBHOOK_URL:-}" ]; then
+            echo "::error::DOKPLOY_DEPLOY_WEBHOOK_URL is empty"
+            exit 1
+          fi
+          RAW_RESPONSE=$(curl -sSL -w "\n%{http_code}" -X POST "${WEBHOOK_URL}")
+          BODY=$(echo "${RAW_RESPONSE}" | head -n -1)
+          HTTP_CODE=$(echo "${RAW_RESPONSE}" | tail -n 1)
+          echo "response=$(echo "${BODY}" | tr -d '\n' | tr -d '\r')" >> "$GITHUB_OUTPUT"
+          test "${HTTP_CODE}" -lt 400 || (echo "::error::Deploy failed - HTTP ${HTTP_CODE}" && exit 1)
+
+      - name: Deploy summary
+        run: |
+          echo "### Dokploy response" >> "$GITHUB_STEP_SUMMARY"
+          echo '${{ steps.dokploy.outputs.response }}' >> "$GITHUB_STEP_SUMMARY"

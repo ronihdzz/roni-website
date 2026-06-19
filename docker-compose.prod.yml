@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  roni-web-prod:
+    image: registry.ronihdz.com/roni/roni-web:prod-latest
+    pull_policy: always
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+
+    environment:
+      # =================================================================
+      # VARIABLES QUE USA RONI-WEB EN RUNTIME
+      # =================================================================
+
+      # --- SEO y URLs publicas ---
+      # Usada para canonical URLs, hreflang, JSON-LD (Person) y sitemap.
+      # Sin esta variable se usa el fallback https://ronihdz.com
+      NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL}
+
+      # =================================================================
+      # VARIABLES YA DEFINIDAS EN EL DOCKERFILE (no necesitan override)
+      # =================================================================
+      # NODE_ENV: production  (ENV en Dockerfile.app, stage runner)
+      # PORT: 3000            (ENV en Dockerfile.app, Traefik apunta al 3000)
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=dokploy-network"
+      - "traefik.http.routers.roni-web-prod-dr.rule=Host(`ronihdz.com`) || Host(`www.ronihdz.com`)"
+      - "traefik.http.routers.roni-web-prod-dr.entrypoints=websecure"
+      - "traefik.http.routers.roni-web-prod-dr.tls.certresolver=letsencrypt"
+      # Puerto fijo 3000 — definido en el Dockerfile, no necesita variable
+      - "traefik.http.services.roni-web-prod-dr.loadbalancer.server.port=3000"
+
+networks:
+  dokploy-network:
+    external: true
