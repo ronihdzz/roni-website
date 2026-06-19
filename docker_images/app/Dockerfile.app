@@ -1,20 +1,37 @@
-# Usa una imagen base de Python
-FROM python:3.11-slim
+# ─── Roni Web (Next.js) ────────────────────────────────────────────
+# Build and serve the personal portfolio website (standalone output)
 
-# Establece el directorio de trabajo dentro del contenedor
-WORKDIR /application/src
+FROM node:22-alpine AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# Copia el archivo de dependencias (si usas poetry o pip)
-COPY requirements.txt .
+FROM node:22-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
 
-# Instala las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN npm run build
 
-# Copia el resto del código de la aplicación al contenedor
-COPY ./src /application/src
+FROM node:22-alpine AS runner
+WORKDIR /app
 
-# Expone el puerto que tu aplicación utilizará
-EXPOSE 9000
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Ejecuta el servidor de FastHTML usando Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "9000"]
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+RUN chown nextjs:nodejs /app
+
+USER nextjs
+EXPOSE 3000
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]

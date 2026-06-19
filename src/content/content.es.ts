@@ -1,0 +1,888 @@
+import type { SiteContent } from "./types";
+
+export const contentEs: SiteContent = {
+  "personal": {
+    "name": "Roni Hernández",
+    "profession": "Sr Sofware Engenieer",
+    "titleParts": [
+      "Hola,",
+      "Soy Roni Hernández,",
+      "Sr Sofware Engenieer."
+    ],
+    "about": "Soy desarrollador Sr Backend con más de cuatro años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",
+    "photo": "/ronihdz_en_proyectos.jpeg",
+    "cv": {
+      "spanish": "/cv.pdf",
+      "english": "/cv_en.pdf"
+    }
+  },
+  "contact": {
+    "location": "Ciudad de México, México",
+    "form": {
+      "title": "Envíame un mensaje",
+      "subtitle": "¿Tienes un proyecto en mente? ¡Me encantaría escuchar sobre él!",
+      "submitText": "Enviar mensaje",
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "placeholder": "Tu nombre",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "placeholder": "Tu email",
+          "required": true
+        },
+        {
+          "name": "subject",
+          "type": "text",
+          "placeholder": "Asunto",
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "textarea",
+          "placeholder": "Tu mensaje",
+          "required": true,
+          "rows": 5
+        }
+      ]
+    }
+  },
+  "skills": {
+    "featured": [
+      "Python",
+      "FastAPI",
+      "AWS",
+      "LangChain",
+      "GithubActions",
+      "PostgreSQL"
+    ],
+    "categories": [
+      {
+        "id": "languages",
+        "title": "Lenguajes de Programación",
+        "items": [
+          {
+            "name": "Python",
+            "level": "Avanzado",
+            "years": 5
+          },
+          {
+            "name": "C",
+            "level": "Intermedio",
+            "years": 3
+          },
+          {
+            "name": "C++",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "Go",
+            "level": "Básico",
+            "years": 0
+          }
+        ]
+      },
+      {
+        "id": "frameworks",
+        "title": "Frameworks & Librerías",
+        "items": [
+          {
+            "name": "FastAPI",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "Django",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "Django REST Framework",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "Flask",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "pyQT5",
+            "level": "Intermedio",
+            "years": 1
+          }
+        ]
+      },
+      {
+        "id": "ai-ml",
+        "title": "IA & Machine Learning",
+        "items": [
+          {
+            "name": "pandas",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "numpy",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "matplotlib",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "scikit-learn",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "TensorFlow",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "LangChain",
+            "level": "Intermedio",
+            "years": 2
+          }
+        ]
+      },
+      {
+        "id": "protocols",
+        "title": "Protocolos y Herramientas",
+        "items": [
+          {
+            "name": "gRPC",
+            "level": "Avanzado",
+            "years": 2
+          },
+          {
+            "name": "GraphQL",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "WebSocket",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "Webhooks",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "MQTT",
+            "level": "Intermedio",
+            "years": 1
+          },
+          {
+            "name": "RabbitMQ",
+            "level": "Intermedio",
+            "years": 1
+          },
+          {
+            "name": "OpenTelemetry",
+            "level": "Básico",
+            "years": 1
+          },
+          {
+            "name": "Git",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "GitHub",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "GitLab",
+            "level": "Intermedio",
+            "years": 1
+          }
+        ]
+      },
+      {
+        "id": "cloud-aws",
+        "title": "Cloud AWS",
+        "items": [
+          {
+            "name": "Lambda",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "API Gateway",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "Step Functions",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "SQS",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "SNS",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "EC2",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "ECR",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "S3",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "CloudWatch",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "IAM",
+            "level": "Intermedio",
+            "years": 2
+          }
+        ]
+      },
+      {
+        "id": "devops",
+        "title": "DevOps",
+        "items": [
+          {
+            "name": "Kubernetes",
+            "level": "Básico",
+            "years": 0
+          },
+          {
+            "name": "NGINX",
+            "level": "Intermedio",
+            "years": 1
+          },
+          {
+            "name": "Bash/Shell Scripting",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "GitHub Actions",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "DigitalOcean",
+            "level": "Intermedio",
+            "years": 1
+          },
+          {
+            "name": "Docker",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "Docker Compose",
+            "level": "Avanzado",
+            "years": 3
+          }
+        ]
+      },
+      {
+        "id": "databases",
+        "title": "Bases de Datos",
+        "items": [
+          {
+            "name": "PostgreSQL",
+            "level": "Avanzado",
+            "years": 3
+          },
+          {
+            "name": "MongoDB",
+            "level": "Intermedio",
+            "years": 2
+          },
+          {
+            "name": "Redis",
+            "level": "Intermedio",
+            "years": 2
+          }
+        ]
+      }
+    ]
+  },
+  "experiences": [
+    {
+      "id": "swift-hackathon-2024",
+      "title": "Ganadores de Swift Change Makers Hackathon 2024",
+      "description": "Hackathon celebrado en Monterrey que reunió a los mejores equipos de todo México, cada uno habiendo ganado previamente hackathones locales para obtener su pase al evento. Mi equipo y yo fuimos seleccionados para participar en este Hakathon y logramos el primer lugar en el reto propuesto por FEMSA.Durante el hackathon, desarrollamos OXXO LINK, una solución innovadora diseñada para facilitar la colaboración entre vecinos y optimizar la compra de productos en OXXO. Este proyecto fue el resultado de un intenso trabajo en equipo, donde cada uno de nosotros aportó ideas que evolucionaron en una propuesta sólida y efectiva.Nuestra solución impresionó al jurado, tanto que comenzaron a utilizar nuestro término 'los paros' para describir la dinámica del proyecto. Ganar el Reto FEMSA fue una experiencia emocionante y muy gratificante, sobre todo por la calidad de los otros equipos participantes. Competir y destacar en un evento de esta magnitud fue una experiencia que recordaré siempre.",
+      "date": "2024-03-15",
+      "location": "Monterrey, México",
+      "type": "hackathon",
+      "award": "1er Lugar",
+      "media": {
+        "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726351947/website/d2hmldjtasmrygarimjn.mp4",
+        "type": "video"
+      },
+      "tags": [
+        "Hackathon",
+        "FEMSA",
+        "OXXO",
+        "Innovation"
+      ]
+    },
+    {
+      "id": "nasa-space-apps-2023",
+      "title": "Ganadores del hackathon NASA Space Apps Challenge 2023",
+      "description": "La NASA Space Apps Challenge 2023 es un hackathon global que invita a participantes de todo el mundo a resolver desafíos relacionados con la ciencia y el espacio utilizando datos abiertos de la NASA y sus socios. En la edición de CDMX, junto con mi equipo, AstroFire, obtuvimos el primer lugar con nuestra innovadora propuesta llamada 'Sensores de Muerte'. Este proyecto consistía en una red de sensores estratégicamente colocados en áreas forestales para detectar la velocidad y dirección de incendios. Los sensores se comunicaban entre sí mediante el protocolo LORA, formando una red local que permitía emitir alertas tempranas y facilitar una respuesta rápida ante incendios forestales. Aunque se trataba de un prototipo inicial (no con todas las funciones), logramos que fuera completamente funcional. Además, desarrollamos tanto el hardware que capturaba los datos como el sitio web y la aplicación móvil, lo que nos permitió mostrar un prototipo que impresionó al jurado por su efectividad y potencial, a pesar de ser una versión preliminar.",
+      "date": "2023-10-07",
+      "location": "Ciudad de México, México",
+      "type": "hackathon",
+      "award": "1er Lugar",
+      "media": {
+        "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726354821/website/jjnn6tvpi2pqn5ynomyv.mp4",
+        "type": "video"
+      },
+      "tags": [
+        "NASA",
+        "Space",
+        "IoT",
+        "Environmental"
+      ]
+    },
+    {
+      "id": "unam-telecom-talk",
+      "title": "Congreso de telecomunicacion Facultad de Ingenieria UNAM",
+      "description": "Como parte del ciclo de conferencias del departamento de telecomunicaciones de la Facultad de Ingeniería, tuve el honor de ser invitado como ponente por el Dr. Luis Francisco García Jiménez, profesor de Redes de Comunicaciones. Durante la charla, expuse sobre temas clave como el Internet de las Cosas, el desarrollo de software y algunos de mis proyectos open source. Fue una experiencia enriquecedora compartir mi conocimiento y pasión frente a un público interesado en estos campos tecnológicos.",
+      "date": "2023-11-15",
+      "location": "UNAM, Ciudad de México",
+      "type": "conference",
+      "award": null,
+      "media": {
+        "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370258/website/mbs9zoqpmpgycc4velq9.mp4",
+        "type": "video"
+      },
+      "tags": [
+        "IoT",
+        "Software Development",
+        "Open Source",
+        "UNAM"
+      ]
+    },
+    {
+      "id": "conaces-acapulco",
+      "title": "CONACES Acapulco",
+      "description": "Mis amigos y yo tuvimos el honor de ser invitados como ponentes en el CONACES 2023, el evento espacial más importante de México, organizado por la Agencia Espacial Mexicana. Durante el congreso, coincidimos con figuras brillantes como Rodolfo Neri Vela, el primer astronauta mexicano, así como otros expertos del sector espacial. Tuvimos la oportunidad de presentar nuestros proyectos en un evento de tal magnitud, lo cual fue una experiencia increíble para compartir ideas y aprender de personas destacadas en la industria.",
+      "date": "2023-09-20",
+      "location": "Acapulco, México",
+      "type": "conference",
+      "award": null,
+      "media": {
+        "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/v1726370338/website/bgt0ke4ryyargaehljek.mp4",
+        "type": "video"
+      },
+      "tags": [
+        "Space",
+        "Mexican Space Agency",
+        "Innovation"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "aws_lambda_fastapi_template",
+      "title": "AWS Lambda FastAPI Template",
+      "description": "Plantilla profesional para construir APIs REST serverless usando FastAPI, Docker y AWS Lambda.",
+      "longDescription": "AWS Lambda FastAPI Template es una plantilla profesional diseñada para desarrollar APIs REST serverless de forma modular y escalable. Utiliza FastAPI como framework principal, desplegado sobre AWS Lambda mediante contenedores Docker. Integra arquitectura modular, pruebas de base de datos reales y un flujo completo de CI/CD automatizado a través de GitHub Actions. La plantilla permite definir modelos de datos con SQLAlchemy y Pydantic, soportando bases de datos como PostgreSQL y MongoDB. Además, aprovecha Mangum como adaptador ASGI para Lambda y soporta microservicios cloud-native, ideal para proyectos modernos orientados a la nube.",
+      "technologies": [
+        "python",
+        "testing",
+        "docker",
+        "template",
+        "sqlalchemy",
+        "cloud",
+        "microservices",
+        "mongodb",
+        "aws-lambda",
+        "serverless",
+        "rest-api",
+        "postgresql",
+        "ci-cd",
+        "github-actions",
+        "pydantic",
+        "fastapi",
+        "mangum"
+      ],
+      "category": "backend",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/aws-lambda-fastapi-template",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "aws_lambda_go",
+      "title": "AWS Lambda Go",
+      "description": "API REST construida con Go y Gin Framework para ejecución híbrida en AWS Lambda.",
+      "longDescription": "AWS Lambda Go es un proyecto que implementa una API REST utilizando el lenguaje Go junto con el framework Gin. Su arquitectura permite una ejecución híbrida, donde las funciones Lambda son utilizadas en ambientes de producción serverless, mientras que para desarrollo local se expone un servidor HTTP tradicional. El proyecto emplea contenedores Docker para la empaquetación de funciones, integración con API Gateway para el enrutamiento de solicitudes HTTP, y flujos completos de CI/CD automatizados mediante GitHub Actions. Además, soporta despliegue de microservicios, modelos serverless, y arquitecturas cloud-native bajo AWS.",
+      "technologies": [
+        "go",
+        "docker",
+        "golang",
+        "microservices",
+        "aws-lambda",
+        "serverless",
+        "containers",
+        "api-gateway",
+        "rest-api",
+        "ci-cd",
+        "cloud-computing",
+        "gin-framework",
+        "github-actions"
+      ],
+      "category": "backend",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/aws-lambda-go",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "voice_ai_assistant_python",
+      "title": "VOICE AI Assistant Python",
+      "description": "Asistente de voz AI para llamadas telefónicas en tiempo real, construido con Python, Twilio y OpenAI Realtime API.",
+      "longDescription": "VOICE AI Assistant Python es un asistente de voz basado en inteligencia artificial diseñado para manejar conversaciones telefónicas en tiempo real. Implementado con Python y FastAPI, utiliza la API Realtime de OpenAI para la transcripción y generación de respuestas durante la llamada, mientras que Twilio gestiona el enrutamiento y manejo de las llamadas telefónicas. El sistema soporta flujos bidireccionales de audio, procesando la voz entrante y respondiendo dinámicamente. El despliegue está containerizado con Docker, permitiendo un entorno flexible para pruebas y producción. Este proyecto integra capacidades avanzadas de IA conversacional, comunicación en tiempo real y control de llamadas telefónicas.",
+      "technologies": [
+        "python",
+        "docker",
+        "real-time",
+        "twilio",
+        "voice-assistant",
+        "conversational-ai",
+        "fastapi",
+        "openai-api",
+        "gpt-4o"
+      ],
+      "category": "ai",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/voice-ai-asistant-python",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "telegram_connector",
+      "title": "Telegram Connector",
+      "description": "Solución completa para integrar aplicaciones con bots de Telegram mediante comunicación bidireccional.",
+      "longDescription": "Telegram Connector es una solución diseñada para integrar aplicaciones backend con la plataforma de bots de Telegram, permitiendo comunicación bidireccional en tiempo real para enviar y recibir mensajes. Construido sobre Python y FastAPI, expone endpoints REST y webhooks que manejan la recepción de eventos desde Telegram y la emisión de respuestas automatizadas o asistidas. Utiliza Docker para la contenerización, PostgreSQL como base de datos de persistencia y soporta integración con arquitecturas modulares para sistemas de mensajería avanzados. Es ideal como microservicio conector dentro de plataformas multicanal o CRM con soporte para bots de mensajería.",
+      "technologies": [
+        "python",
+        "api",
+        "docker",
+        "telegram",
+        "connector",
+        "integration",
+        "telegram-bot",
+        "rest-api",
+        "webhook",
+        "postgresql",
+        "fastapi"
+      ],
+      "category": "backend",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/telegram-connector",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "cacpy",
+      "title": "CACPY",
+      "description": "Herramienta automática de calificación de programas Python en Google Classroom.",
+      "longDescription": "CACPY es una herramienta desarrollada en Python que permite automatizar la calificación de programas entregados en Google Classroom. Utiliza PyQt5 para proporcionar una interfaz gráfica amigable, integra el acceso a Google Drive y Google Classroom para la descarga, revisión y devolución automática de tareas, junto con sus respectivos feedbacks individuales. Además, incorpora nbgrader como motor de evaluación para notebooks Jupyter y maneja flujos de corrección masiva mediante procesos de automatización. Está pensado como un sistema de apoyo para docentes, reduciendo el tiempo manual de revisión y mejorando la eficiencia del proceso educativo.",
+      "technologies": [
+        "python",
+        "classroom",
+        "education",
+        "gui",
+        "automation",
+        "pyqt5",
+        "google-drive",
+        "nbgrader",
+        "google-classroom",
+        "auto-grading",
+        "teacher-tools",
+        "grading-tools"
+      ],
+      "category": "education",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/CACPY",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "opentelemetry_microservices",
+      "title": "OpenTelemetry Microservices",
+      "description": "Microservicios en Python con observabilidad distribuida mediante OpenTelemetry y Jaeger.",
+      "longDescription": "Este proyecto implementa una arquitectura de microservicios en Python cuyo objetivo es calcular promedios de manera distribuida. Cada microservicio trabaja de forma colaborativa aprovechando técnicas de procesamiento paralelo y sistemas distribuidos. Se ha integrado OpenTelemetry para el rastreo distribuido, permitiendo una visibilidad completa del flujo de peticiones a través de los distintos componentes. Además, se utiliza Jaeger como backend de trazas, ofreciendo capacidades de observabilidad avanzada y facilitando la detección de cuellos de botella o problemas de latencia. El despliegue y orquestación de los servicios se realiza mediante Docker, y se emplea FastAPI como framework principal para exponer las APIs de los microservicios.",
+      "technologies": [
+        "Python",
+        "API",
+        "Docker",
+        "Distributed Systems",
+        "Microservices",
+        "Observability",
+        "Distributed Tracing",
+        "Python Multiprocessing",
+        "Jaeger",
+        "FastAPI",
+        "OpenTelemetry"
+      ],
+      "category": "Sistemas Distribuidos",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/opentelemtry-microservices",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "central_var_rxd",
+      "title": "Central Var RXD",
+      "description": "CLI para la gestión segura de variables de entorno con cifrado GPG y soporte multiambiente.",
+      "longDescription": "Central Var RXD es una herramienta de línea de comandos (CLI) desarrollada en Python, orientada a la gestión segura de variables de entorno. Permite manejar configuraciones para múltiples entornos (desarrollo, staging, producción) de forma organizada, garantizando la confidencialidad de los valores mediante cifrado GPG. Además, facilita la integración en flujos de trabajo DevOps y CI/CD al utilizar Makefile para automatizaciones. Gracias a su enfoque en seguridad, soporta el manejo centralizado de secretos, almacenamiento seguro, y el versionamiento de configuraciones sensibles para diferentes fases del ciclo de vida de las aplicaciones.",
+      "technologies": [
+        "Python",
+        "CLI",
+        "Security",
+        "DevOps",
+        "Encryption",
+        "Makefile",
+        "GPG",
+        "Environment Variables",
+        "Command Line Tool",
+        "Development Tools",
+        "Secure Storage",
+        "Secrets Management",
+        "Env Management"
+      ],
+      "category": "Herramientas de Desarrollo",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/central_var_rxd",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "git_archive_action",
+      "title": "Git Archive Action",
+      "description": "GitHub Action para persistir artefactos de workflows en ramas dedicadas dentro del mismo repositorio.",
+      "longDescription": "Git Archive Action es una GitHub Action diseñada para almacenar de forma persistente los artefactos generados por los workflows de integración continua, como los reportes de cobertura de pruebas. Los artefactos se guardan en una rama de Git dedicada dentro del mismo repositorio, permitiendo desacoplar el almacenamiento de artefactos del historial principal del código fuente. Esto proporciona un registro histórico y accesible de los resultados de cada ejecución de workflow, facilitando auditorías, análisis de calidad de código y mantenibilidad en entornos de CI/CD complejos.",
+      "technologies": [
+        "Git",
+        "DevOps",
+        "CI/CD",
+        "Artifacts",
+        "Workflow Automation",
+        "GitHub Actions",
+        "Persist Artifacts"
+      ],
+      "category": "Automatización de Workflows",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/git-archive-action",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "push_to_dockerhub_action",
+      "title": "Push to DockerHub Action",
+      "description": "GitHub Action para automatizar el versionado y despliegue de imágenes en Docker Hub con control de entornos.",
+      "longDescription": "Push to DockerHub Action es una GitHub Action altamente configurable que automatiza el proceso de versionado y despliegue de imágenes Docker hacia Docker Hub. La acción permite mapear ramas de Git a distintos entornos (desarrollo, staging, producción), facilitando flujos de trabajo CI/CD robustos y controlados. También soporta la creación de tags de rollback, lo cual habilita revertir versiones de forma segura en caso de fallos. Su diseño está orientado a simplificar el manejo de imágenes, evitando errores manuales en los pipelines de despliegue y asegurando consistencia en los entornos de ejecución.",
+      "technologies": [
+        "Docker",
+        "DevOps",
+        "Automation",
+        "CI/CD",
+        "Docker Hub",
+        "GitHub Actions"
+      ],
+      "category": "Automatización de Deployments",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/push-to-dockerhub-action",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "push_to_digitalocean_action",
+      "title": "Push to DigitalOcean Action",
+      "description": "GitHub Action para construir y publicar imágenes Docker en DigitalOcean Container Registry con control de entornos.",
+      "longDescription": "Push to DigitalOcean Action es una GitHub Action personalizable diseñada para automatizar el proceso de construcción y despliegue de imágenes Docker hacia el Container Registry de DigitalOcean. Permite mapear ramas de Git a entornos específicos (desarrollo, staging, producción), facilitando estrategias de versionado y despliegue controlado. Además, soporta la generación de tags de rollback para revertir versiones fácilmente en caso de fallos. Esta acción es ideal para pipelines de CI/CD que buscan una integración fluida con la infraestructura de DigitalOcean, reduciendo la intervención manual y mejorando la confiabilidad del despliegue de contenedores.",
+      "technologies": [
+        "Docker",
+        "DigitalOcean",
+        "DevOps",
+        "Automation",
+        "CI/CD",
+        "Container Registry",
+        "GitHub Actions"
+      ],
+      "category": "Automatización de Deployments",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/push-to-digitalocean-action",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "git_archive_action_testing_example",
+      "title": "Git Archive Action Testing Example",
+      "description": "Ejemplo práctico de CI/CD integrando múltiples servicios y almacenamiento de artefactos con Git Archive Action.",
+      "longDescription": "Git Archive Action Testing Example es un repositorio de demostración que integra de manera realista un flujo completo de CI/CD. Ejecuta pruebas de integración contra múltiples servicios (PostgreSQL, MongoDB, Redis) levantados dentro de un contenedor Docker, generando reportes de cobertura de pruebas automatizadas. Finalmente, utiliza la GitHub Action 'git-archive-action' para almacenar de forma persistente dichos artefactos de prueba dentro de ramas dedicadas del repositorio. Este ejemplo permite visualizar el uso combinado de herramientas de testing, automatización de pipelines y almacenamiento histórico de reportes dentro de un entorno distribuido de servicios.",
+      "technologies": [
+        "Testing",
+        "Docker",
+        "Redis",
+        "DevOps",
+        "Demo",
+        "MongoDB",
+        "Example",
+        "PostgreSQL",
+        "CI/CD",
+        "GitHub Actions"
+      ],
+      "category": "Automatización de Workflows",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/git-archive-action-testing-example",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-12",
+      "dateUpdated": "2025-06-12"
+    },
+    {
+      "id": "roni_website",
+      "title": "Roni Website",
+      "description": "Sitio web personal construido con FastHTML y diseño responsivo moderno.",
+      "longDescription": "Roni Website es un sitio web personal desarrollado utilizando el framework FastHTML, el cual permite una estructura modular y eficiente para la creación de páginas web. El proyecto implementa un diseño completamente responsivo, optimizado para distintos dispositivos, e integra secciones organizadas para mostrar experiencias profesionales, habilidades técnicas, proyectos realizados y un formulario de contacto. Además, emplea animaciones avanzadas en CSS para mejorar la experiencia visual y la interacción del usuario. La solución combina tecnologías como JavaScript, Python, HTML5, CSS3 y FastHTML, ofreciendo un despliegue profesional y moderno ideal para portafolios personales.",
+      "technologies": [
+        "JavaScript",
+        "Python",
+        "HTML5",
+        "CSS3",
+        "FastHTML"
+      ],
+      "category": "portfolio-website",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": "https://ronihdz.com/",
+        "github": "https://github.com/ronihdzz/roni-website",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    },
+    {
+      "id": "web_personal_django",
+      "title": "Web Personal Django",
+      "description": "Sitio web personal completo desarrollado en Django con portafolio, blog y sistema de contacto automático.",
+      "longDescription": "Web Personal Django es un sitio web personal profesionalmente desarrollado utilizando el framework Django. La aplicación incluye un portafolio profesional para mostrar proyectos y certificaciones, un blog personal para publicar artículos y experiencias laborales, así como un sistema de contacto automatizado que facilita la comunicación con visitantes. Además, cuenta con un completo panel de administración de Django para gestionar contenido dinámico, publicaciones, formularios de contacto y administración de datos. El despliegue está realizado sobre PythonAnywhere y emplea tecnologías como Python, MySQL, Django, HTML, CSS, automatización de correo electrónico y diseño web responsivo, ofreciendo una experiencia organizada, profesional y de fácil mantenimiento.",
+      "technologies": [
+        "Python",
+        "Django",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "PythonAnywhere",
+        "Email Automation"
+      ],
+      "category": "portfolio-website",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "github": "https://github.com/ronihdzz/web-personal-django",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    },
+    {
+      "id": "simon_dice_troni",
+      "title": "Simon Dice Troni",
+      "description": "Juego de memoria Simon Says con Arduino, LEDs, botones y sonido.",
+      "longDescription": "Simon Dice Troni es una recreación interactiva del clásico juego Simon Says, programada en C para una placa Arduino UNO. El sistema emplea cuatro LEDs de colores y cuatro pulsadores para mostrar y captar las secuencias de luces que el usuario debe memorizar y repetir. Incorpora un zumbador piezoeléctrico con control de volumen para efectos sonoros y melodías de recompensa al superar niveles. El firmware implementa generación de secuencias pseudoaleatorias, varios niveles de dificultad escalables y comunicación serie para depuración o supervisión externa desde un monitor serial. Este proyecto demuestra conceptos de computación física, manejo de E/S digital, temporización no bloqueante y diseño de juegos embebidos, siendo ideal para fines educativos en electrónica e IoT.",
+      "technologies": [
+        "C",
+        "Arduino",
+        "LEDs",
+        "Botones (push buttons)",
+        "Zumbador piezoeléctrico",
+        "Comunicación serie",
+        "Electrónica",
+        "Sistemas embebidos"
+      ],
+      "category": "Computación física e IoT",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/simon-dice-troni",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    },
+    {
+      "id": "iot_domotica",
+      "title": "IoT Domótica",
+      "description": "Sistema de automatización doméstica con Raspberry Pi, PyQt5 y microcontroladores.",
+      "longDescription": "IoT Domótica es una plataforma de control y monitoreo para el hogar basada en Raspberry Pi con una interfaz gráfica de escritorio desarrollada en PyQt5. Permite encender y regular iluminación RGB, activar un ventilador, detectar incendios mediante sensores de llama, programar alarmas y gestionar tareas desde una GUI intuitiva. El sistema se comunica con microcontroladores Arduino y ESP-32 a través de puertos serie y/o Wi-Fi para accionar periféricos externos, mientras que la Raspberry Pi orquesta la lógica de negocio, el cron de eventos y el registro de estados. La aplicación demuestra integración de hardware y software en entornos IoT, manejo de GPIO, comunicación serial y redes inalámbricas, así como diseño de interfaces de usuario responsivas para domótica.",
+      "technologies": [
+        "Python",
+        "PyQt5",
+        "Raspberry Pi",
+        "Arduino",
+        "ESP-32",
+        "GPIO",
+        "RGB LEDs",
+        "Sensores de llama",
+        "IoT"
+      ],
+      "category": "Domótica e IoT",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/IoT_domotica",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    },
+    {
+      "id": "metro_maps_cdmx",
+      "title": "Metro Maps CDMX",
+      "description": "Aplicación de escritorio que muestra toda la red del Metro de la Ciudad de México y calcula la ruta más corta entre estaciones.",
+      "longDescription": "Metro Maps CDMX es una aplicación de escritorio desarrollada en Python 3 con PyQt5 para la interfaz gráfica. Modela la red completa del Sistema de Transporte Colectivo Metro de la Ciudad de México usando NetworkX, representando cada estación como nodo y los tramos como aristas ponderadas. Implementa algoritmos de búsqueda de ruta más corta (Dijkstra y A*) para determinar el trayecto óptimo entre dos estaciones, considerando transbordos y distancias. Adopta una arquitectura cliente-servidor: la GUI envía solicitudes de cálculo al servidor mediante sockets y recibe la ruta resultante para renderizarla sobre un lienzo interactivo. Este flujo desacoplado facilita pruebas, mantenimiento y posibles despliegues distribuidos. El proyecto sirve como herramienta educativa en algoritmos de grafos y como apoyo a la planificación de desplazamientos urbanos, y puede ejecutarse en Windows, macOS y Linux sin dependencias externas aparte de Python y las bibliotecas mencionadas.",
+      "technologies": [
+        "Python 3",
+        "PyQt5",
+        "NetworkX",
+        "Algoritmo de Dijkstra",
+        "Algoritmo A*",
+        "Sockets TCP/IP"
+      ],
+      "category": "Transporte y movilidad",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/metro-maps-cdmx",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    },
+    {
+      "id": "circuirtos_rf_punto_q",
+      "title": "Circuirtos RF punto Q",
+      "description": "Herramienta educativa para encontrar el punto de operación Q de transistores FET (JFET y MOSFET) con distintos métodos.",
+      "longDescription": "Circuirtos RF punto Q es una herramienta educativa desarrollada en Python, diseñada para calcular el punto de operación Q de transistores de efecto de campo (FET), incluyendo JFET y MOSFET, bajo diversas configuraciones de polarización. La aplicación implementa múltiples métodos de análisis: iterativo, analítico y gráfico, permitiendo el estudio y comparación de resultados en distintos escenarios de diseño electrónico. El flujo de trabajo está construido sobre notebooks de Jupyter, donde se incluyen ejemplos detallados, explicaciones numéricas, soluciones analíticas y representaciones gráficas interactivas. Es ideal para estudiantes y profesionales de ingeniería electrónica que buscan comprender el comportamiento de circuitos de polarización, análisis de RF, y optimización de diseños de transistores en aplicaciones educativas y de simulación electrónica.",
+      "technologies": [
+        "Python",
+        "Jupyter Notebook",
+        "Métodos numéricos",
+        "Análisis de circuitos",
+        "Análisis gráfico",
+        "Ingeniería electrónica"
+      ],
+      "category": "Educación y simulación electrónica",
+      "status": "Completed",
+      "featured": false,
+      "links": {
+        "demo": null,
+        "github": "https://github.com/ronihdzz/Circuitos-RF-punto-Q",
+        "documentation": null
+      },
+      "dateCreated": "2025-06-13",
+      "dateUpdated": "2025-06-13"
+    }
+  ],
+  "seo": {
+    "title": "Roni Hernández - Sr Sofware Engenieer",
+    "description": "Ronaldo Hernández - Full-stack Developer specialized in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations.",
+    "keywords": [
+      "full-stack developer",
+      "web developer",
+      "React",
+      "Node.js",
+      "Python",
+      "JavaScript",
+      "freelance",
+      "portfolio"
+    ]
+  }
+};

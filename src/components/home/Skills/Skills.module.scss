@@ -1,0 +1,72 @@
+.section {
+  padding: var(--content-padding);
+  min-height: 100vh;
+
+  @include tablet-down {
+    padding: 1rem;
+    padding-top: 4rem;
+    min-height: auto;
+  }
+}
+
+.title {
+  @include section-title;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+.category {
+  @include card;
+  @include card-hover;
+}
+
+.categoryTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all var(--transition-speed) ease;
+
+  &:hover {
+    background: var(--primary-color);
+  }
+}
+
+.itemIcon {
+  flex-shrink: 0;
+  color: var(--accent-color);
+}
+
+.item:hover .itemIcon {
+  color: #fff;
+}
+
+.itemName {
+  font-weight: 500;
+}
