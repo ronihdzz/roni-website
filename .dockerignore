@@ -1,0 +1,29 @@
+# Dependencies & build artifacts
+node_modules
+.next
+out
+build
+coverage
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Git & CI
+.git
+.github
+.gitignore
+
+# Local tooling
+.idea
+.vscode
+.cursor
+*.log
+*.tsbuildinfo
+
+# Docs & compose (not needed inside the image)
+README.md
+README_EN.md
+docker-compose*.yml
+Makefile

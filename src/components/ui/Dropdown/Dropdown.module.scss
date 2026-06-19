@@ -1,0 +1,22 @@
+.root {
+  position: relative;
+}
+
+.menu {
+  @include dropdown-menu;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-speed) ease;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+// El consumidor aplica `.active` al trigger via estado open (estilos propios).
+.active {
+  // marcador; el trigger define su apariencia activa en su modulo.
+}

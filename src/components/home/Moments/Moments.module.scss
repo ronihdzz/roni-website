@@ -1,0 +1,50 @@
+.section {
+  padding: var(--content-padding);
+  min-height: 100vh;
+  background: var(--surface-color);
+
+  @include tablet-down {
+    padding: 1rem;
+    padding-top: 4rem;
+    min-height: auto;
+  }
+}
+
+.title {
+  @include section-title;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include card;
+  @include card-hover;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-pill, 999px);
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+}

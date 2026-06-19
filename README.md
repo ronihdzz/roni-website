@@ -1,203 +1,104 @@
-# Portafolio Personal - Roni Hernández
+# Roni Web
 
-<!-- Language Menu -->
-<div align="center">
+Portafolio personal de **Roni Hernández** — Sr Software Engineer.
+Sitio bilingüe (ES/EN) construido con **Next.js 16** (Pages Router), **React 19**,
+**TypeScript** y **SCSS Modules**.
 
-**Choose your language / Elige tu idioma:**
+> Migrado desde FastHTML/Python. El diseño dark original (slate + azul/cyan) se
+> conservó 1:1; el contenido vive ahora en `src/content` tipado.
 
-[![English](https://img.shields.io/badge/English-📖-blue?style=for-the-badge&logo=googletranslate&logoColor=white)](README_EN.md)
-[![Español](https://img.shields.io/badge/Español-📖-red?style=for-the-badge&logo=googletranslate&logoColor=white)](README.md)
+## Stack
 
-</div>
+- **Next.js 16.2** (Pages Router, `output: standalone`, React Compiler)
+- **React 19** + **TypeScript 5** (strict, `noUncheckedIndexedAccess`)
+- **SCSS Modules** con auto-import de `variables` y `mixins` (ver `next.config.ts`)
+- **i18n nativo** de Next: `/` (es) y `/en` (en), SSG por locale con `getStaticProps`
+- **lucide-react** (chrome de UI) + **react-icons** (Simple Icons / Font Awesome para marcas)
+- **next-sitemap** para `sitemap.xml` / `robots.txt`
+- Despliegue con **Docker** + **Dokploy** vía **GitHub Actions**
 
----
-
-Un portafolio web personal moderno y responsivo desarrollado con **FastHTML** y **Python**, que presenta información profesional, experiencias, proyectos y habilidades de manera dinámica e interactiva.
-
-## 🎯 ¿Qué hace este proyecto?
-
-Este proyecto es un **sitio web de portafolio personal** que sirve como una plataforma profesional para mostrar:
-
-- **Información personal y profesional** con contenido dinámico multiidioma (Español/Inglés)
-- **Secciones interactivas** que incluyen "Acerca de mí", "Momentos destacados", "Habilidades", "Proyectos" y "Contacto"
-- **Descarga de CV** en ambos idiomas con visor PDF integrado
-- **Formulario de contacto** funcional para comunicación directa
-- **Diseño responsivo** que se adapta a diferentes dispositivos
-- **Animaciones y efectos visuales** para una experiencia de usuario moderna
-
-## 🚀 Tecnologías Utilizadas
-
-### Backend
-- **[FastHTML](https://github.com/answerdotai/fasthtml)** - Framework web moderno de Python para desarrollo rápido
-- **[Uvicorn](https://www.uvicorn.org/)** - Servidor ASGI de alto rendimiento
-
-### Frontend
-- **HTML5** con componentes dinámicos generados por FastHTML
-- **CSS3** con diseño responsivo y animaciones
-- **JavaScript (ES6)** para interactividad del cliente
-- **Font Awesome** para iconografía
-- **Google Fonts** (Inter & JetBrains Mono) para tipografía
-
-### Contenido y Datos
-- **JSON** para almacenamiento de contenido dinámico
-- **Multiidioma** (Español/Inglés) con cambio dinámico
-- **PDFs** para CVs descargables
-
-### DevOps y Despliegue
-- **Docker** y **Docker Compose** para containerización
-- **GitHub Actions** para CI/CD automatizado
-- **Digital Ocean** como plataforma de hosting
-- **Multi-environment deployment** (development, staging, production)
-
-## 📁 Estructura del Proyecto
+## Estructura
 
 ```
-├── .github/
-│   └── workflows/
-│       └── cli.yml                 # Pipeline CI/CD con GitHub Actions
-├── src/
-│   ├── main.py                     # Aplicación principal FastHTML
-│   ├── static/
-│   │   ├── data.json              # Contenido dinámico (Español)
-│   │   ├── data_en.json           # Contenido dinámico (Inglés)
-│   │   ├── styles.css             # Estilos CSS principales
-│   │   ├── script.js              # JavaScript para interactividad
-│   │   ├── cv.pdf                 # CV en Español
-│   │   ├── cv_en.pdf              # CV en Inglés
-│   │   ├── roni.jpg               # Foto de perfil
-│   │   ├── ronihdz_en_proyectos.jpeg
-│   │   └── *.png                  # Iconos y logos
-│   └── __pycache__/               # Cache de Python
-├── env/                           # Entorno virtual de Python
-├── Dockerfile.deploy              # Configuración Docker para producción
-├── docker-compose.yml             # Orquestación de contenedores
-├── requirements.txt               # Dependencias de Python
-├── .gitignore                     # Archivos ignorados por Git
-├── LICENSE                        # Licencia del proyecto
-├── README.md                      # Documentación del proyecto (Español)
-└── README_EN.md                   # Documentación del proyecto (Inglés)
+src/
+  config/        site.ts (identidad), i18n.ts (locales + textos de UI)
+  content/       types.ts + content.es.ts / content.en.ts (contenido tipado por idioma)
+  components/
+    layout/      Layout (estado colapso/movil), Sidebar, Footer
+    home/        Hero (About), Moments, Skills, Projects, Contact
+    ui/          Dropdown, ReadMore, Reveal, Tag, Media, SkillIcon
+    seo/         Seo (meta + OG + hreflang + JSON-LD Person)
+  hooks/         useClickOutside, usePersistedState, useScrollSpy, useInView
+  pages/         _app, _document (lang por locale), index (getStaticProps)
+  styles/        globals.scss (tokens :root), _variables.scss, _mixins.scss
+public/          imagenes, CVs (cv.pdf / cv_en.pdf), favicon
+docker_images/
+  app/           Dockerfile.app (produccion, multi-stage standalone, no-root)
+  local/         Dockerfile (desarrollo con hot-reload)
+.github/workflows/ main.yml (build+push+deploy) + deploy-reusable.yml (webhook Dokploy)
 ```
 
-### Componentes Clave
+## Desarrollo
 
-#### `src/main.py`
-Aplicación principal que incluye:
-- Configuración de rutas y vistas
-- Manejo de idiomas dinámico
-- Componentes reutilizables (sidebar, secciones, formularios)
-- Inyección de metadatos SEO
-- Servicio de archivos estáticos
-
-#### `src/static/data.json` y `src/static/data_en.json`
-Archivos de contenido estructurado que contienen:
-- Información personal y profesional
-- Experiencias y momentos destacados
-- Habilidades organizadas por categorías
-- Proyectos con enlaces y descripciones
-- Información de contacto
-- Metadatos SEO
-
-#### `src/static/styles.css`
-Estilos CSS que proporcionan:
-- Diseño responsivo con CSS Grid y Flexbox
-- Tema oscuro moderno
-- Animaciones y transiciones suaves
-- Componentes interactivos (dropdowns, modales)
-- Optimización para diferentes dispositivos
-
-#### `src/static/script.js`
-JavaScript que maneja:
-- Funcionalidad "Ver más/Ver menos"
-- Dropdowns de idioma y CV
-- Sidebar colapsable
-- Validación de formularios
-- Smooth scrolling entre secciones
-
-## 🌐 Despliegue Automático
-
-El proyecto implementa un sistema de **CI/CD robusto** con diferentes entornos:
-
-- **Branch `development`** → Deploy automático a [dev.ronihdz.com](https://dev.ronihdz.com)
-- **Branch `main`** → Deploy automático a [ronihdz.com](https://ronihdz.com)
-
-### Pipeline de Despliegue
-1. **Build y Push** - Construcción de imagen Docker y push a Digital Ocean Container Registry
-2. **Deploy** - Despliegue automático al servidor correspondiente vía SSH
-3. **Multi-environment** - Mapeo automático de branches a entornos
-
-## 🛠️ Cómo Ejecutar Localmente
-
-### Prerequisitos
-- Python 3.11+
-- pip (gestor de paquetes de Python)
-
-### Pasos de Instalación
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/ronihdzz/website.git
-   cd website
-   ```
-
-2. **Crear y activar entorno virtual:**
-   ```bash
-   python -m venv env
-   source env/bin/activate  # En Windows: env\Scripts\activate
-   ```
-
-3. **Instalar dependencias:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Ejecutar la aplicación:**
-   ```bash
-   cd src
-   uvicorn main:app --reload --port 9999
-   ```
-
-5. **Abrir en el navegador:**
-   ```
-   http://127.0.0.1:9999
-   ```
-
-### Usando Docker
+### Opción A — Local (Node 22+)
 
 ```bash
-# Construir y ejecutar con Docker Compose
-docker-compose up --build
-
-# Acceder en: http://localhost:9000
+cp .env.example .env.local
+npm install
+npm run dev          # http://localhost:3000
 ```
 
-## 🔧 Personalización
+### Opción B — Docker (vía Makefile)
 
-Para adaptar este portafolio a tus necesidades:
+```bash
+make build           # construir imagen de desarrollo
+make up              # levantar contenedor  -> http://localhost:3006
+make logs            # ver logs en tiempo real
+make help            # ver todos los comandos
+```
 
-1. **Modificar contenido:** Edita `src/static/data.json` y `src/static/data_en.json`
-2. **Cambiar estilos:** Personaliza `src/static/styles.css`
-3. **Añadir funcionalidad:** Extiende `src/main.py` con nuevas rutas o componentes
-4. **Actualizar assets:** Reemplaza imágenes y PDFs en `src/static/`
+## Build de producción
 
-## 📄 Licencia
+```bash
+npm run build && npm start
+```
 
-Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Usa salida `standalone` y se ejecuta como usuario no-root. Ver
+`docker_images/app/Dockerfile.app`.
 
-## 🤝 Contribuciones
+## Internacionalización
 
-Las contribuciones son bienvenidas. Por favor:
+- ES en `/`, EN en `/en` (SSG por locale; `getStaticProps` elige `content.es` / `content.en`).
+- El selector de idioma enlaza entre locales; `canonical` + `hreflang` por idioma.
+- Textos de interfaz en `src/config/i18n.ts`; contenido en `src/content/content.{es,en}.ts`.
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'Añadir nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+## CI/CD
 
----
+`.github/workflows/main.yml` se dispara en push a `main` y `develop`:
 
-**Desarrollado con ❤️ por Roni Hernández**
+1. **Build & Push** de la imagen Docker al registry.
+2. **Deploy** al entorno correspondiente vía webhook de Dokploy (`develop`→development / `main`→production).
 
-🌐 **Website:** [ronihdz.com](https://ronihdz.com)  
-📧 **Email:** ronihdzbel@gmail.com  
-💼 **LinkedIn:** [linkedin.com/in/ronihdz](https://linkedin.com/in/ronihdz)  
-🔧 **GitHub:** [github.com/ronihdzz](https://github.com/ronihdzz)
+Requiere las siguientes **variables** y **secrets** en el repositorio:
+
+| Tipo     | Nombre                       | Ejemplo / Descripción                                          |
+|----------|------------------------------|----------------------------------------------------------------|
+| Variable | `BRANCH_TAG_MAP`             | `{"main":"prod","develop":"dev"}`                             |
+| Variable | `REGISTRY_TYPE`              | vacío (registry custom) o `dockerhub`                          |
+| Variable | `REGISTRY_URL`               | `registry.ronihdz.com` (si es custom)                         |
+| Variable | `REGISTRY_PROJECT`           | `roni`                                                         |
+| Variable | `REGISTRY_IMAGE_NAME`        | `roni-web`                                                     |
+| Variable | `DOCKERFILE_PATH`            | Opcional; default `docker_images/app/Dockerfile.app`          |
+| Secret   | `REGISTRY_USERNAME`          | Usuario del registry                                          |
+| Secret   | `REGISTRY_PASSWORD`          | Password/token del registry                                   |
+| Secret   | `DOKPLOY_DEPLOY_WEBHOOK_URL` | Webhook de despliegue de Dokploy (por entorno)               |
+
+La imagen se publica como `:<tag>-<timestamp>` y `:<tag>-latest`, creando además
+un tag `:<tag>-rollback` desde la imagen previa. `docker-compose.prod.yml` la
+consume en Dokploy con labels de Traefik (`Host(ronihdz.com)`, TLS letsencrypt,
+puerto 3000).
+
+## SEO
+
+- Configura `NEXT_PUBLIC_BASE_URL` para canonical, hreflang, JSON-LD y sitemap.
+- `npm run build` ejecuta `next-sitemap` (`postbuild`) generando `public/sitemap.xml` y `public/robots.txt`.

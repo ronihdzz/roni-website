@@ -1,16 +1,15 @@
-version: '3.8'
-
 services:
-
-  website:
+  roni-web:
     build:
       context: .
-      dockerfile: ./Dockerfile.deploy
-    image: website
-    container_name: website
+      dockerfile: docker_images/local/Dockerfile
+    container_name: roni-web
     ports:
-      - "9000:9000"
-    env_file:
-      - envs/.env.docker
+      - "3006:3000"
     volumes:
-      - .:/application
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true

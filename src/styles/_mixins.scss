@@ -1,0 +1,132 @@
+// =============================================================================
+// Mixins SCSS - Roni Web
+// Auto-importados en cada *.scss vía next.config.ts (sassOptions.additionalData)
+// =============================================================================
+
+// --- Responsive helpers (mobile-first overrides, max-width) ---
+@mixin desktop-down {
+  @media (max-width: #{$bp-lg}) {
+    @content;
+  }
+}
+
+// Breakpoint principal "movil" (sidebar pasa a off-canvas)
+@mixin tablet-down {
+  @media (max-width: #{$bp-md}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$bp-sm}) {
+    @content;
+  }
+}
+
+// --- Layout ---
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-reset {
+  appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+// --- Card (experiencias, skills, proyectos) ---
+@mixin card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+@mixin card-hover {
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// --- Titulo de seccion con subrayado de acento ---
+@mixin section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 1px;
+  }
+}
+
+// --- Boton "ghost" reutilizable (CTA / read-more) ---
+@mixin ghost-button {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: inline-block;
+  transition: all var(--transition-speed) ease;
+  font-size: 0.875rem;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.05);
+  }
+}
+
+// --- Menu desplegable (CV / idioma) ---
+@mixin dropdown-menu {
+  position: absolute;
+  background: var(--surface-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem;
+  z-index: 1001;
+  min-width: 140px;
+}
+
+@mixin dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: all var(--transition-speed) ease;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    color: var(--text-primary);
+    background: var(--primary-color);
+    transform: translateX(2px);
+  }
+}
