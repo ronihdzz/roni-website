@@ -9,6 +9,7 @@ import {
   FileText,
   Globe,
   User,
+  Users,
   Star,
   Code2,
   FolderGit2,
@@ -25,6 +26,7 @@ import styles from "./Sidebar.module.scss";
 const NAV_ICONS: Record<NavSection, typeof User> = {
   about: User,
   moments: Star,
+  community: Users,
   skills: Code2,
   projects: FolderGit2,
   contact: Mail,

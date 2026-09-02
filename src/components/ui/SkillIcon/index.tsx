@@ -29,9 +29,22 @@ import {
   SiPostgresql,
   SiMongodb,
   SiRedis,
+  SiClaude,
+  SiModelcontextprotocol,
+  SiGooglebigquery,
+  SiGrafana,
+  SiDatadog,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa6";
-import { LuNetwork, LuArrowLeftRight, LuWebhook, LuChartLine, LuCode } from "react-icons/lu";
+import {
+  LuNetwork,
+  LuArrowLeftRight,
+  LuWebhook,
+  LuChartLine,
+  LuCode,
+  LuBrainCircuit,
+  LuBot,
+} from "react-icons/lu";
 
 /**
  * Mapa nombre-de-skill -> icono. Marcas via Simple Icons; servicios AWS via
@@ -51,6 +64,11 @@ const SKILL_ICONS: Record<string, IconType> = {
   Flask: SiFlask,
   pyQT5: SiQt,
   // IA & ML
+  "Claude Code": SiClaude,
+  MCP: SiModelcontextprotocol,
+  RAG: LuBrainCircuit,
+  "AI Agents": LuBot,
+  "Agentes IA": LuBot,
   pandas: SiPandas,
   numpy: SiNumpy,
   matplotlib: LuChartLine,
@@ -89,10 +107,13 @@ const SKILL_ICONS: Record<string, IconType> = {
   DigitalOcean: SiDigitalocean,
   Docker: SiDocker,
   "Docker Compose": SiDocker,
+  Grafana: SiGrafana,
+  Datadog: SiDatadog,
   // Bases de datos
   PostgreSQL: SiPostgresql,
   MongoDB: SiMongodb,
   Redis: SiRedis,
+  BigQuery: SiGooglebigquery,
 };
 
 type SkillIconProps = {

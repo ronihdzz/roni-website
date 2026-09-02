@@ -20,6 +20,7 @@ export function normalizeLocale(value: string | undefined): Locale {
 export const navSections = [
   "about",
   "moments",
+  "community",
   "skills",
   "projects",
   "contact",
@@ -54,6 +55,12 @@ type UiStrings = {
   footerSource: string;
   footerBuilt: string;
   footerHeart: string;
+  communityPillars: string;
+  communityGallery: string;
+  communityVisit: string;
+  communityFollow: string;
+  viewLarge: string;
+  close: string;
 };
 
 export const ui: Record<Locale, UiStrings> = {
@@ -61,6 +68,7 @@ export const ui: Record<Locale, UiStrings> = {
     nav: {
       about: "Acerca de",
       moments: "Momentos",
+      community: "Comunidad",
       skills: "Habilidades",
       projects: "Proyectos",
       contact: "Contacto",
@@ -91,11 +99,18 @@ export const ui: Record<Locale, UiStrings> = {
     footerSource: "Código fuente disponible en",
     footerBuilt: "Desarrollado con",
     footerHeart: "amor",
+    communityPillars: "Lo que hacemos",
+    communityGallery: "Momentos de la comunidad",
+    communityVisit: "Visitar uniconhub.org",
+    communityFollow: "Sigue a UniconHub",
+    viewLarge: "Ver en grande",
+    close: "Cerrar",
   },
   en: {
     nav: {
       about: "About",
       moments: "Moments",
+      community: "Community",
       skills: "Skills",
       projects: "Projects",
       contact: "Contact",
@@ -126,6 +141,12 @@ export const ui: Record<Locale, UiStrings> = {
     footerSource: "Source code available on",
     footerBuilt: "Built with",
     footerHeart: "love",
+    communityPillars: "What we do",
+    communityGallery: "Community moments",
+    communityVisit: "Visit uniconhub.org",
+    communityFollow: "Follow UniconHub",
+    viewLarge: "View larger",
+    close: "Close",
   },
 };
 

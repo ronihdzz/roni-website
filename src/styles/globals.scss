@@ -17,6 +17,12 @@
   --border-color: #334155;
   --gradient-primary: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
   --gradient-surface: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  // Marca UniconHub (paleta oficial: azul -> celeste -> violeta -> rosa)
+  --unicon-blue: #305aff;
+  --unicon-sky: #2194ff;
+  --unicon-purple: #8d30ff;
+  --unicon-pink: #db49d4;
+  --gradient-unicon: linear-gradient(135deg, #305aff 0%, #2194ff 40%, #8d30ff 75%, #db49d4 100%);
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);

@@ -8,6 +8,18 @@
   }
 }
 
+// Recorte visual: el contenido sigue completo en el DOM.
+.clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+
+  .paragraph:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .toggle {
   @include button-reset;
   @include ghost-button;
