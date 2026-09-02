@@ -6,6 +6,13 @@ Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-09-02
+
+Actualización de contenido y experiencia: "Acerca de" con Mercado Pago, la IA en el
+flujo de trabajo y UniconHub; nueva sección Comunidad con visor de fotos y videos;
+proyectos de herramientas con IA; y mejoras de legibilidad para IA y buscadores
+(texto completo en el HTML, JSON-LD enriquecido, imagen Open Graph y `llms.txt`).
+
 ### Added
 - Sección **Comunidad** (`#community`, después de "Momentos"): UniconHub en tono sobrio con el video del equipo, descripción, iniciativas, fotos y enlaces a uniconhub.org y sus redes.
 - Hero: chips con los roles actuales (Senior Software Engineer @ Mercado Pago; Cofundador y líder @ UniconHub).
@@ -47,5 +54,6 @@ flujo de despliegue con Docker + Dokploy vía GitHub Actions.
 ### Removed
 - Stack FastHTML/Python (`src/main.py`, `requirements.txt`, `Dockerfile.deploy`) y los estáticos servidos a mano (`data.json`, `script.js`, `styles.css`).
 
-[Unreleased]: https://github.com/ronihdzz/roni-website/compare/v0.1.0...develop
+[Unreleased]: https://github.com/ronihdzz/roni-website/compare/v0.2.0...develop
+[0.2.0]: https://github.com/ronihdzz/roni-website/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/ronihdzz/roni-website/releases/tag/v0.1.0
