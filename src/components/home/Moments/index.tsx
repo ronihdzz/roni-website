@@ -5,6 +5,8 @@ import { getUi } from "@/config/i18n";
 import Reveal from "@/components/ui/Reveal";
 import ReadMore from "@/components/ui/ReadMore";
 import MediaPlayer from "@/components/ui/Media";
+import Lightbox from "@/components/ui/Lightbox";
+import { useLightbox } from "@/hooks/useLightbox";
 import styles from "./Moments.module.scss";
 
 type MomentsProps = {
@@ -14,6 +16,7 @@ type MomentsProps = {
 export default function Moments({ experiences }: MomentsProps) {
   const { locale } = useRouter();
   const ui = getUi(locale);
+  const lightbox = useLightbox();
 
   return (
     <section id="moments" className={styles.section}>
@@ -30,13 +33,20 @@ export default function Moments({ experiences }: MomentsProps) {
             <ReadMore
               text={exp.description}
               max={200}
+              lines={4}
               moreLabel={ui.readMore}
               lessLabel={ui.readLess}
             />
-            <MediaPlayer media={exp.media} title={exp.title} />
+            <MediaPlayer
+              media={exp.media}
+              title={exp.title}
+              expandLabel={ui.viewLarge}
+              onExpand={lightbox.open}
+            />
           </Reveal>
         ))}
       </div>
+      <Lightbox item={lightbox.item} closeLabel={ui.close} onClose={lightbox.close} />
     </section>
   );
 }

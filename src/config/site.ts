@@ -5,6 +5,13 @@
 
 export const site = {
   name: "Roni Hernández",
+  /** Nombre completo y alias: solo para datos estructurados (JSON-LD, llms.txt). */
+  fullName: "David Roni Hernández Beltrán",
+  givenName: "David Roni",
+  familyName: "Hernández Beltrán",
+  alias: "ronihdz",
+  /** Imagen para compartir (Open Graph / Twitter), 1200x630 en public/. */
+  ogImage: "/og-image.jpg",
   url: process.env.NEXT_PUBLIC_BASE_URL || "https://ronihdz.com",
   email: "ronihdzbel@gmail.com",
   phone: "+52 55 13086150",

@@ -1,0 +1,295 @@
+.section {
+  padding: var(--content-padding);
+  min-height: 100vh;
+  background: var(--background-color);
+
+  @include tablet-down {
+    padding: 1rem;
+    padding-top: 4rem;
+    min-height: auto;
+  }
+}
+
+.title {
+  @include section-title;
+}
+
+// --- Cabecera ---
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  max-width: 1100px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  object-fit: contain;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary);
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+.brandTagline {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.role {
+  margin-left: auto;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+
+  @include tablet-down {
+    margin-left: 0;
+  }
+}
+
+// --- Video + descripcion ---
+.grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 230px) 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1100px;
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// Marco tipo telefono para el video vertical (9:16)
+.phone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  padding: 4px;
+  border-radius: 1.4rem;
+  background: var(--gradient-unicon);
+  box-shadow: var(--shadow-lg);
+
+  @include tablet-down {
+    max-width: 230px;
+  }
+}
+
+.expand,
+.zoom {
+  @include button-reset;
+}
+
+.expand {
+  @include flex-center;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background var(--transition-speed) ease;
+
+  &:hover {
+    background: var(--primary-color);
+  }
+}
+
+.zoom {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(1.4rem - 4px);
+  background: #000;
+}
+
+.videoCaption {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 240px;
+}
+
+.story {
+  min-width: 0;
+}
+
+.paragraph {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  max-width: 680px;
+}
+
+.subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.25rem 0 0.6rem;
+}
+
+// --- Iniciativas ---
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pillar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--border-radius);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.pillarIcon {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+// --- Acciones ---
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.cta {
+  @include ghost-button;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.socialLink {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: all var(--transition-speed) ease;
+
+  &:hover {
+    color: var(--text-primary);
+    border-color: var(--primary-color);
+  }
+}
+
+// --- Fotos (tres iguales) ---
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 1100px;
+
+  @include tablet-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+.photo {
+  min-width: 0;
+}
+
+.figure {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--surface-color);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.figure:hover .img {
+  transform: scale(1.03);
+}
+
+.caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  pointer-events: none;
+  padding: 1.5rem 0.8rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.figure:hover .caption {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .caption {
+    opacity: 1;
+  }
+}
