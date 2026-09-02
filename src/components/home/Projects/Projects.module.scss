@@ -1,7 +1,7 @@
 .section {
   padding: var(--content-padding);
   min-height: 100vh;
-  background: var(--surface-color);
+  background: var(--background-color);
 
   @include tablet-down {
     padding: 1rem;
@@ -79,4 +79,17 @@
     background: var(--primary-color);
     color: #fff;
   }
+}
+
+// Estado para proyectos sin enlaces publicos (uso interno / experimento)
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }

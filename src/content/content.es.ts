@@ -3,13 +3,27 @@ import type { SiteContent } from "./types";
 export const contentEs: SiteContent = {
   "personal": {
     "name": "Roni Hernández",
-    "profession": "Sr Sofware Engenieer",
+    "profession": "Senior Software Engineer",
     "titleParts": [
       "Hola,",
       "Soy Roni Hernández,",
-      "Sr Sofware Engenieer."
+      "Senior Software Engineer."
     ],
-    "about": "Soy desarrollador Sr Backend con más de cuatro años de experiencia en el sector tecnológico, especialmente en startups. Actualmente, trabajo en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente, fui asignado al proyecto del core bancario, donde junto con otros programadores construimos este sistema desde cero, enfrentando retos relacionados con la eficiencia, escalabilidad y configuraciones de sistemas.\n\nUno de los aspectos que más me ha apasionado de trabajar en el core bancario es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Esto ha sido especialmente emocionante, ya que puedo observar cómo mis soluciones tecnológicas permiten mover grandes cantidades de dinero, lo que hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Telmex en el área de ciberseguridad. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes, y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch, e IAM Amazon), además de herramientas para despliegue y automatización como Docker, Docker Compose, y GitHub Actions. Trabajo principalmente con lenguajes de programación como Python, C, C++ y Java, y he desarrollado APIs y microservicios utilizando Django Rest Framework, FastAPI y Flask. También tengo experiencia con bases de datos como PostgreSQL y Redis.\n\nAunque actualmente no lidero un equipo, ya he tenido la oportunidad de supervisar a personas en el pasado, lo que me ha permitido desarrollar habilidades de liderazgo y gestión. Mi enfoque siempre ha sido colaborar de manera cercana con mis compañeros de equipo para lograr resultados eficientes y escalables.\n\nMis intereses actuales incluyen la arquitectura de software y la integración de inteligencia artificial en soluciones innovadoras, explorando tecnologías como TensorFlow y LangChain. Siempre estoy en busca de nuevos retos y oportunidades para aprender.",
+    "roles": [
+      {
+        "kind": "work",
+        "title": "Senior Software Engineer",
+        "org": "Mercado Pago",
+        "url": "https://www.mercadopago.com.mx/"
+      },
+      {
+        "kind": "community",
+        "title": "Cofundador y líder",
+        "org": "UniconHub",
+        "url": "https://uniconhub.org"
+      }
+    ],
+    "about": "Soy ingeniero de software backend con más de cinco años de experiencia en el sector tecnológico, la mayor parte en startups. Actualmente trabajo en Mercado Pago, la fintech de Mercado Libre, en sistemas de pagos y tokenización que se integran con redes de tarjetas como Visa, Mastercard y Elo. Ahí me toca el ciclo completo: diseñar, implementar, desplegar y operar en producción varios microservicios, apoyándome en herramientas como Grafana y Datadog.\n\nAntes estuve poco más de tres años en Fairplay, una startup financiera donde comencé trabajando en el monolito de la empresa, lo que me permitió entender a fondo los sistemas heredados. Posteriormente fui asignado al proyecto del core bancario, donde junto con otros programadores construimos el sistema desde cero, enfrentando retos relacionados con la eficiencia, la escalabilidad y la configuración de sistemas. Con el tiempo pasé a ser Squad Leader del equipo de backend.\n\nUno de los aspectos que más me ha apasionado de trabajar en sistemas financieros es ver de forma tangible cómo las líneas de código que escribo impactan directamente en ingresos, transacciones de dinero y órdenes de pago. Es emocionante observar cómo una solución técnica permite mover grandes cantidades de dinero; eso hace que cada proyecto y cada línea de código cobren una relevancia única.\n\nAdemás, he tenido la oportunidad de colaborar con diferentes áreas como Data Engineering, Data Science, Ciberseguridad, Producto, Ventas y DevOps, lo cual me ha brindado una visión integral de cómo las distintas áreas se interrelacionan dentro de una empresa tecnológica. Esta interacción me ha permitido aportar soluciones más alineadas con las necesidades globales de la compañía.\n\nAntes de unirme a Fairplay, trabajé en Scitum, la unidad de ciberseguridad de Telmex. Aunque siempre me ha interesado la seguridad informática y las redes, en ese momento de mi carrera sentí que necesitaba \"tirar más código\" y profundizar mis conocimientos en sistemas backend. Esto me llevó a buscar una experiencia más dinámica y orientada al desarrollo, y qué mejor lugar para hacerlo que en una startup, donde los desafíos técnicos son continuos y variados.\n\nEn el último tiempo, la inteligencia artificial se volvió parte de mi forma de trabajar. En el equipo he construido cosas como un MCP conectado a BigQuery, un bot de Slack para consultar información en lenguaje natural, sistemas RAG sobre nuestra documentación y skills para Claude Code que ayudan en el code review. Me gusta compartir lo que voy aprendiendo en charlas y demos internas, porque creo que estas herramientas valen más cuando todo el equipo las adopta.\n\nEn cuanto a mi stack tecnológico, tengo amplia experiencia con Linux, redes y servicios de AWS (incluyendo Lambda, S3, SQS, SNS, Step Functions, CloudWatch e IAM), además de herramientas para despliegue y automatización como Docker, Docker Compose y GitHub Actions. Trabajo principalmente con Python y he desarrollado APIs y microservicios utilizando Django REST Framework, FastAPI, gRPC y Flask. También tengo experiencia con bases de datos como PostgreSQL, MongoDB y Redis.\n\nFuera del trabajo, soy cofundador y líder de UniconHub, una comunidad tecnológica que arrancamos en 2023 con un grupo de amigos para que jóvenes en tecnología se conozcan, compartan lo que están construyendo y aprendan juntos a través de meetups, proyectos y un podcast. Ahí lidero a la comunidad y, junto con otro compañero, el desarrollo de la plataforma.\n\nDisfruto programar incluso en mi tiempo libre, y siempre estoy en busca de nuevos retos y de oportunidades para aprender y construir proyectos con personas que comparten ese entusiasmo.",
     "photo": "/ronihdz_en_proyectos.jpeg",
     "cv": {
       "spanish": "/cv.pdf",
@@ -56,9 +70,9 @@ export const contentEs: SiteContent = {
       "Python",
       "FastAPI",
       "AWS",
-      "LangChain",
-      "GithubActions",
-      "PostgreSQL"
+      "Docker",
+      "PostgreSQL",
+      "Claude Code"
     ],
     "categories": [
       {
@@ -122,6 +136,26 @@ export const contentEs: SiteContent = {
         "id": "ai-ml",
         "title": "IA & Machine Learning",
         "items": [
+          {
+            "name": "Claude Code",
+            "level": "Avanzado",
+            "years": 1
+          },
+          {
+            "name": "MCP",
+            "level": "Avanzado",
+            "years": 1
+          },
+          {
+            "name": "RAG",
+            "level": "Avanzado",
+            "years": 1
+          },
+          {
+            "name": "Agentes IA",
+            "level": "Intermedio",
+            "years": 1
+          },
           {
             "name": "pandas",
             "level": "Intermedio",
@@ -304,6 +338,16 @@ export const contentEs: SiteContent = {
             "name": "Docker Compose",
             "level": "Avanzado",
             "years": 3
+          },
+          {
+            "name": "Grafana",
+            "level": "Intermedio",
+            "years": 1
+          },
+          {
+            "name": "Datadog",
+            "level": "Intermedio",
+            "years": 1
           }
         ]
       },
@@ -325,10 +369,179 @@ export const contentEs: SiteContent = {
             "name": "Redis",
             "level": "Intermedio",
             "years": 2
+          },
+          {
+            "name": "BigQuery",
+            "level": "Intermedio",
+            "years": 1
           }
         ]
       }
     ]
+  },
+  "career": [
+    {
+      "id": "mercado-pago",
+      "kind": "work",
+      "current": true,
+      "org": "Mercado Pago · Mercado Libre",
+      "url": "https://www.mercadopago.com.mx/",
+      "role": "Senior Software Engineer",
+      "period": "ago. 2025 – actualidad",
+      "location": "Ciudad de México · Híbrido",
+      "summary": "Sistemas de pagos y tokenización integrados con redes de tarjetas como Visa, Mastercard y Elo. Ciclo completo de varios microservicios: diseño, implementación, despliegue, observabilidad con Grafana y Datadog, y operación en producción. En paralelo, herramientas con IA para el equipo: un MCP sobre BigQuery, un bot de Slack, RAGs sobre la documentación y skills para Claude Code.",
+      "tags": [
+        "Pagos",
+        "Tokenización",
+        "Microservicios",
+        "Grafana",
+        "Datadog",
+        "IA"
+      ],
+      "start": "2025-08"
+    },
+    {
+      "id": "uniconhub",
+      "kind": "community",
+      "current": true,
+      "org": "UniconHub",
+      "url": "https://uniconhub.org",
+      "role": "Cofundador",
+      "period": "nov. 2023 – actualidad",
+      "location": "Ciudad de México · Remoto",
+      "summary": "Comunidad tecnológica que arrancamos con un grupo de amigos. Coordino a la comunidad y, junto con otro compañero, el desarrollo de la plataforma con la que organizamos meetups, proyectos y el podcast.",
+      "tags": [
+        "Comunidad",
+        "Meetups",
+        "Producto"
+      ],
+      "start": "2023-11"
+    },
+    {
+      "id": "fairplay",
+      "kind": "work",
+      "current": false,
+      "org": "Fairplay",
+      "url": "https://www.getfairplay.com/",
+      "role": "Back-end Developer → Squad Leader Back-end",
+      "period": "abr. 2022 – ago. 2025",
+      "location": "Ciudad de México",
+      "summary": "Fintech de financiamiento para empresas y comercios digitales. Entré como Back-end Developer Jr al monolito (Django REST Framework), con pruebas automatizadas, paquetes privados en Python y crones para automatizar procesos internos. Después construimos el core bancario con microservicios (FastAPI, gRPC, AWS Lambda, S3, SQS, SNS) y diseñé el orquestador de microservicios para una migración completa de datos. Desde 2024 fui Squad Leader del equipo de backend: participé en la arquitectura de módulos financieros, en la estandarización de cómo construimos APIs con FastAPI y presenté investigaciones técnicas al equipo de ingeniería.",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "gRPC",
+        "AWS Lambda",
+        "Django REST Framework",
+        "Liderazgo"
+      ],
+      "start": "2022-04",
+      "end": "2025-08"
+    },
+    {
+      "id": "scitum",
+      "kind": "work",
+      "current": false,
+      "org": "Scitum · Telmex",
+      "url": "https://www.scitum.com.mx/",
+      "role": "Ciberseguridad",
+      "period": "Antes de Fairplay",
+      "location": "Ciudad de México",
+      "summary": "Unidad de ciberseguridad de Telmex. Seguridad informática y redes, antes de dar el salto al desarrollo backend.",
+      "tags": [
+        "Ciberseguridad",
+        "Redes",
+        "Linux"
+      ]
+    },
+    {
+      "id": "unam",
+      "kind": "education",
+      "current": false,
+      "org": "Facultad de Ingeniería, UNAM",
+      "url": "https://www.ingenieria.unam.mx/",
+      "role": "Instructor de cursos de programación · Centro de Cómputo",
+      "period": "2019 – 2022",
+      "location": "Ciudad de México",
+      "summary": "Instructor de Python básico y líder de los cursos de Python pre-intermedio, procesamiento de datos con Python y C básico; diseñé los temarios, las métricas de evaluación y las evaluaciones. Antes, en BRAIN Artificial Intelligence, aprendí a programar algoritmos de machine learning y a construir dispositivos para recolectar datos, y dirigí Delphia, un grupo de estudio de inteligencia artificial.",
+      "tags": [
+        "Python",
+        "C",
+        "Docencia",
+        "Machine Learning"
+      ],
+      "start": "2019-11",
+      "end": "2022-06"
+    }
+  ],
+  "community": {
+    "name": "UniconHub",
+    "url": "https://uniconhub.org",
+    "logo": "/uniconhub-mark.png",
+    "role": "Cofundador · Líder de la comunidad",
+    "tagline": "Build. Connect. Repeat.",
+    "description": "UniconHub es una comunidad tecnológica que arrancamos en 2023 un grupo de amigos en la Ciudad de México, con miembros también en Colombia y Argentina. La idea es simple: que jóvenes en tecnología se conozcan, compartan lo que están construyendo y aprendan juntos. Organizamos meetups presenciales cada mes y medio o dos, tenemos un podcast con historias de la comunidad, una Social Run mensual de 5 km, proyectos con código abierto y un blog por invitación.\n\nSomos nueve cofundadores. Yo coordino a la comunidad y, junto con otro compañero, llevo el desarrollo de la plataforma con la que queremos que sea más fácil descubrir eventos, comunidades y proyectos.",
+    "pillars": [
+      {
+        "id": "meetups",
+        "label": "Meetups"
+      },
+      {
+        "id": "podcast",
+        "label": "Podcast"
+      },
+      {
+        "id": "socialrun",
+        "label": "Social Run"
+      },
+      {
+        "id": "projects",
+        "label": "Proyectos"
+      },
+      {
+        "id": "blog",
+        "label": "Blog"
+      },
+      {
+        "id": "networking",
+        "label": "Networking"
+      },
+      {
+        "id": "reading",
+        "label": "Círculo de lectura"
+      },
+      {
+        "id": "hackathon",
+        "label": "Hackathon"
+      }
+    ],
+    "video": {
+      "url": "https://res.cloudinary.com/dktvzpt6a/video/upload/q_auto/team_video_fcuhpv.mp4",
+      "poster": "https://res.cloudinary.com/dktvzpt6a/video/upload/so_52,w_720,q_auto/team_video_fcuhpv.jpg",
+      "caption": "Un meetup de UniconHub y el equipo fundador, en 60 segundos."
+    },
+    "photos": [
+      {
+        "src": "/uniconhub-meetup-auditorium.jpg",
+        "alt": "Asistentes al Devs Meetup de UniconHub en un auditorio",
+        "caption": "Devs Meetup"
+      },
+      {
+        "src": "/uniconhub-team.jpg",
+        "alt": "Equipo fundador de UniconHub en una azotea",
+        "caption": "Equipo fundador"
+      },
+      {
+        "src": "/uniconhub-meetup-office.jpg",
+        "alt": "Comunidad UniconHub despidiendo un meetup",
+        "caption": "Después de un meetup"
+      }
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/unicon.hub/",
+      "linkedin": "https://www.linkedin.com/company/uniconhub/",
+      "youtube": "https://www.youtube.com/@UniConHub"
+    }
   },
   "experiences": [
     {
@@ -408,6 +621,98 @@ export const contentEs: SiteContent = {
     }
   ],
   "projects": [
+    {
+      "id": "ai_code_review_claude_code",
+      "title": "Skills de code review para Claude Code",
+      "description": "Conjunto de skills para Claude Code que ayudan a revisar código: validan los commits, comparan la descripción del PR con el diff real y revisan las reglas de arquitectura del equipo. Se pueden conectar con MCPs para tener más contexto.",
+      "longDescription": "Skills para Claude Code pensadas para que cualquier persona del equipo las instale y las use en su flujo diario de revisión: validan la calidad de los commits, comparan la descripción del PR contra el diff real, revisan reglas de arquitectura del equipo y pueden conectarse con MCPs para enriquecer el contexto.",
+      "technologies": [
+        "Claude Code",
+        "Skills",
+        "MCP",
+        "Git"
+      ],
+      "category": "Herramientas con IA",
+      "status": "Uso interno",
+      "featured": true,
+      "links": {},
+      "dateCreated": "2025-06-01",
+      "dateUpdated": "2026-09-01"
+    },
+    {
+      "id": "ai_slack_agent_bigquery_mcp",
+      "title": "Bot de Slack para consultar BigQuery",
+      "description": "Bot de Slack que responde preguntas en lenguaje natural sobre información operativa y de auditoría, usando un MCP propio conectado a BigQuery. Antes esas consultas requerían accesos y queries manuales.",
+      "longDescription": "Bot de Slack que traduce preguntas en lenguaje natural a consultas sobre BigQuery mediante un MCP propio y devuelve respuestas con contexto. Reemplaza accesos y queries manuales para consultar información operativa y de auditoría.",
+      "technologies": [
+        "MCP",
+        "BigQuery",
+        "Slack",
+        "LLMs",
+        "Python"
+      ],
+      "category": "Herramientas con IA",
+      "status": "Uso interno",
+      "featured": true,
+      "links": {},
+      "dateCreated": "2025-06-01",
+      "dateUpdated": "2026-09-01"
+    },
+    {
+      "id": "rag_technical_knowledge",
+      "title": "RAG sobre documentación técnica",
+      "description": "Sistemas RAG para consultar con IA la documentación técnica repartida entre varios repositorios. Incluye el diseño de los dominios de conocimiento y la preparación de los documentos.",
+      "longDescription": "Sistemas RAG para que la documentación técnica repartida entre varios repositorios y fuentes internas se pueda consultar con IA. Incluye el diseño de los dominios de conocimiento y la preparación de los documentos para mejorar la calidad de las respuestas.",
+      "technologies": [
+        "RAG",
+        "Embeddings",
+        "Bases vectoriales",
+        "LLMs"
+      ],
+      "category": "Herramientas con IA",
+      "status": "Uso interno",
+      "featured": true,
+      "links": {},
+      "dateCreated": "2025-06-01",
+      "dateUpdated": "2026-09-01"
+    },
+    {
+      "id": "ai_document_processing_pipeline",
+      "title": "Procesamiento de documentos para RAG",
+      "description": "Experimento con Docling, OCR y Markdown para convertir documentación técnica compleja, incluido el texto dentro de diagramas, en un formato que un RAG pueda usar. Comparé alternativas, medí resultados y lo documenté para el equipo.",
+      "longDescription": "Pipeline experimental para convertir documentación técnica compleja en Markdown estructurado utilizable por un RAG, usando Docling y OCR para recuperar incluso el texto dentro de diagramas. Comparé alternativas, medí los resultados y documenté las conclusiones para el equipo.",
+      "technologies": [
+        "Docling",
+        "OCR",
+        "Markdown",
+        "RAG",
+        "Python"
+      ],
+      "category": "Herramientas con IA",
+      "status": "Experimento",
+      "featured": false,
+      "links": {},
+      "dateCreated": "2025-06-01",
+      "dateUpdated": "2026-09-01"
+    },
+    {
+      "id": "ai_team_learning",
+      "title": "Preguntas automáticas para aprender en equipo",
+      "description": "Sistema que genera preguntas a partir de documentación interna, las publica en Slack, evalúa las respuestas y da retroalimentación. Una forma de repasar la documentación de manera continua.",
+      "longDescription": "Sistema que genera preguntas a partir de la documentación interna, las publica en Slack, evalúa con IA las respuestas de cada persona y devuelve retroalimentación, para repasar la documentación de forma continua.",
+      "technologies": [
+        "LLMs",
+        "Slack",
+        "Automatización",
+        "Python"
+      ],
+      "category": "Herramientas con IA",
+      "status": "Uso interno",
+      "featured": false,
+      "links": {},
+      "dateCreated": "2025-06-01",
+      "dateUpdated": "2026-09-01"
+    },
     {
       "id": "aws_lambda_fastapi_template",
       "title": "AWS Lambda FastAPI Template",
@@ -872,17 +1177,24 @@ export const contentEs: SiteContent = {
     }
   ],
   "seo": {
-    "title": "Roni Hernández - Sr Sofware Engenieer",
-    "description": "Ronaldo Hernández - Full-stack Developer specialized in modern web applications with React, Node.js, and Python. Available for freelance projects and collaborations.",
+    "title": "Roni Hernández · Senior Software Engineer",
+    "description": "Ingeniero de software backend en Mercado Pago (sistemas de pagos y tokenización). Antes, core bancario en Fairplay y ciberseguridad en Scitum/Telmex. Python, AWS, microservicios y herramientas con IA (Claude Code, MCP, RAG). Cofundador de UniconHub.",
     "keywords": [
-      "full-stack developer",
-      "web developer",
-      "React",
-      "Node.js",
+      "Roni Hernández",
+      "Senior Software Engineer",
+      "backend",
+      "Mercado Pago",
+      "Fairplay",
+      "sistemas de pagos",
       "Python",
-      "JavaScript",
-      "freelance",
-      "portfolio"
+      "FastAPI",
+      "AWS",
+      "microservicios",
+      "Claude Code",
+      "MCP",
+      "RAG",
+      "UniconHub",
+      "portafolio"
     ]
   }
 };

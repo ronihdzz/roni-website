@@ -25,11 +25,11 @@ src/
   content/       types.ts + content.es.ts / content.en.ts (contenido tipado por idioma)
   components/
     layout/      Layout (estado colapso/movil), Sidebar, Footer
-    home/        Hero (About), Moments, Skills, Projects, Contact
-    ui/          Dropdown, ReadMore, Reveal, Tag, Media, SkillIcon
+    home/        Hero (About), Moments, Community (UniconHub), Skills, Projects, Contact
+    ui/          Dropdown, ReadMore, Reveal, Tag, Media, SkillIcon, Lightbox
     seo/         Seo (meta + OG + hreflang + JSON-LD Person)
-  hooks/         useClickOutside, usePersistedState, useScrollSpy, useInView
-  pages/         _app, _document (lang por locale), index (getStaticProps)
+  hooks/         useClickOutside, usePersistedState, useScrollSpy, useInView, useLightbox
+  pages/         _app, _document (lang por locale), index (getStaticProps), llms.txt (SSR, texto para LLMs)
   styles/        globals.scss (tokens :root), _variables.scss, _mixins.scss
 public/          imagenes, CVs (cv.pdf / cv_en.pdf), favicon
 docker_images/

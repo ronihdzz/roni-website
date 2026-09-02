@@ -1,6 +1,7 @@
 .section {
   padding: var(--content-padding);
   min-height: 100vh;
+  background: var(--surface-color);
 
   @include tablet-down {
     padding: 1rem;

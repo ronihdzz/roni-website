@@ -5,7 +5,7 @@ const config = {
   siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 5000,
-  exclude: ["/404", "/500"],
+  exclude: ["/404", "/500", "/llms.txt", "/en/llms.txt"],
   alternateRefs: [
     { href: siteUrl, hreflang: "es" },
     { href: `${siteUrl}/en`, hreflang: "en" },

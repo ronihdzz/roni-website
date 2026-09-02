@@ -8,10 +8,21 @@ export interface CvLinks {
   english: string;
 }
 
+export type RoleKind = "work" | "community";
+
+/** Rol actual (chip bajo el titulo del hero). El icono se elige por `kind`. */
+export interface Role {
+  kind: RoleKind;
+  title: string;
+  org: string;
+  url?: string;
+}
+
 export interface Personal {
   name: string;
   profession: string;
   titleParts: string[];
+  roles: Role[];
   about: string;
   photo: string;
   cv: CvLinks;
@@ -97,6 +108,67 @@ export interface Contact {
   form: ContactForm;
 }
 
+export type CareerKind = "work" | "community" | "education";
+
+/**
+ * Entrada de trayectoria. No se renderiza como seccion: alimenta los datos
+ * estructurados (JSON-LD en Seo) y /llms.txt.
+ */
+export interface CareerEntry {
+  id: string;
+  kind: CareerKind;
+  current: boolean;
+  org: string;
+  url?: string;
+  role: string;
+  /** Texto mostrado (p. ej. "abr. 2022 – ago. 2025"). */
+  period: string;
+  /** Fechas ISO (YYYY-MM) para datos estructurados; opcionales. */
+  start?: string;
+  end?: string;
+  location?: string;
+  summary: string;
+  tags?: string[];
+}
+
+/** Pilar/iniciativa de la comunidad; el icono se resuelve por `id`. */
+export interface CommunityPillar {
+  id: string;
+  label: string;
+}
+
+export interface CommunityVideo {
+  url: string;
+  poster: string;
+  caption: string;
+}
+
+export interface CommunityPhoto {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+export interface CommunitySocial {
+  instagram?: string;
+  linkedin?: string;
+  youtube?: string;
+}
+
+/** Seccion "Comunidad" (UniconHub). */
+export interface Community {
+  name: string;
+  url: string;
+  logo: string;
+  role: string;
+  tagline: string;
+  description: string;
+  pillars: CommunityPillar[];
+  video: CommunityVideo;
+  photos: CommunityPhoto[];
+  social: CommunitySocial;
+}
+
 export interface Seo {
   title: string;
   description: string;
@@ -107,6 +179,8 @@ export interface SiteContent {
   personal: Personal;
   contact: Contact;
   skills: Skills;
+  career: CareerEntry[];
+  community: Community;
   experiences: Experience[];
   projects: Project[];
   seo: Seo;
